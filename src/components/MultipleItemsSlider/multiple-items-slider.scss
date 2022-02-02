@@ -1,0 +1,46 @@
+@import "../../styles/mixins";
+
+.multiple-items-slider {
+  .BrainhubCarousel__dots {
+    @media (max-width: 584px){
+      display: none;
+    }
+  }
+  .BrainhubCarousel {
+    @include tablet {
+      overflow: visible;
+    }
+    .BrainhubCarouselItem {
+      @include tablet {
+        opacity: .35;
+        transform: translateX(25%) translateX(3px);
+        transition: opacity $trans-slow;
+        pointer-events: none;
+      }
+      @media (max-width: 720px) {
+        transform: translateX(10%) translateX(3px);
+      }
+      @media (max-width: 584px) {
+        transform: translateX(25%) translateX(3px);
+      }
+      @media (max-width: 430px) {
+        transform: translateX(12.5%) translateX(2px);
+      }
+      @media (max-width: 360px) {
+        transform: translateX(10%) translateX(2px);
+      }
+      &--active {
+        @include tablet {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        & + .BrainhubCarouselItem {
+          @media (min-width: 585px) and (max-width: $tabletMaxWidth) {
+            opacity: 1;
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+  }
+}

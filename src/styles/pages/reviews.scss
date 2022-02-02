@@ -1,0 +1,290 @@
+@import "../variables";
+@import "../mixins";
+
+.page-reviews {
+  .section {
+    text-align: center;
+  }
+
+  .section-title {
+    &.with-overflow {
+      @include mobile {
+        width: 100%;
+        border-radius: 0;
+        top: 0;
+        max-width: none;
+        padding-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .section-intro {
+    padding: 0 0 180px;
+    background-color: #F0F1F6;
+
+    @include mobile {
+      padding: 30px 0 40px;
+    }
+
+    .h1 {
+      margin-bottom: 50px;
+      color: #2A3853;
+
+      @include mobile {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .intro-desc {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 34px;
+      color: #2A3853;
+
+      @include tablet {
+        font-size: 24px;
+        line-height: 30px;
+      }
+      @include mobile {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include mobile-small {
+        font-size: 12px;
+        line-height: 17px;
+      }
+    }
+  }
+
+  .section-reviews-video {
+    padding-bottom: 190px;
+
+    @include tablet {
+      padding-bottom: 100px;
+    }
+    @include mobile {
+      padding-bottom: 50px;
+    }
+  }
+
+  .section-reviews-players {
+    background-color: #FFFFFF;
+
+    .section-title {
+      background-color: #FFFFFF;
+    }
+  }
+
+  .section-reviews-parents {
+    background-color: #252D3A;
+
+    .section-title {
+      color: #FFFFFF;
+      background-color: #252D3A;
+    }
+  }
+
+  .section-reviews-kidshockey {
+    background-color: #F0F1F6;
+    padding-bottom: 148px;
+
+    @include tablet {
+      padding-bottom: 100px;
+    }
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+
+    .section-title {
+      background-color: #F0F1F6;
+      margin-bottom: 40px;
+    }
+  }
+
+  .text-reviews-list-item {
+    &-enter {
+      opacity: 0;
+    }
+    &-enter-active {
+      opacity: 1;
+      overflow: hidden;
+      transition: height $trans, opacity $trans;
+    }
+
+    &:last-child {
+      .text-reviews-list-item-content-wrap {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .text-reviews-list-item-content-wrap {
+    padding-top: 40px;
+    padding-bottom: 50px;
+
+    @include mobile {
+      padding-top: 30px;
+      padding-bottom: 25px;
+    }
+  }
+
+  .text-reviews-list-item-content {
+    position: relative;
+    max-width: 920px;
+    padding: 20px 65px 40px;
+    margin: auto;
+    background-color: #FFFFFF;
+
+    @include tablet {
+      padding: 10px 50px 30px;
+    }
+
+    @include mobile {
+      padding: 5px 20px 25px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      margin-left: -42px;
+      width: 84px;
+      height: 70px;
+      background: url('/assets/svg/quote-icon.svg') center center / contain no-repeat;
+
+      @include tablet {
+        transform: scale(.75);
+      }
+      @include mobile {
+        transform: scale(.65);
+      }
+      @include mobile-small {
+        transform: scale(.57);
+      }
+    }
+
+    .source-link-wrap {
+      text-align: right;
+
+      @include mobile-small {
+        text-align: center;
+      }
+    }
+    .source-link {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 13px;
+      color: rgba($black, .5);
+
+      @include mobile {
+        margin-top: 20px;
+        font-size: 12px;
+      }
+
+      a {
+        display: inline-block;
+        margin-left: .25em;
+        color: rgba($black, .5);
+        border-bottom: 1px dotted rgba($black, .5);
+        transition: color $trans, border-color $trans;
+
+        &:hover {
+          color: $primary;
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  .panel-content {
+    text-align: left;
+    //text-align: justify;
+  }
+
+  .review-author-and-player {
+    padding: 50px 0;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #FA6900;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 34px;
+    text-align: center;
+
+    br {
+      @include tablet-laptop-desktop {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      padding: 40px 0;
+      margin-bottom: 40px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @include mobile {
+      padding: 45px 0 20px;
+      margin-bottom: 28px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .show-more-btn-wrap {
+    text-align: center;
+    padding-top: 80px;
+
+    @include mobile {
+      padding-top: 40px;
+    }
+    @include mobile-small {
+      padding-top: 30px;
+    }
+
+    .show-more-btn {
+      //margin-bottom: 0;
+    }
+
+    &-exit {
+      height: 88px;
+      opacity: 1;
+
+      @include mobile {
+        height: 78px;
+      }
+
+      &-active {
+        height: 0;
+        padding-top: 0;
+        opacity: 0;
+        transition: all $trans;
+      }
+    }
+  }
+
+  .section-reviews-partners {
+    background-color: #252D3A;
+    padding-bottom: 140px;
+
+    @include tablet {
+      padding-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: 50px;
+    }
+
+    .section-title {
+      color: #FFFFFF;
+      background-color: #252D3A;
+    }
+  }
+
+
+}

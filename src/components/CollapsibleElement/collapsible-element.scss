@@ -1,0 +1,7 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.collapsible-element {
+  overflow: hidden;
+  transition: height $trans, max-height $trans;
+}

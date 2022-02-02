@@ -1,0 +1,337 @@
+@import "../variables";
+@import "../mixins";
+
+.page-agency {
+  .section-intro {
+    min-height: 450px;
+    max-height: 640px;
+
+    .container {
+      //padding-top: 60px;
+
+      @include mobile {
+        padding-top: 0;
+      }
+    }
+    .intro-img {
+      transform-origin: top center;
+
+      @include mobile {
+        margin: 10px auto 0;
+      }
+    }
+  }
+  .section-founder {
+    padding-bottom: 63px;
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+  }
+  .section-founder .founder-photo-img {
+    margin-bottom: 0;
+
+    @include mobile {
+      margin-bottom: -50px;
+    }
+
+    @include xxs-xs(margin-bottom, 0, -50);
+    @include xxxs-xxs(margin-bottom, 75, 0);
+  }
+  .section-founder .founder-desc-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0;
+
+    > p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .section-client-trust-reasons {
+    background-color: #FFFFFF;
+    padding-bottom: 64px;
+
+    @include mobile {
+      padding-bottom: 10px;
+    }
+
+    .trust-reasons-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .trust-reasons-list-item {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      margin-bottom: 50px;
+      padding-right: 65px;
+
+      @include laptop {
+        padding-right: 25px;
+      }
+      @include tablet {
+        padding-right: 15px;
+      }
+      @include mobile {
+        width: 100%;
+        max-width: 385px;
+        margin: auto auto 35px;
+        padding-right: 0;
+      }
+
+      .reason-number {
+        flex: 0 0 auto;
+        width: 110px;
+        height: 110px;
+        margin-right: 20px;
+        border-radius: 50%;
+        background-color: #00B6F0;
+        color: #FFFFFF;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 60px;
+        font-weight: 300;
+        line-height: 106px;
+        padding-top: 4px;
+        text-align: center;
+
+        @include laptop {
+          font-size: 50px;
+          width: 90px;
+          height: 90px;
+          line-height: 86px;
+        }
+        @include tablet {
+          font-size: 46px;
+          width: 80px;
+          height: 80px;
+          line-height: 78px;
+          padding-top: 2px;
+        }
+        @include mobile {
+          font-size: 36px;
+          width: 60px;
+          height: 60px;
+          line-height: 58px;
+          margin-right: 15px;
+        }
+      }
+
+      .reason-text {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+
+        @include laptop {
+          font-size: 18px;
+        }
+        @include tablet {
+          font-size: 16px;
+        }
+        @include mobile {
+          font-size: 14px;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  .section-partnership-agreements {
+    background-color: #252D3A;
+    padding-bottom: 60px;
+
+    .section-title {
+      color: #FFFFFF;
+    }
+
+    .partners-list-slider {
+      margin: 0 -80px;
+
+      @media (max-width: 1287px) {
+        margin: 0 -15px;
+      }
+      @include tablet {
+        margin: 0 -28px;
+      }
+      @include mobile {
+        margin: 0 -16px;
+      }
+
+      .slide-wrap {
+        padding-bottom: 125px;
+
+        @include laptop {
+          padding-bottom: 100px;
+        }
+        @include tablet {
+          padding-bottom: 50px;
+        }
+        @include mobile {
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+    .partners-list-slider-item {
+      display: block;
+      position: relative;
+      margin: 0 15px;
+      text-align: center;
+      cursor: zoom-in;
+
+      @include laptop {
+        margin: 0 12px;
+      }
+      @include tablet {
+        //margin-bottom: 50px;
+      }
+      @include mobile {
+        margin: 0 6px;
+      }
+
+    }
+    .partnership-agreement-img {
+      max-width: 100%;
+      margin-bottom: 24px;
+
+      @include laptop {
+        margin-bottom: 16px;
+      }
+    }
+    .partner-name {
+      font-size: 20px;
+      font-weight: 500;
+      color: #00B6F0;
+      margin-bottom: 14px;
+
+      @include laptop {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      @media (max-width: 1287px) {
+        font-size: 16px;
+      }
+      @include tablet {
+        font-size: 18px;
+      }
+      @include mobile {
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+    }
+    .partner-country {
+      font-size: 16px;
+      font-weight: 500;
+      color: #FFFFFF;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .section-gha-and-foreign-partners {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding-bottom: 120px;
+
+    @include tablet {
+      padding-bottom: 80px;
+    }
+    @include mobile {
+      padding-bottom: 50px;
+    }
+
+    .section-title {
+      background-color: #FFFFFF;
+    }
+
+    //.gha-and-partners-slider {
+    //  margin: 0 -80px;
+    //
+    //  @media (max-width: 1287px) {
+    //    margin: 0 -15px;
+    //  }
+    //  @include tablet {
+    //    margin: 0 -28px;
+    //  }
+    //  @include mobile {
+    //    margin: 0 -16px;
+    //  }
+    //}
+    //
+    //.gha-and-partners-slider-item {
+    //  display: block;
+    //  position: relative;
+    //  margin: 0 15px 125px;
+    //  text-align: center;
+    //
+    //  @include laptop {
+    //    margin: 0 12px 100px;
+    //  }
+    //  @include tablet {
+    //    margin-bottom: 50px;
+    //  }
+    //  @include mobile {
+    //    margin: 15px 6px 20px;
+    //  }
+    //
+    //  img {
+    //    display: block;
+    //    max-width: 100%;
+    //    margin-bottom: 20px;
+    //
+    //    @include laptop {
+    //      margin-bottom: 16px;
+    //    }
+    //
+    //    @include tablet {
+    //      margin-bottom: 12px;
+    //    }
+    //  }
+    //  .camp-name {
+    //    font-size: 18px;
+    //    font-weight: 500;
+    //    margin-bottom: 12px;
+    //
+    //    @include laptop {
+    //      font-size: 16px;
+    //      margin-bottom: 8px;
+    //    }
+    //
+    //    @include mobile {
+    //      font-size: 14px;
+    //      margin-bottom: 6px;
+    //    }
+    //  }
+    //  .date-and-place {
+    //    font-size: 16px;
+    //    font-weight: 500;
+    //
+    //    @include laptop {
+    //      font-size: 14px;
+    //    }
+    //    @include mobile {
+    //      font-size: 12px;
+    //    }
+    //  }
+    //}
+  }
+
+  .section-reviews {
+    background-color: #252D3A;
+    padding: 0 0 140px;
+
+    @include tablet {
+      padding-bottom: 40px;
+    }
+
+    .section-title {
+      color: #FFFFFF;
+    }
+  }
+}

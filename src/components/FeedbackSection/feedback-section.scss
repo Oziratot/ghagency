@@ -1,0 +1,83 @@
+@import "../../styles/mixins";
+
+.section-feedback {
+  height: 645px;
+  padding: 100px 0 0;
+  position: relative;
+  background: url('/assets/img/feedback-background-raw-compressed.jpg') center center / cover;
+
+  @include tablet {
+    background-image: url('/assets/img/feedback-background-raw-mobile-compressed.jpg');
+    height: 550px;
+    padding-top: 60px;
+  }
+
+  @include mobile {
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+  @include mobile-small {
+    //height: 680px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10, 17, 34, 0.89);
+  }
+
+  .container-mini {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: auto;
+
+    @include tablet {
+      max-width: 786px;
+      padding: 0 13px;
+    }
+
+    @include mobile {
+      padding: 0 8px;
+    }
+  }
+
+  .h2 {
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    @include mobile {
+      padding: 0 10px;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include tablet {
+    }
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
+  }
+}

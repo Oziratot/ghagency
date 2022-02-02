@@ -1,0 +1,284 @@
+@import "../../styles/mixins";
+
+.section-founder {
+  padding: 50px 0 0;
+  background-color: #252D3A;
+
+  @include tablet {
+    padding-top: 62px;
+  }
+
+  @include mobile {
+    position: relative;
+    padding: 0 0 30px;
+    overflow: hidden;
+  }
+
+  .founder-title {
+    font-size: 42px;
+    line-height: 56px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+
+    @include tablet {
+      font-size: 34px;
+      line-height: 44px;
+    }
+    @include mobile {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 76.25vw;
+      z-index: 2;
+      font-size: 42px;
+      line-height: 56px;
+      text-align: center;
+    }
+
+    @include xxs-xs(top, 244, 339);
+  }
+
+  .founder-title-first-line {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .founder-position {
+    position: relative;
+    max-width: 230px;
+    margin-left: 36px;
+    padding-left: 30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    color: #00B6F0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+
+    .absolute {
+      position: absolute;
+      top: -20px;
+
+      @include tablet {
+        top: -13px;
+      }
+
+      @include mobile {
+        position: static;
+      }
+    }
+
+    @include tablet {
+      position: relative;
+      bottom: 3px;
+      font-size: 14px;
+      line-height: 17px;
+      margin-left: 25px;
+      padding: 4px 0 3px 17px;
+    }
+
+    @include mobile {
+      position: absolute;
+      top: 100%;
+      bottom: auto;
+      left: 50%;
+      width: 170px;
+      max-width: none;
+      padding: 0;
+      border: 0;
+      margin: 12px 0 0 -82px;
+      color: #FFFFFF;
+      font-size: 13px;
+    }
+  }
+
+  .founder-title-second-line {
+    display: block;
+  }
+
+  .founder-photo-and-desc {
+    display: flex;
+    align-items: stretch;
+
+    @include mobile {
+      display: block;
+      margin: 0 -16px;
+    }
+
+    .ui-button {
+      font-weight: 400;
+      min-width: 200px;
+
+      @include tablet {
+        font-size: 16px;
+        height: 40px;
+        line-height: 38px;
+      }
+      @include mobile {
+
+      }
+    }
+  }
+
+  .founder-photo-block {
+    position: relative;
+    width: 445px;
+    flex: 0 0 auto;
+    //width: 38%;
+
+    @include tablet {
+      width: 35.35%;
+    }
+    @include mobile {
+      width: 100%;
+      max-width: 445px;
+      margin: auto;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 78.125vw;
+        left: 0;
+        right: 0;
+        height: 757px;
+        background: linear-gradient(180deg, rgba(37, 45, 58, 0) 0%, #252D3A 10.42%, #252D3A 100%);
+
+        @include xxs-xs(top, 250, 348);
+      }
+    }
+  }
+  .founder-photo-img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: -60px;
+
+    @include mobile {
+      margin-bottom: -50px;
+    }
+
+    @include xxs-xs(margin-bottom, -100, -200);
+    @include xxxs-xxs(margin-bottom, 0, -100);
+
+    &.mobile-desktop-photo {
+      @include tablet-only {
+        display: none;
+      }
+      @include mobile {
+        margin-top: -12px;
+      }
+    }
+    &.tablet-photo {
+      @include laptop-desktop {
+        display: none;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+    &.mobile-photo {
+      @include tablet-laptop {
+        display: none;
+      }
+      @include laptop-desktop {
+        display: none;
+      }
+    }
+  }
+  .founder-desc-block {
+    //width: 62%;
+    position: relative;
+    z-index: 2;
+    padding-left: 60px;
+    padding-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #FFFFFF;
+
+    @include laptop {
+      padding-left: 50px;
+      font-size: 16px;
+    }
+
+    @include tablet {
+      padding-left: 24px;
+      font-size: 14px;
+    }
+
+    @include mobile {
+      padding: 0 16px;
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    p {
+      margin-bottom: 26px;
+
+      @include laptop {
+        margin-bottom: 29px;
+      }
+      @include tablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    .increased-text {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 40px;
+
+      @include laptop {
+        font-size: 20px;
+        margin-bottom: 36px;
+      }
+
+      @include tablet {
+        font-size: 18px;
+        margin-bottom: 34px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+    }
+
+    .team-list {
+      margin-top: -10px;
+      margin-bottom: 30px;
+      list-style: none;
+      color: var(--blue, #00B6F0);
+
+      @include laptop {
+        margin-top: -8px;
+      }
+      @include tablet {
+        margin-top: -2px;
+        margin-bottom: 20px;
+      }
+      @include mobile {
+        margin-top: -5px;
+        margin-bottom: 32px;
+      }
+    }
+
+    .team-list-item {
+      margin-bottom: 13px;
+
+      @include laptop {
+        line-height: 1.4;
+        margin-bottom: 16px;
+      }
+      @include tablet {
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

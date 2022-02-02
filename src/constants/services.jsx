@@ -1,0 +1,15 @@
+import ServicesCareerConsultationsIcon from '../assets/svg/main/services-career-consultations.svg';
+import ServicesFindingJobsAbroadIcon from '../assets/svg/main/services-finding-jobs-abroad.svg';
+import ServicesPlayerViewingsIcon from '../assets/svg/main/services-player-viewings.svg';
+import ServicesProVideoSlicingIcon from '../assets/svg/main/services-pro-video-slicing.svg';
+import ServicesSupervisingAbroadIcon from '../assets/svg/main/services-supervising-abroad.svg';
+import ServicesTrainingCampsIcon from '../assets/svg/main/services-training-camps.svg';
+
+export const SERVICES = [
+  { id: 'career-consultations', icon: ServicesCareerConsultationsIcon, label: 'Карьерные консультации', previewImgSrcSet: '/assets/img/services/main/1x/services-preview-career-consultations-min.jpg, /assets/img/services/main/2x/services-preview-career-consultations-min.jpg 2x', previewDesc: 'Бесплатно ответим на вопросы о карьерных перспективах хоккеиста в России и за рубежом. Поможем выбрать подходящее направление исходя из уровня, возможностей и потребностей игрока.' },
+  { id: 'player-viewing', icon: ServicesPlayerViewingsIcon, label: 'Просмотры игроков', previewImgSrcSet: '/assets/img/services/main/1x/services-preview-player-viewing-min.jpg, /assets/img/services/main/2x/services-preview-player-viewing-min.jpg 2x', previewDesc: 'Организовываем просмотровые турниры в Москве с приглашенными спортивными функционерами высших лиг США и Канады. Устраиваем выездные просмотры за рубежом.' },
+  { id: 'find-job-abroad', icon: ServicesFindingJobsAbroadIcon, label: 'Устройство хоккеистов за&nbsp;границу', previewImgSrcSet: '/assets/img/services/main/1x/services-preview-find-job-abroad-min.jpg, /assets/img/services/main/2x/services-preview-find-job-abroad-min.jpg 2x', previewDesc: 'Предлагаем эффективную карьерную стратегию и устраиваем в хоккейные клубы США и Канады. ' },
+  { id: 'supervising-abroad', icon: ServicesSupervisingAbroadIcon, label: 'Курирование игроков за&nbsp;границей', previewImgSrcSet: '/assets/img/services/main/1x/services-preview-supervising-abroad-min.jpg, /assets/img/services/main/2x/services-preview-supervising-abroad-min.jpg 2x', previewDesc: 'Следим за успехами игроков, их спортивными и бытовыми условиями. Помогаем в решении возникающих вопросов и контролируем условия исполнения контрактов.' },
+  { id: 'training-camps', icon: ServicesTrainingCampsIcon, label: 'Тренировочные лагеря', previewImgSrcSet: '/assets/img/services/main/1x/services-preview-training-camps-min.jpg, /assets/img/services/main/2x/services-preview-training-camps-min.jpg 2x', previewDesc: 'Для повышения профессиональных навыков спортсменов ежегодно организовываем хоккейные лагеря в России и помогаем подобрать тренировочные программы за рубежом.' },
+  { id: 'pro-video-slicing', icon: ServicesProVideoSlicingIcon, label: 'Профессиональные видеонарезки', previewImgSrcSet: '/assets/img/services/main/1x/services-preview-pro-video-slicing-min.jpg, /assets/img/services/main/2x/services-preview-pro-video-slicing-min.jpg 2x', previewDesc: 'Помогаем спортсменам сделать качественное портфолио из лучших игровых моментов для презентации хоккейным клубам.' },
+];

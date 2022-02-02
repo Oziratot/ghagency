@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.breadcrumbs {
+  display: flex;
+  padding: 35px 0 55px;
+
+  @include mobile {
+    display: none;
+  }
+
+  > li {
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 18px;
+      height: 18px;
+      margin: 0 3px;
+      background: url('/assets/svg/breadcrumbs-arrow.svg') center center / contain no-repeat;
+    }
+
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+  }
+
+  .breadcrumbs-link {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 22px;
+    color: $black;
+    transition: color $trans;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

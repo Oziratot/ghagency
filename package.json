@@ -1,0 +1,63 @@
+{
+  "name": "gha",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "NODE_ENV=production next build",
+    "export": "NODE_ENV=production next export",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "author": "gvoskresenskii",
+  "license": "ISC",
+  "dependencies": {
+    "@brainhubeu/react-carousel": "^1.18.6",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "formik": "^2.1.4",
+    "lodash.memoize": "^4.1.2",
+    "moment": "^2.27.0",
+    "next": "^9.4.4",
+    "next-transpile-modules": "^3.3.0",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "qs": "^6.9.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-imask": "^6.0.3  ",
+    "react-phone-input-2": "^2.13.9",
+    "react-spring": "^8.0.27",
+    "react-spring-lightbox": "^1.4.11",
+    "react-transition-group": "^4.4.1",
+    "react-youtube": "^7.11.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "styled-components": "^5.1.1",
+    "ymaps-touch-scroll": "^2.1.0",
+    "yup": "^0.28.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-export-default-from": "^7.10.1",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+    "@babel/plugin-transform-react-constant-elements": "^7.10.1",
+    "@svgr/webpack": "^4.3.3",
+    "@types/react": "^17.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "file-loader": "^5.1.0",
+    "fs-extra": "^8.1.0",
+    "html-loader": "^1.1.0",
+    "webpack-bundle-analyzer": "^3.8.0"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  }
+}

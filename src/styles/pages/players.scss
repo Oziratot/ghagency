@@ -1,0 +1,825 @@
+@import "../variables";
+@import "../mixins";
+
+.page-players {
+  .section-players {
+    padding-bottom: 90px;
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+  }
+
+  .players-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    @include mobile-small {
+      margin: 0 -16px;
+    }
+  }
+
+  .players-list-item {
+    width: 50%;
+    //overflow: hidden;
+    will-change: transform;
+
+    @include mobile {
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    &:first-child {
+      //@include mobile-small {
+        .players-list-item-content {
+          padding-top: 0;
+        }
+      //}
+    }
+    &:nth-child(2) {
+      .players-list-item-content {
+        @include tablet-laptop-desktop {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
+  .players-list-item-content {
+    padding: 15px;
+
+    @include mobile-small {
+      padding: 16px 0;
+    }
+  }
+
+  .players-list-item-link {
+    position: relative;
+    display: block;
+    padding: 45px 45px 30px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      opacity: 0;
+      will-change: opacity;
+      transition: opacity $trans;
+      box-shadow: 0 20px 50px rgba(31, 30, 36, 0.1);
+    }
+
+    @include laptop {
+      padding: 30px 30px 25px;
+    }
+
+    @include tablet {
+      padding: 24px 24px 30px;
+    }
+
+    @include mobile {
+      padding: 20px 20px 30px;
+    }
+
+    //&.cirkunov-vadim,
+    //&.guseinov-alexander,
+    //&.ryazancev-miroslav {
+    //  .player-photo {
+    //    background-position: top center;
+    //  }
+    //}
+
+    &.tsegelnik-maxim,
+    &.ganabin-egor,
+    &.leontev-yaroslav {
+      .player-photo {
+        background-position: center center;
+      }
+    }
+    &.ganabin-egor {
+      .player-photo {
+        background-position: center 47%;
+      }
+    }
+    &.grishakov-vladislav {
+      .player-photo {
+        background-position: center 39%;
+      }
+    }
+    &.ashikhmin-tikhon {
+      .player-photo {
+        background-position: center 17%;
+      }
+    }
+    &.filippenko-nikita {
+      .player-photo {
+        background-position: center 13%;
+      }
+    }
+    &.rubtsov-igor {
+      .player-photo {
+        background-position: center 25%;
+      }
+    }
+    &.stepanyans-artem {
+      .player-photo {
+        background-position: center 20%;
+      }
+    }
+    &.zykov–nazar,
+    &.smirnov-ilia,
+    &.bubnov-daniil {
+      .player-photo {
+        background-position: center 70%;
+      }
+    }
+
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+      //box-shadow: 0 20px 50px rgba(31, 30, 36, 0.1);
+
+      .players-details-tip {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .player-photo {
+    width: 100%;
+    height: 0;
+    padding-bottom: 65.7778%;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 12px;
+    margin-bottom: 30px;
+
+    @include laptop {
+      margin-bottom: 24px;
+    }
+    @include tablet {
+      margin-bottom: 20px;
+    }
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  .player-desc {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
+
+    @include tablet {
+      display: block;
+      text-align: center;
+      padding: 0 8px;
+    }
+  }
+
+  .player-name {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: $black;
+    margin-bottom: 30px;
+    transition: color $trans;
+    width: 190px;
+    flex: 0 0 auto;
+    padding-right: 10px;
+    //width: min-content;
+
+    @include laptop {
+      font-size: 22px;
+      width: 170px;
+      margin-bottom: 24px;
+    }
+
+    @include tablet {
+      font-size: 20px;
+      width: auto;
+      text-align: center;
+      padding-right: 0;
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      margin-top: 10px;
+      width: 140px;
+      height: 4px;
+      background-color: #FA6900;
+
+      @include laptop {
+        width: 128px;
+      }
+      @include tablet {
+        width: 140px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .player-info {
+    flex: 1 1 auto;
+
+    @include tablet {
+      max-width: 300px;
+      margin: auto;
+    }
+    //width: calc(100% - 170px);
+
+    //@include desktop {
+    //  padding-left: 30px;
+    //}
+
+    > * {
+      display: flex;
+      align-items: center;
+      //margin-bottom: 20px;
+      height: 44px;
+      color: #7D8189;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+
+      @include laptop {
+        font-size: 14px;
+        line-height: 18px;
+        height: 36px;
+      }
+
+      @include tablet {
+        height: 44px;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: left;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        flex: 0 0 auto;
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &.player-team {
+        &:before {
+          background-image: url('/assets/svg/puck.svg');
+        }
+      }
+      &.player-country {
+        &:before {
+          background-image: url('/assets/svg/map.svg');
+        }
+      }
+      &.player-role {
+        &:before {
+          background-image: url('/assets/svg/role.svg');
+        }
+      }
+      &.player-birthday {
+        &:before {
+          background-image: url('/assets/svg/calendar.svg');
+        }
+      }
+    }
+  }
+
+  .players-details-tip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FA6900;
+    font-size: 16px;
+    font-weight: 500;
+    will-change: transform;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity $trans, transform $trans;
+
+    @include laptop {
+      font-size: 14px;
+    }
+
+    @include tablet {
+      position: static;
+      display: inline-block;
+      background-color: #FA6900;
+      color: #FFFFFF;
+      text-align: center;
+      border-radius: 8px;
+      padding: 8px 50px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 20px;
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}
+
+.page-player {
+  .section-player {
+    background-color: #FFFFFF;
+    padding-bottom: 70px;
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+
+    .container {
+      @include mobile {
+        padding: 0;
+      }
+    }
+
+    & + .back-to-all-btn-wrap {
+      padding-top: 0;
+    }
+  }
+
+  .player-details {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 50px;
+
+    @include mobile {
+      position: relative;
+      display: block;
+      padding-top: 92px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .player-photo {
+    position: relative;
+    width: 445px;
+
+    @include tablet {
+      width: 400px;
+    }
+
+    @include mobile {
+      width: 100%;
+      //height: ;
+      //max-width: 500px;
+      margin: auto;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media all and (-ms-high-contrast:none) { // IE hack (ie has no object-fit support
+        position: static;
+        display: block;
+        height: auto;
+      }
+
+      @include mobile {
+        display: block;
+        position: static;
+        max-height: 60vh;
+        object-fit: contain;
+      }
+      //@media (max-width: 500px) {
+      //  max-height: 70vh;
+      //  object-fit: cover;
+      //}
+    }
+  }
+
+  .player-resume {
+    padding-left: 30px;
+
+    @include mobile {
+      padding: 30px 16px 0;
+    }
+
+    .section-title {
+      margin-top: 0;
+      padding-top: 0;
+      margin-bottom: 40px;
+      text-align: left;
+
+      @include mobile {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+
+      &:before {
+        @include tablet-laptop-desktop {
+          left: 0;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .resume-params-list-item {
+    display: flex;
+    align-items: center;
+    //margin-bottom: 20px;
+    height: 54px;
+    color: #7D8189;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+
+    &:last-child {
+      height: auto;
+      margin-top: 12px;
+
+      @include mobile {
+        margin-top: 13px;
+      }
+    }
+
+    @include laptop {
+      font-size: 16px;
+      line-height: 20px;
+      height: 44px;
+    }
+
+    @include tablet {
+      //height: 44px;
+      //font-size: 16px;
+      //line-height: 20px;
+      //text-align: left;
+    }
+
+    @include mobile {
+      height: 50px;
+      font-size: 14px;
+    }
+
+    @include mobile-small {
+      font-size: 13px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      flex: 0 0 auto;
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &.resume-param-team {
+      font-weight: 600;
+      color: #474B54;
+
+      &:before {
+        background-image: url('/assets/svg/team.svg');
+      }
+    }
+    &.resume-param-league {
+      font-weight: 600;
+      color: #474B54;
+
+      &:before {
+        background-image: url('/assets/svg/puck.svg');
+      }
+    }
+    &.resume-param-country {
+      &:before {
+        background-image: url('/assets/svg/map.svg');
+      }
+    }
+    &.resume-param-role {
+      &:before {
+        background-image: url('/assets/svg/role.svg');
+      }
+    }
+    &.resume-param-grip {
+      &:before {
+        background-image: url('/assets/svg/grip.svg');
+      }
+    }
+    &.resume-param-height {
+      &:before {
+        background-image: url('/assets/svg/height.svg');
+      }
+    }
+    &.resume-param-weight {
+      &:before {
+        background-image: url('/assets/svg/weight.svg');
+      }
+    }
+    &.resume-param-birthday {
+      &:before {
+        background-image: url('/assets/svg/calendar.svg');
+      }
+    }
+    &.resume-param-agent {
+      &:before {
+        background-image: url('/assets/svg/management.svg');
+      }
+    }
+  }
+
+  .player-review {
+    padding: 35px 40px;
+    border-radius: 20px;
+    background-color: #F0F1F6;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #474B54;
+    max-width: 750px;
+
+    @include mobile {
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 22px;
+      margin: 0 16px;
+    }
+
+    @include mobile-small {
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  .section-player-photo {
+    background-color: #F0F1F6;
+    padding: 115px 0 100px;
+
+    @include laptop {
+      padding: 90px 0 80px;
+    }
+
+    @include tablet {
+      padding: 80px 0 70px;
+    }
+
+    @include mobile {
+      padding: 30px 0;
+    }
+
+    .container {
+      @include mobile-small {
+        padding: 0;
+      }
+    }
+  }
+
+  .player-lg-photo {
+    display: block;
+    margin: 0 auto 56px;
+    max-width: 100%;
+    max-height: 650px;
+
+    @include laptop {
+      max-height: 600px;
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+  .player-lg-photo-caption {
+    max-width: 730px;
+    margin: auto;
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #474B54;
+    text-align: center;
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    @include mobile-small {
+      font-size: 14px;
+      padding: 0 16px;
+    }
+  }
+
+  .section-reviews {
+    background-color: #FFFFFF;
+    padding: 0 0 130px;
+
+    @include laptop {
+      padding: 0 0 110px;
+    }
+
+    @include tablet {
+      padding-bottom: 90px;
+    }
+
+    @include mobile {
+      padding-bottom: 50px;
+    }
+
+    .back-to-all-btn-wrap {
+      padding-bottom: 0;
+    }
+
+    .text-reviews-list-item-content {
+      position: relative;
+      max-width: 920px;
+      padding: 20px 65px 40px;
+      margin: auto;
+      background-color: #F0F1F6;
+
+      @include tablet {
+        padding: 10px 50px 40px;
+      }
+
+      @include mobile {
+        padding: 5px 20px 30px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -35px;
+        left: 50%;
+        margin-left: -42px;
+        width: 84px;
+        height: 70px;
+        background: url('/assets/svg/quote-icon.svg') center center / contain no-repeat;
+
+        @include tablet {
+          transform: scale(.75);
+        }
+        @include mobile {
+          transform: scale(.65);
+        }
+        @include mobile-small {
+          transform: scale(.57);
+        }
+      }
+    }
+
+    .panel-content {
+      text-align: left;
+      text-align: justify;
+    }
+
+    .text-review-author {
+      padding: 50px 0;
+      margin-bottom: 50px;
+      border-bottom: 1px solid #FA6900;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 34px;
+      text-align: center;
+
+      @include tablet {
+        padding: 40px 0;
+        margin-bottom: 40px;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @include mobile {
+        padding: 45px 0 20px;
+        margin-bottom: 28px;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .back-to-all-btn-wrap {
+    padding-top: 70px;
+    padding-bottom: 124px;
+    background-color: #FFF;
+
+    @include tablet {
+      padding-top: 60px;
+      padding-bottom: 114px;
+    }
+
+    @include mobile {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .back-to-all-btn {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 385px;
+    height: 42px;
+    line-height: 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #7D8189;
+    text-align: center;
+    transition: background-color $trans;
+
+    @include mobile {
+      //width: 280px;
+      width: 200px;
+      height: 40px;
+      line-height: 38px;
+      //height: 36px;
+      //line-height: 34px;
+      font-size: 14px;
+      border-radius: 20px;
+    }
+
+    @include mobile-small {
+      width: 180px;
+      height: 36px;
+      line-height: 34px;
+      font-size: 12px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      //top: 50%;
+      //margin-top: -12px;
+      top: 9px;
+      left: 20px;
+      width: 24px;
+      height: 24px;
+      background: url('/assets/svg/arrow-left.svg') center center / contain no-repeat;
+      transition: transform $trans;
+      will-change: transform;
+
+      @include mobile {
+        position: static;
+        display: inline-block;
+        margin-right: 14px;
+        margin-left: -4px;
+        vertical-align: middle;
+      }
+    }
+
+    &:hover, &:active {
+      background-color: darken(#7D8189, 10%);
+
+      &:before {
+        transform: translateX(-4px) rotate(0.001deg);
+      }
+    }
+    &:active {
+      background-color: darken(#7D8189, 15%);
+    }
+  }
+}

@@ -1,0 +1,743 @@
+@import "../variables";
+@import "../mixins";
+
+.page-home {
+  .section-title {
+    &:before {
+      @include mobile {
+        bottom: -12px;
+        width: 98px;
+        margin-left: -49px;
+      }
+    }
+  }
+
+  .section-our-services {
+    position: relative;
+    background: url('/assets/img/main/main-second-hero-raw-compressed.jpg') center center / cover;
+    padding-bottom: 100px;
+
+    @include tablet {
+      padding-bottom: 30px;
+    }
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(10, 17, 34, 0.89);
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      @include laptop {
+        margin-bottom: 120px;
+      }
+
+      @include tablet {
+        margin-bottom: 70px;
+      }
+    }
+
+    .our-services-list {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 15px;
+    }
+    .our-services-list-item {
+      width: calc(100% / 3);
+      @include tablet {
+        width: 50%;
+      }
+      @include mobile {
+        width: 100%;
+      }
+
+      .service-link {
+        display: block;
+        height: 100%;
+        padding-bottom: 45px;
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        @include laptop {
+          padding-top: 22px;
+          padding-bottom: 56px;
+        }
+
+        @include tablet {
+          text-align: left;
+          border: none;
+          display: flex;
+          align-items: center;
+        }
+
+        @include mobile {
+          padding: 18px 0;
+          //justify-content: center;
+        }
+
+        &:hover {
+          .service-icon {
+            path {
+              fill: #00B6F0;
+            }
+          }
+        }
+      }
+
+      &:first-child {
+        .service-link {
+          @include mobile {
+            padding-top: 0;
+          }
+        }
+      }
+
+      &:nth-child(n+4) {
+        .service-link {
+          padding-top: 72px;
+          border-bottom: none;
+
+          @include tablet {
+            padding-top: 22px;
+          }
+        }
+      }
+
+      &:nth-child(3n) {
+        .service-link {
+          border-right: none;
+        }
+      }
+
+      &:nth-child(2) {
+        .service-link {
+          .service-label {
+            padding: 0 80px;
+
+            @include tablet {
+              padding: 0 40px 0 0;
+              max-width: 160px;
+            }
+            @include mobile {
+              padding: 0;
+              max-width: 188px;
+            }
+          }
+        }
+      }
+
+      &:nth-last-child(2) {
+        .service-link {
+          .service-label {
+            @include mobile {
+              padding-right: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .service-icon {
+      display: block;
+      margin: 0 auto 32px;
+
+      @include laptop {
+        width: 92px;
+        height: 92px;
+        margin-bottom: 38px;
+      }
+
+      @include tablet {
+        flex-shrink: 0;
+        width: 68px;
+        height: 68px;
+        margin: 0 24px 0 0;
+      }
+
+      @include mobile {
+        width: 40px;
+        height: 40px;
+      }
+
+      path {
+        transition: fill $trans;
+      }
+    }
+    .service-label {
+      padding: 0 50px;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: #00B6F0;
+
+      @include laptop {
+        padding: 0 40px;
+        font-size: 18px;
+      }
+
+      @include tablet {
+        padding: 0 40px 0 0;
+        max-width: 264px;
+      }
+
+      @include mobile {
+        flex-grow: 1;
+        font-size: 14px;
+        line-height: 20px;
+        max-width: 188px;
+        padding: 0;
+      }
+    }
+  }
+
+  .section-advantages-abroad {
+    padding-bottom: 100px;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
+
+    @include mobile {
+      padding-bottom: 30px;
+    }
+
+    .advantages-abroad-list {
+      display: flex;
+      padding-top: 14px;
+
+      @include tablet {
+        flex-wrap: wrap;
+        //justify-content: center;
+      }
+
+      .advantages-abroad-list-item {
+        width: 16%;
+
+        @include tablet {
+          width: 50%;
+        }
+        @include mobile {
+          width: 100%;
+        }
+
+        .service-link {
+          display: block;
+          height: 100%;
+          padding: 5px 15px 24px;
+          border-right: 1px solid #D0D9E9;
+
+          @include tablet {
+            padding: 0 20px 80px;
+            display: flex;
+            align-items: center;
+            border: none;
+          }
+          @include mobile {
+            padding: 18px 10px;
+            //justify-content: center;
+          }
+
+          &:hover {
+            .advantage-icon {
+              path {
+                fill: $primary;
+              }
+            }
+            .advantage-label {
+              color: $primary;
+            }
+          }
+        }
+
+        &:first-child {
+          .service-link {
+            @include mobile {
+              padding-top: 0;
+            }
+          }
+        }
+
+        &:nth-child(2n) {
+          width: 22%;
+
+          @include tablet {
+            width: 50%;
+          }
+          @include mobile {
+            width: 100%;
+          }
+        }
+
+        &:nth-child(3) {
+          width: 24%;
+
+          @include tablet {
+            width: 50%;
+          }
+          @include mobile {
+            width: 100%;
+          }
+
+          .advantage-icon {
+            @include laptop-only {
+              transform: scale(0.609756);
+            }
+          }
+        }
+
+        &:last-child {
+          .service-link {
+            border-right: none;
+          }
+
+          .advantage-icon {
+            @include laptop-only {
+              transform: scale(0.59);
+            }
+          }
+        }
+      }
+      .advantage-icon-wrap {
+        height: 110px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin-bottom: 32px;
+
+        @include tablet {
+          flex-shrink: 0;
+          height: 68px;
+          width: 68px;
+          margin-bottom: 0;
+          margin-right: 24px;
+        }
+
+        @include mobile {
+          width: 44px;
+          height: 44px;
+          margin-right: 20px;
+        }
+      }
+      .advantage-icon {
+        @include laptop-only {
+          transform: scale(0.66);
+        }
+        @include tablet {
+          height: 100%;
+          width: auto;
+          max-width: 100%;
+          margin: auto;
+          //transform: scale(0.66);
+        }
+
+        path {
+          transition: fill $trans;
+        }
+      }
+      .advantage-label {
+        color: var(--dark-gray, #474B54);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: center;
+        transition: color $trans;
+
+        @include laptop {
+          font-size: 14px;
+        }
+
+        @include tablet {
+          max-width: 294px;
+          font-size: 18px;
+          text-align: left;
+        }
+
+        @include mobile {
+          //hyphens: auto;
+          font-size: 14px;
+          max-width: 220px;
+        }
+      }
+    }
+  }
+
+  .section-clients {
+    padding: 30px 0 60px;
+
+    @include laptop {
+      padding-top: 15px;
+    }
+
+    @include tablet {
+      padding: 0 0 40px;
+    }
+
+    .clients-slider {
+      margin: 0 -80px;
+      //margin: 0 -30px;
+
+      @media (max-width: 1287px) {
+        margin: 0 -15px;
+      }
+
+      @include tablet {
+        margin: 0 -28px;
+      }
+
+      @include mobile {
+        margin: 0 -16px;
+      }
+
+      //BrainhubCarousel__arrow--disable BrainhubCarousel__custom-arrowLeft
+
+      .slide-wrap {
+        padding-bottom: 125px;
+
+        @include laptop {
+          padding-bottom: 100px;
+        }
+        @include tablet {
+          padding-bottom: 50px;
+        }
+        @include mobile {
+          padding-bottom: 20px;
+        }
+      }
+    }
+    .player-card {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      margin: 0 15px;
+
+      @include laptop {
+        margin: 0 12px;
+      }
+
+      @include tablet {
+        //margin-bottom: 50px;
+      }
+
+      @include mobile {
+        margin: 0 6px 0;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(31, 30, 36, 0.08);
+        transition: opacity $trans, bottom $trans;
+      }
+      &:after {
+        bottom: 0;
+        //border-bottom-left-radius: 0;
+        //border-bottom-right-radius: 0;
+        box-shadow: 0 10px 15px rgba(31, 30, 36, 0.2);
+        opacity: 0;
+      }
+      .details-link {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 80px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #FFA800;
+        transition: transform $trans, opacity $trans;
+        transform: translateY(-100%) rotate(0.001deg);
+        opacity: 0;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+
+        @include laptop {
+          font-size: 18px;
+          line-height: 60px;
+        }
+      }
+
+      &:hover {
+        @include laptop-desktop {
+          &:before {
+            opacity: 0;
+          }
+          &:after {
+            opacity: 1;
+            bottom: -80px;
+
+            @include laptop {
+              bottom: -60px;
+            }
+          }
+          .player-card-content {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            //  &:after {
+            //    transform: translateY(0px) rotate(0.0001deg);
+            //  }
+          }
+          .player-name {
+            border-color: #FFA800;
+          }
+          .details-link {
+            opacity: 1;
+            transform: translateY(0) rotate(0.001deg);
+          }
+        }
+      }
+
+
+      &.zainulin-ismail {
+        .player-photo {
+          background-position: center 10%;
+        }
+      }
+      &.filippenko-nikita {
+        .player-photo {
+          background-position: center 7%;
+        }
+      }
+      //&.zykov–nazar,
+      //&.smirnov-ilia,
+      //&.bubnov-daniil {
+      //  .player-photo {}
+      //}
+    }
+
+    .player-card-content {
+      position: relative;
+      z-index: 2;
+      padding: 34px 30px 65px;
+      border-radius: 12px;
+      text-align: center;
+      background-color: #FFFFFF;
+      transition: border-radius $trans;
+
+      @include laptop {
+        padding: 34px 20px 30px;
+      }
+
+      @include tablet {
+        padding: 30px 24px 40px;
+      }
+
+      //&:after {
+      //  content: '';
+      //  position: absolute;
+      //  bottom: 0;
+      //  left: 0;
+      //  right: 0;
+      //  height: 12px;
+      //  background-color: #FFFFFF;
+      //  transform: translateY(-12px) rotate(0.0001deg);
+      //  transition: transform $trans;
+      //  will-change: transform;
+      //}
+    }
+
+    .player-photo {
+      width: 202px;
+      height: 202px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 30px;
+      background-position: center center;
+      background-size: cover;
+
+      @include laptop {
+        width: 158px;
+        height: 158px;
+        margin-bottom: 34px;
+      }
+      @include tablet {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 32px;
+      }
+    }
+
+    .player-name {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #575C66;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 4px solid #FF8A00;
+      transition: border-color $trans;
+
+      @include laptop {
+        font-size: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+      }
+
+      @include tablet {
+        font-size: 18px;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        border-bottom: 2px solid #FF8A00;
+      }
+    }
+
+    .player-league {
+      font-size: 18px;
+      line-height: 1.2;
+      color: #979DA9;
+
+      @include laptop {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .section-reviews {
+    padding: 0 0 140px;
+    background-color: #252D3A;
+
+    @include tablet {
+      padding-bottom: 40px;
+    }
+
+    .section-title {
+      color: #FFFFFF;
+    }
+  }
+
+  .section-leagues-usa,
+  .section-leagues-canada {
+    min-height: 680px;
+    padding-top: 110px;
+    padding-bottom: 130px;
+    background: url('/assets/img/main/main-leagues-usa-min.jpg') center center / cover;
+
+    @include tablet {
+      min-height: 610px;
+      padding-top: 90px;
+      padding-bottom: 40px;
+    }
+
+    @include mobile {
+      min-height: 385px;
+      padding-top: 50px;
+      padding-bottom: 55px;
+      background-image: url('/assets/img/main/main-leagues-usa-mobile-compressed.jpg');
+    }
+
+    > .container {
+      @include laptop {
+        padding: 0 20px;
+      }
+      @include mobile {
+        padding: 0 6px;
+      }
+    }
+
+    .h2 {
+      color: #FFFFFF;
+      margin-bottom: 110px;
+      text-align: center;
+
+      @include tablet {
+        margin-bottom: 62px;
+      }
+      @include mobile {
+        margin-bottom: 37px;
+      }
+    }
+
+    .leagues-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 970px;
+      margin: auto;
+
+      @include tablet {
+        max-width: 630px;
+      }
+    }
+    .leagues-list-item {
+      color: #575C66;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 30px;
+      margin: 0 18px 40px;
+
+      @include tablet {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0 10px 50px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 19px;
+        margin: 0 10px 24px;
+      }
+
+      > a, span {
+        display: block;
+        padding: 12px 20px;
+        border-radius: 14px;
+        white-space: nowrap;
+        color: #575C66;
+        background-color: #FFFFFF;
+        transition: color $trans, background-color $trans;
+
+        @include mobile {
+          padding: 6px 8px;
+          border-radius: 8px;
+        }
+      }
+
+      > a {
+        color: #00B6F0;
+
+        &:hover {
+          color: #FFF;
+          background-color: #00B6F0;
+        }
+      }
+    }
+  }
+
+  .section-leagues-canada {
+    background-image: url('/assets/img/main/main-leagues-canada-min.jpg');
+
+    @include mobile {
+      background-image: url('/assets/img/main/main-leagues-canada-mobile-compressed.jpg');
+    }
+
+    .leagues-list {
+      max-width: 585px;
+
+      @include tablet {
+        max-width: 550px;
+      }
+    }
+  }
+}

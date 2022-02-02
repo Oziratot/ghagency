@@ -1,0 +1,264 @@
+@import "../variables";
+@import "../mixins";
+
+body {
+  &._modal-active {
+    overflow: hidden;
+  }
+}
+
+.page-contacts {
+
+  .contacts-and-social-links {
+    position: relative;
+
+    @include tablet {
+      padding-bottom: 600px;
+    }
+    @include mobile {
+      padding-bottom: 480px;
+    }
+  }
+
+  .contacts-wrap {
+    position: relative;
+    z-index: 2;
+    padding: 20px 0;
+
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: 30px;
+    }
+
+    > .container {
+      display: flex;
+
+      @include tablet {
+        display: block;
+        padding: 0;
+      }
+    }
+  }
+  .contacts-list {
+    flex: 1 1 auto;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26px;
+    padding-bottom: 14px;
+
+    @include tablet-only {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 28px 80px;
+      font-size: 20px;
+    }
+    @include mobile {
+      font-size: 16px;
+    }
+    @include mobile-small {
+      font-size: 14px;
+    }
+  }
+
+  .map-container {
+    position: relative;
+    flex: 0 0 auto;
+    width: 635px;
+    //cursor: zoom-in;
+    margin-bottom: -134px;
+
+    @include laptop {
+      width: 520px;
+    }
+    @include tablet {
+      position: absolute;
+      top: calc(100% + 188px);
+      left: 0;
+      width: 100%;
+      height: 600px;
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      top: calc(100% + 135px);
+      height: 480px;
+    }
+  }
+
+  .static-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    //pointer-events: none;
+    box-shadow: 0 20px 50px rgba(31, 30, 36, 0.1);
+  }
+
+  .contacts-list-item {
+    position: relative;
+    z-index: 2;
+    max-width: 430px;
+    margin-bottom: 28px;
+
+    @include tablet-only {
+      width: 47%;
+    }
+    @include mobile {
+      max-width: 300px;
+      margin: 0 auto 30px;
+    }
+    @include mobile-small {
+      max-width: 288px;
+    }
+
+    &:nth-child(1) {
+      @include tablet-only {
+        order: 1;
+      }
+    }
+    &:nth-child(2) {
+      @include tablet-only {
+        width: 53%;
+        order: 5;
+      }
+    }
+    &:nth-child(3) {
+      @include tablet-only {
+        order: 3;
+      }
+    }
+
+    &:nth-child(4) {
+      @include tablet-only {
+        order: 2;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      @include tablet-only {
+        width: 53%;
+        order: 4;
+      }
+    }
+  }
+
+  .contacts-list-item-link {
+    color: #474B54;
+    display: flex;
+    align-items: center;
+    transition: color $trans;
+    cursor: pointer;
+
+    svg {
+      flex: 0 0 auto;
+      margin-right: 22px;
+
+      @include mobile {
+        width: 32px;
+        height: auto;
+        margin-right: 18px;
+      }
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .social-links-wrap {
+    position: relative;
+    z-index: 1;
+    background-color: #FFFFFF;
+    padding: 28px 0 60px;
+
+    @include tablet {
+      height: 188px;
+      padding-top: 38px;
+    }
+    @include mobile {
+      height: 135px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  .social-links-title {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #474B54;
+    margin-bottom: 14px;
+
+    @include tablet {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    @include mobile {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    @include mobile-small {
+      font-size: 14px;
+    }
+  }
+
+  .social-links-list {
+    display: flex;
+
+    @include tablet {
+      justify-content: center;
+    }
+    //@include tablet {
+    //  flex-direction: column;
+    //  align-items: center;
+    //}
+  }
+
+  .youtube-link,
+  .instagram-link {
+    &:hover {
+      .stroke-colored-el {
+        stroke: $primary;
+      }
+    }
+
+    .stroke-colored-el {
+      transition: stroke $trans;
+    }
+  }
+
+  .youtube-link {
+    margin-right: 30px;
+
+    @include laptop {
+      margin-right: 24px;
+    }
+
+    @include mobile {
+      margin-right: 20px;
+    }
+  }
+
+  .icon-desktop {
+    @include tablet {
+      display: none;
+    }
+  }
+  .icon-mobile {
+    @include laptop-desktop {
+      display: none;
+    }
+  }
+
+  //.map-wrap {
+  //  //position: absolute;
+  //  //top: 0;
+  //  //bottom: 50px;
+  //  //left: 0;
+  //  //right: 0;
+  //}
+}
