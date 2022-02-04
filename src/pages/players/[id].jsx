@@ -16,12 +16,10 @@ const resumeConfig = [
   { id: 'team', label: 'Команда', bold: true },
   { id: 'league', label: 'Лига', bold: true },
   { id: 'country', label: 'Страна' },
+  { id: 'prevteam', label: 'Предыдущий\u00A0клуб' },
   { id: 'role', label: 'Амплуа' },
-  { id: 'grip', label: 'Хват' },
-  { id: 'height', label: 'Рост' },
-  { id: 'weight', label: 'Вес' },
-  { id: 'birthday', label: 'Дата рождения' },
-  { id: 'agent', label: 'Агент' },
+  { id: 'birthday', label: 'Год рождения' },
+  { id: 'clientsince', label: '' },
 ];
 
 const reviews = [
@@ -131,7 +129,11 @@ function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, rev
                 <ul className="resume-params-list">
                   {resumeConfig.map(({ id, label }) => (
                     <li key={id} className={`resume-params-list-item resume-param-${id}`}>
-                      {`${label}: ${resumeParams[id]}`}
+                      {id === 'clientsince' ? `Клиент агенства с ${resumeParams[id]} года` : (
+                        <>
+                          <p>{`${label}:`}&nbsp;<span className="resume-params-list-item-text">{resumeParams[id]}</span></p>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>

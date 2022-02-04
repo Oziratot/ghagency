@@ -158,7 +158,7 @@
   .player-photo {
     width: 100%;
     height: 0;
-    padding-bottom: 65.7778%;
+    padding-bottom: 100%;
     background-size: cover;
     background-position: top center;
     border-radius: 12px;
@@ -386,10 +386,12 @@
 
   .player-photo {
     position: relative;
-    width: 445px;
+    width: 500px;
+    height: 500px;
 
     @include tablet {
       width: 400px;
+      height: auto;
     }
 
     @include mobile {
@@ -397,6 +399,7 @@
       //height: ;
       //max-width: 500px;
       margin: auto;
+      border-radius: 12px;
     }
 
     img {
@@ -418,6 +421,7 @@
         position: static;
         max-height: 60vh;
         object-fit: contain;
+        border-radius: 12px;
       }
       //@media (max-width: 500px) {
       //  max-height: 70vh;
@@ -427,6 +431,7 @@
   }
 
   .player-resume {
+    align-self: center;
     padding-left: 30px;
 
     @include mobile {
@@ -463,8 +468,8 @@
     height: 54px;
     color: #7D8189;
     font-size: 18px;
-    font-weight: 500;
     line-height: 30px;
+    font-weight: 600;
 
     &:last-child {
       height: auto;
@@ -513,17 +518,17 @@
       background-repeat: no-repeat;
     }
 
+    .resume-params-list-item-text {
+      font-weight: 400;
+    }
+
     &.resume-param-team {
-      font-weight: 600;
-      color: #474B54;
 
       &:before {
         background-image: url('/assets/svg/team.svg');
       }
     }
     &.resume-param-league {
-      font-weight: 600;
-      color: #474B54;
 
       &:before {
         background-image: url('/assets/svg/puck.svg');
@@ -531,7 +536,7 @@
     }
     &.resume-param-country {
       &:before {
-        background-image: url('/assets/svg/map.svg');
+        background-image: url('/assets/svg/map2.svg');
       }
     }
     &.resume-param-role {
@@ -542,6 +547,11 @@
     &.resume-param-grip {
       &:before {
         background-image: url('/assets/svg/grip.svg');
+      }
+    }
+    &.resume-param-prevteam {
+      &:before {
+        background-image: url('/assets/svg/grip2.svg');
       }
     }
     &.resume-param-height {
@@ -564,6 +574,11 @@
         background-image: url('/assets/svg/management.svg');
       }
     }
+    &.resume-param-clientsince {
+      &:before {
+        background-image: url('/assets/svg/management.svg');
+      }
+    }
   }
 
   .player-review {
@@ -574,7 +589,6 @@
     font-weight: 500;
     line-height: 26px;
     color: #474B54;
-    max-width: 750px;
 
     @include mobile {
       padding: 12px 16px;
