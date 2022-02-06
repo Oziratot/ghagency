@@ -50,7 +50,7 @@ export const PLAYERS = [
   },
   {
     id: 'babets-danil',
-    imgSrc: '/assets/img/players/player-fallback.jpg',
+    imgSrc: '/assets/img/players/Babets-Danil.jpeg',
     name: 'Бабец Данил',
     birthday: '2003',
     role: 'Вратарь',
@@ -252,8 +252,8 @@ export const PLAYERS = [
     lgImgSrc: '/assets/img/players/lg/kabataev-lg-photo.jpg',
   },
   {
-    id: 'ispalatov-egor',
-    imgSrc: '/assets/img/players/player-fallback.jpg',
+    id: 'kleimenov-kirill',
+    imgSrc: '/assets/img/players/Kleimenov-Kirill.jpeg',
     name: 'Клейменов Кирилл',
     birthday: '2003',
     role: 'Защитник',
@@ -313,7 +313,7 @@ export const PLAYERS = [
   },
   {
     id: 'rudskoy-egor',
-    imgSrc: '/assets/img/players/player-fallback.jpg',
+    imgSrc: '/assets/img/players/Rudskoy-Egor.jpeg',
     name: 'Рудской Егор',
     birthday: '2002',
     role: 'Защитник',
@@ -361,7 +361,7 @@ export const PLAYERS = [
   },
   {
     id: 'smirnov-ilia',
-    imgSrc: '/assets/img/players/player-fallback.jpg',
+    imgSrc: '/assets/img/players/Smirnov-Ilia.jpeg',
     name: 'Смирнов Илья',
     birthday: '2002',
     role: 'Нападающий',
@@ -384,12 +384,12 @@ export const PLAYERS = [
     clientsince: '2021',
   },
   {
-    id: 'smirnov-ilia',
+    id: 'stepayants-artyom',
     imgSrc: '/assets/img/players/player-fallback.jpg',
     name: 'Степанянц Артём',
     birthday: '2005',
     role: 'Защитник',
-    team: 'Polonia Bytom',
+    team: 'Toronto Red Wings U18 AAA',
     league: 'GTHL',
     country: 'Канада',
     prevteam: 'Витязь Подольск U16, Россия',
