@@ -170,6 +170,8 @@
 
     .source-link-wrap {
       text-align: right;
+      display: flex;
+      flex-direction: column;
 
       @include mobile-small {
         text-align: center;
@@ -180,6 +182,10 @@
       margin-top: 30px;
       font-size: 13px;
       color: rgba($black, .5);
+
+      &:last-of-type {
+        margin-top: 0;
+      }
 
       @include mobile {
         margin-top: 20px;
