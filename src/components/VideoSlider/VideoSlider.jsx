@@ -8,7 +8,7 @@ import SliderArrowRight from '../SliderArrowRight';
 
 import YouTubePlay from '../../assets/svg/youtube-play.svg';
 
-function VideoSlider({ className, items, initialSlide }) {
+function VideoSlider({ className, items, initialSlide, player }) {
   const [slide, setSlide] = useState(initialSlide);
   const [playingId, setPlayingId] = useState(null);
   const [lazyLoadedIds, setLazyLoadedIds] = useState({});
@@ -97,8 +97,8 @@ function VideoSlider({ className, items, initialSlide }) {
         slidesPerPage={3}
         breakpoints={breakpoints}
         centered
-        arrowLeft={<SliderArrowLeft />}
-        arrowRight={<SliderArrowRight />}
+        arrowLeft={!player && <SliderArrowLeft />}
+        arrowRight={!player && <SliderArrowRight />}
         addArrowClickHandler
       >
         {items.map(({ videoId }) => (

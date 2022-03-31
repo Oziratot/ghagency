@@ -3,6 +3,8 @@ import React, { memo, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 // import classnames from 'classnames';
+import classnames from 'classnames';
+import YouTube from 'react-youtube';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Collapse from '../../components/Collapse';
 import CollapsePanel from '../../components/Collapse/CollapsePanel';
@@ -11,6 +13,7 @@ import Head from '../../components/Head';
 import Page from '../../components/Page';
 import VideoSlider from '../../components/VideoSlider/VideoSlider';
 import { PLAYERS } from '../../constants/players';
+import YouTubePlay from '../../assets/svg/youtube-play.svg';
 
 const resumeConfig = [
   { id: 'team', label: 'Команда', bold: true },
@@ -87,6 +90,8 @@ const getBreadcrumbListStructuredData = ({ id, name }) => ({
 
 function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, reviewByPlayerOrParent, desc, ...resumeParams }) {
   const initialVideoSlide = useMemo(() => reviews.findIndex((item) => item.videoId === videoId), [videoId]);
+  const video = useMemo(() => ({ videoId }), [videoId]);
+  const vidoeArr = [video];
   const [activePanels, setActivePanels] = useState([]);
   const BreadcrumbListStructuredData = useMemo(() => getBreadcrumbListStructuredData({ id, name }), [id, name]);
   // const router = useRouter();
@@ -152,22 +157,27 @@ function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, rev
           </section>
         )}
 
-        {(videoId || reviewByPlayerOrParent) && (
+        {videoId && (
+          <section className="section section-video-review">
+            <h2 className="h2 section-title with-overflow">Отзыв игрока</h2>
+            <VideoSlider player items={vidoeArr} />
+          </section>
+        )}
+
+        {reviewByPlayerOrParent && (
           <section className="section section-reviews">
-            <h2 className="h2 section-title">{videoId ? 'Отзывы' : 'Отзыв'}</h2>
-            {videoId && <VideoSlider items={reviews} initialSlide={initialVideoSlide} />}
-            {!videoId && reviewByPlayerOrParent && (
-              <div className="container">
-                <div className="text-reviews-list-item-content">
-                  <Collapse activePanels={activePanels} onChange={setActivePanels}>
-                    <div className="text-review-author">{reviewByPlayerOrParent.author}</div>
-                    <CollapsePanel id={reviewByPlayerOrParent.author} className="collapsible-review" expandBtnLabel="Развернуть отзыв" collapseBtnLabel="Свернуть отзыв">
-                      {reviewByPlayerOrParent.text}
-                    </CollapsePanel>
-                  </Collapse>
-                </div>
+            <h2 className="h2 section-title">Отзыв родителей</h2>
+            {/*{videoId && <VideoSlider items={reviews} initialSlide={initialVideoSlide} />}*/}
+            <div className="container">
+              <div className="text-reviews-list-item-content">
+                <Collapse activePanels={activePanels} onChange={setActivePanels}>
+                  <div className="text-review-author">{reviewByPlayerOrParent.author}</div>
+                  <CollapsePanel id={reviewByPlayerOrParent.author} className="collapsible-review" expandBtnLabel="Развернуть отзыв" collapseBtnLabel="Свернуть отзыв">
+                    {reviewByPlayerOrParent.text}
+                  </CollapsePanel>
+                </Collapse>
               </div>
-            )}
+            </div>
             <BackToAllPlayers />
           </section>
         )}
