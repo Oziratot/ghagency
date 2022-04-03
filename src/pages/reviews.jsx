@@ -10,6 +10,7 @@ import VideoSlider from '../components/VideoSlider/VideoSlider';
 import DoubleArrowDownIcon from '../assets/svg/double-arrow-down.svg';
 
 const reviewsPlayers = [
+  { videoId: 'PQfI4z2GSU4' }, // Смирнов Илья
   { videoId: 'tVA3qvl1TfY' }, // Коротаев Илья
   { videoId: 'AflFJRhM-as' }, // Шульц Даниил
   { videoId: '0cuoBKSWfQk' }, // Гусейнов Александр
