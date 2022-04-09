@@ -11,10 +11,10 @@ export function isActive(pageKey, asPath) {
   switch (pageKey) {
     case 'main':
       return (asPath.slice(0, asPath.indexOf('?')) || asPath) === '/';
-    case 'services/player-viewing/2021':
-      return asPath === '/services/player-viewing/2021';
+    case 'services/player-viewing/2022':
+      return asPath === '/services/player-viewing/2022';
     case 'services':
-      return asPath !== '/services/player-viewing/2021' && asPath.includes(pageKey);
+      return asPath !== '/services/player-viewing/2022' && asPath.includes(pageKey);
     default:
       return asPath.includes(pageKey);
   }

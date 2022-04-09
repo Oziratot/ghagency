@@ -1,7 +1,10 @@
-import React, { forwardRef, memo, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+ forwardRef, memo, useCallback, useContext, useEffect, useMemo, useRef, useState,
+} from 'react';
 import Link from 'next/link';
 import classnames from 'classnames';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { useRouter } from 'next/router';
 import DoubleArrowDownIcon from '../../../assets/svg/double-arrow-down.svg';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import OrderCallButton from '../../../components/Button/OrderCallButton';
@@ -27,26 +30,110 @@ import ExtraServiceVideoPros1Icon from '../../../assets/svg/services/player-view
 import ExtraServiceVideoPros2Icon from '../../../assets/svg/services/player-viewing/2021/extra-service-video-2.svg';
 import ExtraServiceVideoPros3Icon from '../../../assets/svg/services/player-viewing/2021/extra-service-video-3.svg';
 import CloseExtraServiceModalIcon from '../../../assets/svg/services/player-viewing/2021/close-modal.svg';
+import ArrowIcon from '../../../assets/svg/arrow.svg';
+import Button from '../../../components/Button';
 
 const details = [
   { id: '3-days-3-games', value: '3', label: 'Игры за&nbsp;3&nbsp;дня' },
-  { id: 'scouts', value: '11', label: 'Скаутов' },
+  { id: 'scouts', value: '9', label: 'Скаутов' },
   { id: '50-usa-and-europe-teams', value: '50+', label: 'Команд США, Канады&nbsp;и&nbsp;Европы' },
   { id: 'address', value: <MapPointIcon />, label: 'Москва ЛД&nbsp;«Морозово»' },
 ];
 
+const statistics = [
+  { title: '70%', text: 'Участников получают приглашения в команды' },
+  { title: '35 000 $', text: 'Мы&nbsp;сэкономили участникам просмотра 2021&nbsp;за&nbsp;счёт скидок на&nbsp;взнос в&nbsp;команды и&nbsp;стипендий' },
+  { title: '40+', text: 'Положительных отзывов клиентов на Kidshockey' },
+];
+
+const viewStatistics = [
+  { title: '75', text: 'Участников просмотра' },
+  { title: '52', text: 'Получили приглашения в команду' },
+  { title: '29', text: 'Игроков уехали за границу' },
+  { title: '6', text: 'Игроков получают зарплату' },
+];
+
 const scouts = [
-  { name: 'Коди Ганье', photo: '/assets/img/services/player-viewing/scouts/scout-1.jpg', desc: 'Ассистент главного тренера Northeast Generals NAHL, США<br />Скаут Northeast Generals U18 NAPHL, США<br />Главный тренер Northeast Generals U16 NAPHL и ECEL, США<br />Скаут Seahawks Hockey EHL, США<br />Скаут New England Knights NA3HL, США' },
-  { name: 'Шон Уэрф', photo: '/assets/img/services/player-viewing/scouts/scout-2.jpg', desc: 'Генеральный менеджер Bradford Rattlers GMHL, Канада<br />Директор по хоккейным операциям South Muskoka Shield GMHL, Канада<br />Скаут The Hill Academy U16/U18 Prep CSSHLE и ECEL, Канада' },
+  { name: 'Шон Уэрф', photo: '/assets/img/services/player-viewing/scouts/scout-2.jpg', desc: 'Генеральный менеджер Bradford Rattlers GMHL, Канада' },
+  { name: 'Коди Ганье', photo: '/assets/img/services/player-viewing/scouts/scout-1.jpg', desc: 'Главный тренер Northeast Generals U16, США<br />Ассистент главного тренера Northeast Generals NAHL, США<br />Програмный директор Northeast Generals Academy' },
+  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-10.png', desc: 'Главный тренер Cleveland Barons U18 T1EHL, США' },
   { name: 'Адам Бортоломей', photo: '/assets/img/services/player-viewing/scouts/scout-3.jpg', desc: 'Главный тренер Philadelphia Hockey Club USPHL Premier, США<br />Ассистент главного тренера Philadelphia Hockey Club NCDC, США' },
   { name: 'Марк Андре-Карон', photo: '/assets/img/services/player-viewing/scouts/scout-4.jpg', desc: 'Генеральный менеджер Ville-Marie Pirates GMHL, Канада' },
-  { name: 'Дейв Буш', photo: '/assets/img/services/player-viewing/scouts/scout-5.jpg', desc: 'Скаут New Jersey Junior Titans NAHL, США<br />Скаут New Jersey 87\'s EHL, США' },
-  { name: 'Джозеф Кэткарт', photo: '/assets/img/services/player-viewing/scouts/scout-6.jpg', desc: 'Главный тренер New Tecumseth Civics GMHL, Канада' },
-  { name: 'Томас Гбур', photo: '/assets/img/services/player-viewing/scouts/scout-7.jpg', desc: 'Глава европейского хоккейного агентства GSA, Словакия' },
-  { name: 'Ринат Омарбеков', photo: '/assets/img/services/player-viewing/scouts/scout-8.png', desc: 'Главный тренер Ястребы Уральск U20, Казахстан' },
-  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-9.png', desc: 'Главный тренер Cleveland Barons U18 T1EHL, США' },
-  { name: 'Боб Кроски', photo: '/assets/img/services/player-viewing/scouts/scout-10.png', desc: 'Главный тренер Cleveland Barons U15 T1EHL, США' },
-  { name: 'Глен Кэмпбелл', photo: '/assets/img/services/player-viewing/scouts/scout-11.png', desc: 'Владелец Northumberland Stars GMHL, Канада' },
+  { name: 'Глен Кэмпбэл', photo: '/assets/img/services/player-viewing/scouts/scout-12.png', desc: 'Владелец Northumberland Stars GMHL, Канада' },
+  { name: 'Райан Уитсон', photo: '/assets/img/services/player-viewing/scouts/scout-10.png', desc: 'Главный тренер Cleveland Barons U14 T1EHL, США' },
+];
+
+const countries = [
+{
+    id: 'usa',
+    label: 'Команды США',
+    photo: '/assets/img/services/player-viewing/2022/teams-usa.png',
+    teams: [
+      { label: 'Northeast Generals NAHL' },
+      { label: 'Northeast Generals NA3HL' },
+      { label: 'Northeast Generals NAPHL' },
+      { label: 'Cleveland Barons&nbsp;T1EHL' },
+      { label: 'Philadelphia Hockey Club NCDC,&nbsp;США' },
+      { label: 'Philadelphia Hockey Club USPHL Premier,&nbsp;США' },
+    ],
+  },
+{
+    id: 'canada',
+    label: 'Команды Канады',
+    photo: '/assets/img/services/player-viewing/2022/teams-canda.png',
+    teams: [
+      { label: 'Bradford Rattlers GMHL' },
+      { label: 'Ville-Marie Pirates GMHL' },
+      { label: 'New Tecumseth Civics GMHL' },
+      { label: 'Northumberland Stars GMHL' },
+      { label: 'Toronto Red Wings GTHL' },
+      { label: 'Toronto Titans GTHL' },
+      { label: 'Avalanche GTHL' },
+      { label: 'GT Capitals GTHL' },
+      { label: 'Toronto Royals GTHL' },
+    ],
+  },
+{
+    id: 'eu',
+    label: 'Команды Европы',
+    photo: '/assets/img/services/player-viewing/2022/teams-eu.png',
+    teams: [
+      { label: 'Grästorps IK, Швеция' },
+      { label: 'Leksands IF, Швеция' },
+      { label: 'Malmo Redhawks, Швеция' },
+      { label: 'BC Mlada Boleslav, Чехия' },
+      { label: 'HC Kometa Brno, Чехия' },
+      { label: 'MHC Martin, Словакии' },
+      { label: 'HK Nitra, Словакия' },
+      { label: 'HK Skalica, Словакия' },
+      { label: 'ŠHK 37 Piestany, Словакия' },
+      { label: 'HK Ruzinov 99, Словакия' },
+
+      { label: 'Pesterzsébeti Farkasok, Венгрия' },
+      { label: 'Györi ETO HC, Венгрия' },
+      { label: 'Vasas SC, Венгрия' },
+      { label: 'Dunaujvaros AC, Венгрия' },
+      { label: 'Debrecen, Венгрия' },
+      { label: 'MAC, Венгрия' },
+      { label: 'Fehervar AV19, Венгрия' },
+      { label: 'Miskolc, Венгрия' },
+      { label: 'HC Lehel,Венгрия' },
+      { label: 'HK Karpati Farkasok ERD,Венгрия' },
+
+      { label: 'Meudon, Франция' },
+      { label: 'Besancon, Франция' },
+
+      { label: 'Krefelder EV 1981 DNL, Германия' },
+      { label: 'Iserlohner EC DNL, Германия' },
+      { label: 'Odense Bulldogs, Дания' },
+      { label: 'Rødovre, Дания' },
+      { label: 'Stavanger Oilers, Норвегия' },
+      { label: 'Sport, Финляндия' },
+      { label: 'TUTO Hockey, Финляндия' },
+      { label: 'Ketterä, Финляндия' },
+
+    ],
+  },
 ];
 
 const teams = [
@@ -95,17 +182,23 @@ const teams = [
   { label: 'Northeast Generals U16/U18 NAPHL, США' },
 ];
 
-const view2020 = [
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-1.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-2.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-3.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-4.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-5.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-6.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-7.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-8.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-9.jpg' },
-  { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-10.jpg' },
+const view2021 = [
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-1.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-2.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-3.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-4.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-5.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-6.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-7.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-8.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-9.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-10.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-11.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-12.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-13.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-14.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-15.jpg' },
+  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-16.jpg' },
 ];
 
 const BreadcrumbListStructuredData = {
@@ -140,6 +233,15 @@ const BreadcrumbListStructuredData = {
           {
             "@id": "https://ghockeyagency.ru/services/player-viewing",
             "name": "Просмотры игроков"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item":
+          {
+            "@id": "https://ghockeyagency.ru/services/player-viewing/2022",
+            "name": "Просмотр 2022"
           }
         },
         {
@@ -214,15 +316,19 @@ const ClientSideRender = memo(({ children }) => {
 });
 
 function PlayerViewing2021() {
+  const router = useRouter();
   const formModalContext = useContext(ContactFormModalContext);
   const [mobileTeamsVisibleNumber, setMobileTeamsVisibleNumber] = useState(5);
-  const [desktopScoutsVisibleNumber, setDesktopScoutsVisibleNumber] = useState(4);
-  const [photos2020, setPhotos2020] = useState(view2020);
+  const [teamsVisibleNumber, setTeamsVisibleNumber] = useState(6);
+  const [goToCamp, setGoToCamp] = useState(false);
+  const [desktopScoutsVisibleNumber, setDesktopScoutsVisibleNumber] = useState(3);
+  const [photos2020, setPhotos2020] = useState(view2021);
   const [activeScoutPanels, setActiveScoutPanels] = useState([]);
   const [activeScheduleMobilePanels, setActiveScheduleMobilePanels] = useState([]);
   const [activeFaqItems, setActiveFaqItems] = useState({ 0: true });
   const [hockeyCampModalActive, setHockeyCampModalActive] = useState(false);
   const [videoModalActive, setVideoModalActive] = useState(false);
+  const [teamsList, setTeamsList] = useState({ usa: true, canada: false, eu: false });
   const mapRef = useRef();
   useContactsMap(mapRef, true);
 
@@ -230,6 +336,22 @@ function PlayerViewing2021() {
   const handleVideoModalOpen = useCallback(() => setVideoModalActive(true), []);
   const handleHockeyCampModalClose = useCallback(() => setHockeyCampModalActive(false), []);
   const handleVideoModalClose = useCallback(() => setVideoModalActive(false), []);
+  const handleCampClick = useCallback(() => {
+    setHockeyCampModalActive(false);
+    setGoToCamp(true);
+  }, []);
+  const handleTeamsClick = useCallback((id) => {
+    setTeamsList((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  }, []);
+
+  useEffect(() => {
+    if (!hockeyCampModalActive && goToCamp) {
+      router.push('/services/training-camp-2022').then(() => window.scrollTo(0, 0));
+    }
+  }, [hockeyCampModalActive, goToCamp]);
 
   const handleContactFormOpen = useCallback((e) => {
     e.stopPropagation();
@@ -238,36 +360,32 @@ function PlayerViewing2021() {
 
   const faq = useMemo(() => ([
     {
-      question: 'Просмотр состоится?',
-      answer: (<>Да, просмотр состоится в&nbsp;любом случае. В&nbsp;случае невозможности присутствия скаутов на&nbsp;просмотре в&nbsp;связи с&nbsp;эпидемиологической обстановкой в&nbsp;мире и&nbsp;закрытыми границами, просмотр пройдет в&nbsp;онлайн-формате.</>),
+      question: 'Можно&nbsp;ли&nbsp;сейчас уехать за&nbsp;границу?',
+      answer: (<>Да, агентство оказывает полное содействие и&nbsp;поддержку на&nbsp;всех этапах трудоустройства игрока в&nbsp;зарубежный клуб, включая вопросы получения виз&nbsp;и&nbsp;переездов. Мы&nbsp;можем организовать получение студенческих, туристических, рабочих и&nbsp;спортивных виз&nbsp;в&nbsp;США, Канаду и&nbsp;Европу и&nbsp;сопровождаем игрока в&nbsp;процессе их&nbsp;получения.</>),
     },
     {
-      question: 'Все&nbsp;заявленные скауты приедут?',
-      answer: (<>Мы&nbsp;делаем все&nbsp;возможное для&nbsp;того, чтобы&nbsp;обеспечить личное присутствие каждого скаута на&nbsp;турнире. Тем&nbsp;не&nbsp;менее, коронавирусные ограничения могут повлиять на&nbsp;возможность пересечения границ в&nbsp;июне. В&nbsp;этом случае скауты будут отсматривать и&nbsp;оценивать игроков в&nbsp;онлайн-формате через&nbsp;прямую&nbsp;трансляцию матчей&nbsp;на&nbsp;YouTube.</>),
+      question: 'Реально&nbsp;ли&nbsp;уехать после&nbsp;вашего просмотра?',
+      answer: (<>Да, реально. Наш&nbsp;просмотр&nbsp;— ежегодный, вы&nbsp;можете ознакомиться результатами участников предыдущих лет&nbsp;на&nbsp;странице <Link href="/players" passHref><CustomA className="blue-link">Игроки</CustomA></Link>. Из&nbsp;75&nbsp;участников просмотра предыдущего года приглашения в&nbsp;зарубежные клубы получил 51&nbsp;игрок, 29&nbsp;из&nbsp;них&nbsp;уехали в&nbsp;зарубежные лиги, 6&nbsp;из&nbsp;них&nbsp;подписали профессиональные контракты и&nbsp;получают зарплаты.</>),
     },
     {
-      question: 'Входит&nbsp;ли&nbsp;проживание и&nbsp;питание в&nbsp;стоимость просмотра?',
-      answer: (<>Нет, не&nbsp;входит. Игроки самостоятельно обеспечивают себя проживанием и&nbsp;питанием на&nbsp;время проведения просмотра. В&nbsp;шаговой доступности от&nbsp;ледового находится большое количество гостиниц и&nbsp;мест&nbsp;питания.</>),
+      question: 'За&nbsp;чей&nbsp;счёт осуществляется переезд в&nbsp;зарубежные лиги?',
+      answer: (<>Игроки уровня национальной сборной могут рассчитывать на&nbsp;полное покрытие всех расходов на&nbsp;переезд, в&nbsp;случае интереса со&nbsp;стороны высших молодёжных лиг&nbsp;США, Канады и&nbsp;аффилированных с&nbsp;ними клубов&nbsp;НХЛ. Для&nbsp;остальных игроков переезд в&nbsp;лиги Северной Америки осуществляется полностью за&nbsp;свой счёт. Подробнее на&nbsp;<span className="blue-link" onClick={handleContactFormOpen}>бесплатной&nbsp;консультации</span>.<br /><br />Европейские молодёжные клубы частично покрывают расходы игроков на&nbsp;переезд, проживание и&nbsp;питание, взнос игрока в&nbsp;команду будет зависеть от&nbsp;множества факторов. Для&nbsp;подробного ответа на&nbsp;ваш&nbsp;вопрос вы&nbsp;можете заказать <span className="blue-link" onClick={handleContactFormOpen}>бесплатную&nbsp;консультацию</span>.</>),
     },
     {
-      question: 'Реально&nbsp;ли&nbsp;игроку уехать в&nbsp;зарубежные лиги после&nbsp;этого просмотра?',
-      answer: (<>Да, реально. Наш&nbsp;просмотр&nbsp;— ежегодный, вы&nbsp;можете ознакомиться с&nbsp;результатами участников предыдущих лет&nbsp;в&nbsp;соответствующем разделе или&nbsp;на&nbsp;странице&nbsp;<Link href="/players" passHref><CustomA className="blue-link">Игроки</CustomA></Link>.</>),
-    },
-    {
-      question: 'За&nbsp;чей&nbsp;счет осуществляется переезд в&nbsp;зарубежные клубы?',
-      answer: (<>Игроки уровня национальной сборной могут рассчитывать на&nbsp;полное покрытие всех расходов на&nbsp;переезд в&nbsp;случае интереса со&nbsp;стороны высших молодежных лиг&nbsp;США, Канады и&nbsp;аффилированных с&nbsp;ними клубов&nbsp;НХЛ. Для&nbsp;остальных игроков переезд осуществляется полностью за&nbsp;свой счет. <br /><br />Подробнее об&nbsp;условиях переезда вы&nbsp;можете узнать, заказав <span className="blue-link" onClick={handleContactFormOpen}>бесплатную&nbsp;консультацию</span>.</>),
-    },
-    {
-      question: 'Хоккеистам платят зарплаты в&nbsp;представленных клубах?',
-      answer: (<>Игроки уровня национальной сборной, играющие на молодежном уровне в CHL или же игроки выступающие за профессиональные взрослые команды Европы могут рассчитывать на зарплату. В остальных случаях клубы уровня Tier I и Tier II (USHL и NAHL/NCDC соотв.) покрывают расходы игрока на тренировочный и игровой процесс и в некоторых случаях на&nbsp;проживание. <br /><br />Подробнее со структурой североамериканского хоккея вы можете ознакомиться в&nbsp;разделе&nbsp;<Link href="/blog" passHref><CustomA className="blue-link">Блог</CustomA></Link>.</>),
+      question: 'Хоккеистам платят зарплаты в&nbsp;зарубежных клубах?',
+      answer: (<>Игроки уровня национальной сборной, играющие на&nbsp;молодёжном уровне в&nbsp;CHL (высшая молодёжная лига Канады) или&nbsp;же&nbsp;игроки выступающие за&nbsp;профессиональные взрослые и&nbsp;некоторые молодёжные команды Европы могут рассчитывать на&nbsp;зарплату.</>),
     },
     {
       question: 'Сколько стоит сезон в&nbsp;зарубежных лигах?',
-      answer: (<>Для&nbsp;ответа на&nbsp;данный вопрос вы&nbsp;можете заказать бесплатную консультацию на&nbsp;нашем сайте. Финальная сумма зависит от&nbsp;множества факторов, более подробно о&nbsp;стоимости хоккея за&nbsp;рубежом вы&nbsp;можете узнать в&nbsp;разделе&nbsp;<Link href="/blog" passHref><CustomA className="blue-link">Блог</CustomA></Link>.</>),
+      answer: (<>Финальная сумма зависит от&nbsp;множества факторов: возраст, игровой опыт, уровень игрока, страна команды, лига&nbsp;и&nbsp;т.д. Более подробно о&nbsp;стоимости хоккея за&nbsp;рубежом вы&nbsp;можете узнать на&nbsp;<span className="blue-link" onClick={handleContactFormOpen}>бесплатной&nbsp;консультации</span>.</>),
     },
     {
-      question: 'Можно&nbsp;ли&nbsp;оставлять форму на&nbsp;ледовой арене во&nbsp;время проведения подготовительного лагеря и&nbsp;самого просмотра?',
-      answer: (<>Да, для&nbsp;участников подготовительного лагеря и&nbsp;просмотрового турнира будет выделена отдельная сушилка на&nbsp;территории ледового&nbsp;дворца.</>),
+      question: 'Входит&nbsp;ли&nbsp;проживание и&nbsp;питание в&nbsp;стоимость просмотра?',
+      answer: (<>Нет, не&nbsp;входит. Игроки самостоятельно обеспечивают себя проживанием и&nbsp;питанием на&nbsp;время проведения просмотра. В&nbsp;шаговой доступности от&nbsp;ледового находится большое количество гостиниц и&nbsp;мест питания.</>),
+    },
+    {
+      question: 'Можно&nbsp;ли&nbsp;оставлять форму на&nbsp;ледовой арене во&nbsp;время просмотра?',
+      answer: (<>Да, на&nbsp;ледовой арене есть&nbsp;возможность хранения и&nbsp;стирки экипировки&nbsp;— это&nbsp;платная услуга, стоимость уточняйте у&nbsp;администрации ледового комплекса.</>),
     },
   ]), []);
 
@@ -315,14 +433,19 @@ function PlayerViewing2021() {
     setMobileTeamsVisibleNumber(newMobileTeamsVisibleNumber);
   }, [mobileTeamsVisibleNumber]);
 
+  const handleAllTeamsShowMoreClick = useCallback(() => {
+    const newMobileTeamsVisibleNumber = teamsVisibleNumber + 19 > countries[2].teams.length ? countries[2].teams.length : teamsVisibleNumber + 30;
+    setTeamsVisibleNumber(newMobileTeamsVisibleNumber);
+  }, [teamsVisibleNumber]);
+
   const handleScoutsShowAllClick = useCallback(() => setDesktopScoutsVisibleNumber(scouts.length), []);
 
   return (
     <>
       <Head
-        title="Просмотр хоккеистов 2021 | хоккейное агентство «GHA»"
+        title="Просмотр хоккеистов 2022 | хоккейное агентство «GHA»"
         desc="Хоккейное агентство Гришатова ежегодно организовывает просмотровые турниры в Москве и отправляет игроков на крупнейшие просмотровые мероприятия за границу. Участие в турнирах — это реальная возможность быть замеченным и пройти отбор в лучшие команды США и Канады."
-        page="/services/player-viewing/2021"
+        page="/services/player-viewing/2022"
         breadcrumbsData={BreadcrumbListStructuredData}
       />
       <PageServices subPageKey="player-viewing-2021">
@@ -344,38 +467,64 @@ function PlayerViewing2021() {
             <div className="teams-selection-content">
               <Breadcrumbs />
               <h1 className="h2 section-title">Отбор в&nbsp;хоккейные команды высших лиг&nbsp;США, Канады&nbsp;и&nbsp;Европы</h1>
-              <ul className="teams-list hidden-xs">
-                {teams.map(({ label }) => (
-                  <li className="teams-list-item" key={label}>
-                    <div className="teams-list-item-content" dangerouslySetInnerHTML={{ __html: label }} />
-                  </li>
-                ))}
-              </ul>
-              <ul className="teams-list visible-xs">
-                <TransitionGroup component={null}>
-                  {teams.slice(0, mobileTeamsVisibleNumber).map(({ label }) => (
-                    <CSSTransition
-                      key={label}
-                      timeout={450}
-                      classNames="teams-list-item"
-                    >
-                      <li className="teams-list-item">
-                        <div className="teams-list-item-content" dangerouslySetInnerHTML={{ __html: label }} />
-                      </li>
-                    </CSSTransition>
+              <div className="teams-wrap">
+                <div className="teams-list">
+                  {countries.map((item) => (
+                    <div className="teams " key={item.label}>
+                      <div className="teams-list-item hidden-xs">
+                        <img className="team-img" src={item.photo} />
+                        <p className="country">{item.label}</p>
+                      </div>
+
+                      <div className="teams-list-item visible-xs" onClick={() => handleTeamsClick(item.id)}>
+                        <img className="team-img" src={item.photo} />
+                        <p className="country">{item.label}</p>
+                        <ArrowIcon className={classnames('team-arrow', { active: teamsList[item.id] })} />
+                      </div>
+
+                      <ul className="teams-list-all hidden-xs">
+                        <TransitionGroup component={null}>
+                          {item.teams.slice(0, teamsVisibleNumber).map((team) => (
+                            <CSSTransition
+                              key={team.label}
+                              timeout={450}
+                              classNames="team-item"
+                            >
+                              <li key={team.label} className="team-item">
+                                <div key={team.label} className="teams-list-item-content" dangerouslySetInnerHTML={{ __html: team.label }} />
+                              </li>
+                            </CSSTransition>
+                          ))}
+                        </TransitionGroup>
+                      </ul>
+
+                      <ul className={classnames('teams-list-all visible-xs', { active: teamsList[item.id] })}>
+                        <TransitionGroup component={null}>
+                          {item.teams.map((team) => (
+                            <CSSTransition
+                              key={team.label}
+                              timeout={450}
+                              classNames="team-item"
+                            >
+                              <li key={team.label} className="team-item">
+                                <div key={team.label} className="teams-list-item-content" dangerouslySetInnerHTML={{ __html: team.label }} />
+                              </li>
+                            </CSSTransition>
+                          ))}
+                        </TransitionGroup>
+                      </ul>
+                    </div>
                   ))}
-                </TransitionGroup>
-              </ul>
-              <CSSTransition in={mobileTeamsVisibleNumber < teams.length} classNames="show-more-block" timeout={300} unmountOnExit>
-                <div className="show-more-block visible-xs">
-                  <button className="show-more-btn" type="button" onClick={handleTeamsShowMoreClick}>Показать еще</button>
-                  <DoubleArrowDownIcon className="show-more-icon" onClick={handleTeamsShowMoreClick} />
                 </div>
-              </CSSTransition>
+                <CSSTransition in={teamsVisibleNumber < countries[2].teams.length} classNames="show-more-block" timeout={300} unmountOnExit>
+                  <div className="show-more-block hidden-xs">
+                    <button className="show-more-btn" type="button" onClick={handleAllTeamsShowMoreClick}>Показать еще</button>
+                    <DoubleArrowDownIcon className="show-more-icon" onClick={handleAllTeamsShowMoreClick} />
+                  </div>
+                </CSSTransition>
+              </div>
             </div>
           </div>
-          <img className="teams-img hidden-xs" src="/assets/img/services/player-viewing/2021/gha-view-2021-back-desktop.jpg" alt="Отбор в хоккейные команды высших лиг США, Канады и Европы" />
-          <img className="teams-img visible-xs" src="/assets/img/services/player-viewing/2021/gha-view-2021-back-mobile.jpg" alt="Отбор в хоккейные команды высших лиг США, Канады и Европы" />
         </section>
 
         <section className="section section-scouts" id="scouts">
@@ -434,112 +583,56 @@ function PlayerViewing2021() {
         </section>
 
         <section className="section section-view-format">
-          <h2 className="h2 section-title tablet-mobile-title">Формат просмотра</h2>
+          <h2 className="h2 section-title tablet-mobile-title">Как проходит просмотр</h2>
           <div className="section-illustration">
-            <img className="hidden-xs" src="/assets/img/services/player-viewing/2021/gha-view-2021-format-desktop.jpg" alt="Формат просмотра GHA 2021" />
+            <img className="hidden-xs" src="/assets/img/services/player-viewing/2022/gha-view-2022-format-desktop.jpg" alt="Формат просмотра GHA 2021" />
             <img className="visible-xs" src="/assets/img/services/player-viewing/2021/gha-view-2021-format-mobile.jpg" alt="Формат просмотра GHA 2021" />
           </div>
           <div className="section-content">
-            <h2 className="h2 section-title desktop-title">Формат просмотра</h2>
-            <div className="section-subtitle">Просмотр будет проходить по&nbsp;классической схеме североамериканских Tryout, 3&nbsp;игры за&nbsp;3&nbsp;дня</div>
+            <h2 className="h2 section-title desktop-title">Как проходит просмотр</h2>
             <div className="section-text">
-              Подобный подход полностью соответствует критериям высших дивизионов североамериканского и европейского хоккея и&nbsp;применяется на&nbsp;просмотровых кэмпах и&nbsp;комбайн-турнирах USHL, NAHL, EHL и&nbsp;других&nbsp;лиг.
-              <br /><br />—&nbsp;Участники просмотра будут разделены на&nbsp;8&nbsp;команд, 15&nbsp;полевых и&nbsp;2&nbsp;вратаря в&nbsp;каждой.
-              <br /><br />—&nbsp;Каждая команда за&nbsp;время просмотра сыграет по&nbsp;3&nbsp;матча, 1&nbsp;матч против каждой команды своей группы.
-              <br /><br />—&nbsp;Каждая игра 2&nbsp;периода по&nbsp;25&nbsp;минут чистого времени
+              Просмотр проходит по классической схеме<br />
+              североамериканских просмотровых кэмпов:<br /><br />
+              — 3 игры за 3 дня<br /><br />
+              — 4 команды<br /><br />
+              — 15 полевых и 2 вратаря в команде<br /><br />
+              Такой формат применяется в юношеских, молодёжных и профессиональных лигах Северной Америки.<br /><br />
+              На протяжении 4х лет мы совершенствовали схему проведения турнира, чтобы у каждого участника был реальный шанс получить предложение из зарубежного клуба.<br /><br />
+              Приглашённые скауты и клубы оценивают игроков в режиме онлайн во время прямой трансляции матчей на YouTube.<br /><br />
+              По итогам просмотра игроки подписывают контракты с агентством и клубами.
             </div>
           </div>
         </section>
 
-        <section className="section section-schedule">
+        <section className="section section-bubbles-info">
           <div className="container">
-            <h2 className="h2 section-title">Программа</h2>
-            <div className="schedule-table">
-              <div className="table-row">
-                <div className="table-cell">13&nbsp;июня<br />14:00</div>
-                <div className="table-cell">Конференция: «Хоккей в&nbsp;лигах Северной Америки и&nbsp;Европы: структура, организация, перспективы». Регистрация&nbsp;участников, ответы&nbsp;на&nbsp;вопросы. <br />Адрес проведения: Гостиница Holiday Inn Сокольники, Русаковская ул., 24</div>
-              </div>
-              <div className="table-row">
-                <div className="table-cell">14–16&nbsp;июня</div>
-                <div className="table-cell">Турнир</div>
-              </div>
-              <div className="table-row">
-                <div className="table-cell">17&nbsp;июня</div>
-                <div className="table-cell">Встреча с&nbsp;игроками и&nbsp;их&nbsp;родителями, индивидуальные разборы, заключение контрактов</div>
-              </div>
+            <h2 className=" h2 section-title">Почему нужно участвовать<br />в&nbsp;нашем просмотре</h2>
+            <div className="statistics">
+              {statistics.map((item) => (
+                <div className="statistics-container">
+                  <p className="statistics-title">{item.title}</p>
+                  <div className="statistics-text" dangerouslySetInnerHTML={{ __html: item.text }} />
+                </div>
+              ))}
             </div>
-          </div>
-          <img className="schedule-img hidden-xs" src="/assets/img/services/player-viewing/2021/gha-view-2021-team-desktop.jpg" alt="Игроки в майках GHA" />
-          <img className="schedule-img visible-xs" src="/assets/img/services/player-viewing/2021/gha-view-2021-team-mobile.jpg" alt="Игроки в майках GHA" />
-        </section>
-
-
-        <section className="section section-game-schedule" id="3-days-3-games">
-          <div className="container">
-            <h2 className="h2 section-title">Расписание игр</h2>
-            <div className="game-schedule-by-division hidden-xs">
-              {gameSchedule.map((division) => (
-                <div className="division-schedule" key={division.title}>
-                  <div className="division-schedule-title">{division.title}</div>
-                  <div className="division-schedule-content">
-                    {division.content.map((day) => (
-                      <div className="date-block" key={`${division.title}-${day.title}`}>
-                        <div className="date-block-title">{day.title}</div>
-                        <div className="date-block-content">
-                          {day.content.map((game) => (
-                            <div className="date-block-content-item" key={`${division.title}-${day.title}-${game.title}`}>
-                              <div className="item-teams">{game.title}</div>
-                              <div className="item-time">{game.content}</div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+            <h2 className="h2">Статистика просмотров</h2>
+            <div className="view-statistics">
+              {viewStatistics.map((item) => (
+                <div key={item.title} className={`outer-circle circle-${item.title}`}>
+                  <div className="inner-circle">
+                    <p className="circle-title">{item.title}</p>
+                    <div className="circle-text" dangerouslySetInnerHTML={{ __html: item.text }} />
                   </div>
                 </div>
               ))}
             </div>
-            <div className="game-schedule-by-division visible-xs">
-              <Collapse activePanels={activeScheduleMobilePanels} onChange={setActiveScheduleMobilePanels}>
-                {gameSchedule.map((division) => {
-                  const id = division.title;
-                  const handleDivisionClick = () => {
-                    setActiveScheduleMobilePanels((prevState) => (
-                      prevState.includes(id) ? prevState.filter((activeId) => activeId !== id) : [...prevState, id]
-                    ));
-                  };
-
-                  return (
-                    <div className="division-schedule" key={id} onClick={handleDivisionClick}>
-                      <div className="division-schedule-title">{division.title}</div>
-                      <CollapsePanel id={id} className="collapsible-schedule" expandBtnLabel={null} collapseBtnLabel={null} alwaysShowExpandBtn mobileHeight={0} desktopHeight={0}>
-                        <div className="division-schedule-content">
-                          {division.content.map((day) => (
-                            <div className="date-block" key={`${division.title}-${day.title}`}>
-                              <div className="date-block-title">{day.title}</div>
-                              <div className="date-block-content">
-                                {day.content.map((game) => (
-                                  <div className="date-block-content-item" key={`${division.title}-${day.title}-${game.title}`}>
-                                    <div className="item-teams">{game.title}</div>
-                                    <div className="item-time">{game.content}</div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </CollapsePanel>
-                    </div>
-                  );
-                })}
-              </Collapse>
-            </div>
           </div>
+
         </section>
 
         <section className="section section-last-views-results">
           <div className="container">
-            <h2 className="h2 section-title">Результаты игроков прошлых просмотров</h2>
+            <h2 className="h2 section-title with-overflow">Результаты игроков прошлых просмотров</h2>
             <MultipleItemsSlider className="last-views-slider" desktopArrows desktopDots={false}>
               {VIEWS.map(({ id, imgSrc, name, newRole, prevTeam }) => (
                 <Link href="/players/[id]" as={`/players/${id}`} key={id}>
@@ -555,23 +648,28 @@ function PlayerViewing2021() {
           </div>
         </section>
 
-
         <section className="section section-price">
           <div className="container">
             <h2 className="h2 section-title">Стоимость просмотра</h2>
-            <p className="registration-ends">Регистрация заканчивается 20&nbsp;мая&nbsp;или&nbsp;раньше, после&nbsp;окончания свободных мест</p>
+            <p className="registration-ends">Регистрация для&nbsp;группы 2007–2009&nbsp;г.&nbsp;р. заканчивается 18&nbsp;апреля</p>
+            <p className="registration-ends two">Регистрация для&nbsp;группы 2003–2006&nbsp;г.р. заканчивается 30&nbsp;мая</p>
             <div className="price-desc-block">
               <p className="price-includes-title">В&nbsp;стоимость включено:</p>
               <ul className="price-includes-list">
-                <li className="price-includes-list-item">—&nbsp;Конференция о&nbsp;структуре зарубежного хоккея 13&nbsp;июня</li>
-                <li className="price-includes-list-item">—&nbsp;3&nbsp;просмотровые игры</li>
-                <li className="price-includes-list-item">—&nbsp;Индивидуальный анализ и&nbsp;оценка игры от&nbsp;приглашенных специалистов</li>
+                <li className="price-includes-list-item">—&nbsp;Конференция о структуре североамериканского и европейского хоккея</li>
+                <li className="price-includes-list-item">—&nbsp;Помощь с&nbsp;определением направления продолжения карьеры</li>
                 <li className="price-includes-list-item">—&nbsp;План развития игрока в&nbsp;личной консультации</li>
-                <li className="price-includes-list-item">—&nbsp;Прямая трансляция на&nbsp;Youtube</li>
+                <li className="price-includes-list-item">—&nbsp;3&nbsp;просмотровые игры</li>
+                <li className="price-includes-list-item">—&nbsp;Прямая трансляция матчей на&nbsp;Youtube</li>
                 <li className="price-includes-list-item">—&nbsp;Игровая майка и&nbsp;гамаши участника просмотра</li>
+                <li className="price-includes-list-item">— Вода и спортивные напитки</li>
               </ul>
               <div className="price-amounts">
                 <div className="current-price">29 900&nbsp;₽</div>
+                <div className="participation-extra">
+                  <div className="participation-condition">с&nbsp;16&nbsp;мая&nbsp;— 49 900&nbsp;₽</div>
+                  <div className="participation-condition">с&nbsp;30&nbsp;мая, после завершения регистрации&nbsp;— 99 900&nbsp;₽</div>
+                </div>
                 {/*<div className="later-price">с&nbsp;1&nbsp;апреля&nbsp;—  29 900&nbsp;₽</div>*/}
                 <OrderCallButton modalTitle="Запишитесь на просмотр" firstSubmitLabel="Записаться" secondSubmitLabel="Записаться">Забронировать</OrderCallButton>
               </div>
@@ -587,12 +685,18 @@ function PlayerViewing2021() {
               <li className="extra-services-list-item">
                 <div className="extra-service" onClick={handleHockeyCampModalOpen}>
                   <div className="extra-service-image">
-                    <img src="/assets/img/services/player-viewing/2021/extra-service-1.jpg" alt="Хоккейный лагерь" />
+                    <img src="/assets/img/services/player-viewing/2022/extra-service-1.jpg" alt="Хоккейный лагерь" />
                   </div>
                   <div className="extra-service-info">
                     <div className="extra-service-name">Хоккейный лагерь</div>
-                    <div className="extra-service-desc">7 июня&nbsp;—&nbsp;12&nbsp;июня<br />Москва,&nbsp;ЛД&nbsp;«Морозово»</div>
-                    <div className="extra-service-price">22&nbsp;900&nbsp;₽</div>
+                    <div className="extra-service-wrap">
+                      <div className="extra-service-desc">13&nbsp;июня&nbsp;— 18&nbsp;июня</div>
+                      <div className="extra-service-price">29&nbsp;900&nbsp;₽</div>
+                    </div>
+                    <div className="extra-service-wrap">
+                      <div className="extra-service-desc">6&nbsp;июня&nbsp;— 18&nbsp;июня</div>
+                      <div className="extra-service-price">49&nbsp;900&nbsp;₽</div>
+                    </div>
                   </div>
                   <div className="details-link">Подробнее</div>
                 </div>
@@ -600,12 +704,12 @@ function PlayerViewing2021() {
               <li className="extra-services-list-item">
                 <div className="extra-service" onClick={handleVideoModalOpen}>
                   <div className="extra-service-image">
-                    <img src="/assets/img/services/player-viewing/2021/extra-service-2.jpg" alt="Видеонарезка" />
+                    <img src="/assets/img/services/player-viewing/2022/extra-service-2.jpg" alt="Видеонарезка" />
                   </div>
                   <div className="extra-service-info">
                     <div className="extra-service-name">Видеонарезка</div>
-                    <div className="extra-service-desc">Лучшие моменты игрока <br />для&nbsp;портфолио</div>
-                    <div className="extra-service-price">4&nbsp;900&nbsp;₽</div>
+                    <div className="extra-service-desc second">Лучшие моменты игрока <br />для&nbsp;портфолио</div>
+                    <div className="extra-service-price">5&nbsp;000&nbsp;₽</div>
                   </div>
                   <div className="details-link">Подробнее</div>
                 </div>
@@ -615,16 +719,8 @@ function PlayerViewing2021() {
         </section>
 
         <section className="section section-last-view">
-          <h2 className="h2 section-title with-overflow">Фотографии просмотра 2020</h2>
+          <h2 className="h2 section-title with-overflow">Фотографии просмотра 2021</h2>
           <PhotoSlider items={photos2020} albumTitle="Просмотр 2020" />
-        </section>
-
-        <section className="section section-address" id="address">
-          <h2 className="h2 section-title">Ледовая арена «Морозово»</h2>
-          <div className="event-address"><span className="hidden-xs">Москва, </span>ул.&nbsp;Новоостаповская, д.&nbsp;5, с.&nbsp;2</div>
-          <div className="map-container">
-            <div className="static-map" ref={mapRef} />
-          </div>
         </section>
 
         <section className="section section-faq">
@@ -635,7 +731,7 @@ function PlayerViewing2021() {
                 <li
                   key={question}
                   className={classnames('faq-list-item', { _active: activeFaqItems[i] })}
-                  onClick={() => setActiveFaqItems(prevState => ({ ...prevState, [i]: !prevState[i] }))}
+                  onClick={() => setActiveFaqItems((prevState) => ({ ...prevState, [i]: !prevState[i] }))}
                 >
                   <div className="faq-icon" />
                   <div className="faq-question" dangerouslySetInnerHTML={{ __html: question }} />
@@ -647,6 +743,14 @@ function PlayerViewing2021() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className="section section-address" id="address">
+          <h2 className="h2 section-title">Ледовая арена «Морозово»</h2>
+          <div className="event-address"><span className="hidden-xs">Москва, </span>ул.&nbsp;Новоостаповская, д.&nbsp;5, с.&nbsp;2</div>
+          <div className="map-container">
+            <div className="static-map" ref={mapRef} />
           </div>
         </section>
 
@@ -667,55 +771,71 @@ function PlayerViewing2021() {
         onClose={handleHockeyCampModalClose}
       >
         <div className="extra-service-illustration">
-          <img className="hidden-xs-sm" src="/assets/img/services/player-viewing/2021/extra-service-illustration-1.jpg" alt="Дополнительно - хоккейный лагерь" />
-          <img className="visible-xs-sm" src="/assets/img/services/player-viewing/2021/extra-service-illustration-1-mobile-tablet.jpg" alt="Дополнительно - хоккейный лагерь" />
+          <img className="hidden-xs-sm" src="/assets/img/services/player-viewing/2022/extra-service-illustration-1.jpg" alt="Дополнительно - хоккейный лагерь" />
+          <img className="visible-xs-sm" src="/assets/img/services/player-viewing/2022/extra-service-illustration-1-mobile-tablet.jpg" alt="Дополнительно - хоккейный лагерь" />
         </div>
         <div className="extra-service-description">
           <div className="service-title section-title">Хоккейный лагерь</div>
           <div className="service-details">
             <div className="camp-info-block">
-              <div className="camp-target">Только для&nbsp;участников просмотра 2002–2005&nbsp;г.р</div>
-              <div className="camp-info">Интенсивная подготовка игроков к&nbsp;турниру на&nbsp;базе школы хоккея Z-Hockey</div>
-              <div className="camp-dates">ДАТЫ: 7–12&nbsp;июня</div>
-              <div className="camp-coaches-title">Тренеры школы Z-Hockey</div>
+              <div className="camp-target">Только для&nbsp;участников 2003–2006&nbsp;г. р. </div>
+              <div className="camp-info">На базе школы хоккея Grishatov Hockey</div>
+              <div className="camp-dates">Даты: 6–18&nbsp;июня</div>
+              <div className="camp-coaches-title">Тренеры</div>
               <div className="camp-coaches">
                 <div className="camp-coach">
-                  <img className="camp-coach-photo" src="/assets/img/services/player-viewing/2021/extra-service-coach-zuev.png" alt="Тренер Виктор Зуев" />
-                  <div className="camp-coach-name">Виктор Зуев</div>
+                  <img className="camp-coach-photo" src="/assets/img/services/player-viewing/2022/extra-service-coach-vinokurov.png" alt="Тренер Илья Винокуров" />
+                  <div className="camp-coach-name">Илья Винокуров</div>
                 </div>
                 <div className="camp-coach">
-                  <div className="camp-coach-name">Павел Панков</div>
-                  <img className="camp-coach-photo" src="/assets/img/services/player-viewing/2021/extra-service-coach-pankov.png" alt="Тренер Павел Панков" />
+                  <img className="camp-coach-photo" src="/assets/img/services/player-viewing/2022/extra-service-coach-mihin.png" alt="Тренер Дмитрий Михин" />
+                  <div className="camp-coach-name">Дмитрий Михин</div>
+                </div>
+                <div className="camp-coach">
+                  <img className="camp-coach-photo" src="/assets/img/services/player-viewing/2022/extra-service-coach-yurin.png" alt="Тренер Александр Юрин" />
+                  <div className="camp-coach-name">Александр Юрин</div>
                 </div>
               </div>
             </div>
+
             <div className="camp-schedule-block">
               <div className="camp-schedule-title">Расписание</div>
               <ul className="camp-schedule-list">
                 <li className="camp-schedule-list-item">
-                  <div className="item-title">Понедельник–Пятница</div>
+                  <div className="item-title section-title">Понедельник–Пятница</div>
                   <div className="item-content">
-                    <div className="item-content-element">9:00–10:30&nbsp;лед</div>
-                    <div className="item-content-element">10:50–12:20&nbsp;зал</div>
+                    <div className="item-content-element">• 1&nbsp;час&nbsp;15&nbsp;минут лёд</div>
+                    <div className="item-content-element">• 1&nbsp;час&nbsp;15&nbsp;минут земля</div>
                   </div>
                 </li>
                 <li className="camp-schedule-list-item">
-                  <div className="item-title">Суббота</div>
+                  <div className="item-title section-title">Суббота</div>
                   <div className="item-content">
-                    <div className="item-content-element">10:30–12:00&nbsp;игра</div>
-                    <div className="item-content-element">12:30–14:30&nbsp;баня</div>
+                    <div className="item-content-element">• 1 час 30 минут игра</div>
+                    <div className="item-content-element">• Восстанавливающая баня</div>
                   </div>
                 </li>
               </ul>
               <div className="camp-schedule-address">
-                <div className="address-title">Адрес</div>
-                <div className="address-content">лд&nbsp;«Морозово», ул.&nbsp;Новоастаповская, д.&nbsp;5&nbsp;с&nbsp;2</div>
+                <div className="address-title with-overflow">
+                  Адрес:
+                  <div className="address-content">&nbsp;лд&nbsp;«Морозово», ул.&nbsp;Новоастаповская, д.&nbsp;5&nbsp;с&nbsp;2</div>
+                </div>
               </div>
             </div>
           </div>
           <div className="service-price">
-            <div className="service-price-title">Стоимость</div>
-            <div className="service-price-value">22 900 ₽</div>
+            <div className="service-price-wrap">
+              <div className="service-price-container">
+                <div className="service-price-title">Лагерь на 6 дней</div>
+                <div className="service-price-value">29 900 ₽</div>
+              </div>
+              <div className="service-price-container">
+                <div className="service-price-title">Лагерь на 12 дней</div>
+                <div className="service-price-value">49 900 ₽</div>
+              </div>
+            </div>
+            <Button className="camp-button" onClick={handleCampClick}>Подробнее</Button>
           </div>
         </div>
       </Modal>
@@ -726,7 +846,7 @@ function PlayerViewing2021() {
         onClose={handleVideoModalClose}
       >
         <div className="extra-service-illustration">
-          <img className="hidden-xs-sm" src="/assets/img/services/player-viewing/2021/extra-service-illustration-2.jpg" alt="Дополнительно - видеонарезка" />
+          <img className="hidden-xs-sm" src="/assets/img/services/player-viewing/2022/extra-service-illustration-2.jpg" alt="Дополнительно - видеонарезка" />
           <img className="visible-xs-sm" src="/assets/img/services/player-viewing/2021/extra-service-illustration-2-mobile-tablet.jpg" alt="Дополнительно - видеонарезка" />
         </div>
         <div className="extra-service-description">
@@ -764,7 +884,7 @@ function PlayerViewing2021() {
           </div>
           <div className="service-price">
             <div className="service-price-title">Стоимость</div>
-            <div className="service-price-value">4 900 ₽</div>
+            <div className="service-price-value">5 000 ₽</div>
           </div>
         </div>
       </Modal>

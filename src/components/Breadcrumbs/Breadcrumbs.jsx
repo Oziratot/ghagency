@@ -16,7 +16,8 @@ const nameByKey = {
   ...playersNameByKey,
   ...servicesNameByKey,
   ...postNameByKey,
-  2021: 'Просмотр 2021',
+  2022: 'Просмотр 2022',
+  'training-camp-2022': 'Хоккейный лагерь в Москве 2022',
 };
 
 function BreadcrumbsItem({ href, label }) {

@@ -35,7 +35,7 @@ function HeroSliderSection({ initialSlide, slides }) {
         router.push('/services/training-camps');
         break;
       case '4':
-        router.push('/services/player-viewing/2021');
+        router.push('/services/player-viewing/2022');
         break;
     }
   }, []);
@@ -47,11 +47,15 @@ function HeroSliderSection({ initialSlide, slides }) {
           {slides.map(({ id, title, desc, link }) => (
             <div className={`slide-content slide-${id}`} key={id} onClick={onSlideClick} data-id={id}>
               <div className="container">
-                <p className="h2 slide-title" dangerouslySetInnerHTML={{ __html: title }} />
-                <p className="slide-text" dangerouslySetInnerHTML={{ __html: desc }} />
-                {id === 1 && <OrderCallButton>Заказать</OrderCallButton>}
-                {id === 4 && <OrderCallButton modalTitle="Запишитесь на просмотр" firstSubmitLabel="Записаться" secondSubmitLabel="Записаться">Забронировать</OrderCallButton>}
-                {id !== 1 && id !== 4 && <Link href={link}><a className="ui-button ui-button-orange">Подробнее</a></Link>}
+                <div className="hero-slide-wrap">
+                  {id === 5 && <p className="section-title">Москва, ЛД&nbsp;«Морозово» 6–18&nbsp;июня</p>}
+                  <p className={`h2 slide-title slide-title-${id}`} dangerouslySetInnerHTML={{ __html: title }} />
+                  <p className="slide-text" dangerouslySetInnerHTML={{ __html: desc }} />
+                  {id === 1 && <OrderCallButton>Заказать</OrderCallButton>}
+                  {(id === 4 || id === 5) && <OrderCallButton modalTitle="Запишитесь на просмотр" firstSubmitLabel="Записаться" secondSubmitLabel="Записаться">Забронировать</OrderCallButton>}
+                  {id !== 1 && id !== 4 && id !== 5 && <Link href={link}><a className="ui-button ui-button-orange">Подробнее</a></Link>}
+                  {id === 5 && <p className="note">*Регистрация до&nbsp;1&nbsp;июня</p> }
+                </div>
               </div>
             </div>
           ))}

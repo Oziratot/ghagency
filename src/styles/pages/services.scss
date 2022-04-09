@@ -817,7 +817,7 @@
 
     .faq-block {
       position: relative;
-      top: -64px;
+      top: 100px;
       margin: auto;
       max-width: 920px;
       padding: 60px 95px 70px;
@@ -967,13 +967,14 @@
   .section-last-views-results {
     text-align: center;
     padding-bottom: 130px;
+    background-color: #FFFFFF;
 
     @include tablet {
       padding-bottom: 100px;
     }
 
     .section-title {
-      background-color: #F0F1F6;
+      background-color: #FFFFFF;
     }
 
     .last-views-list {
@@ -994,7 +995,7 @@
       padding: 45px;
       margin-bottom: 30px;
       border-radius: 12px;
-      background-color: #FFFFFF;
+      background-color: #F0F1F6;
       transition: box-shadow $trans;
 
       @include laptop {
@@ -1105,8 +1106,7 @@
 
   .section-last-view,
   .section-photo-reports {
-    padding-bottom: 120px;
-    background-color: #252D3A;
+    background-color: #FFFFFF;
     text-align: center;
 
     @include tablet {
@@ -1117,8 +1117,8 @@
     }
 
     .section-title {
-      color: #FFFFFF;
-      background-color: #252D3A;
+      color: #474B54;
+      background-color: #FFFFFF;
     }
   }
 
@@ -1657,7 +1657,167 @@
     }
   }
 
-  &.page-services-player-viewing-2021 {
+  &.page-services-training-camp-2022 {
+    .section-event-details.section-event-details {
+      @include mobile {
+        padding: 50px 0;
+      }
+      .event-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mobile {
+          flex-direction: column;
+        }
+
+        .event-title {
+          font-size: 80px;
+          line-height: 1.69;
+          font-weight: 700;
+          color: #00B6F0;
+          margin-right: 60px;
+
+          @include tablet {
+            font-size: 40px;
+            line-height: 1.6;
+          }
+
+          @include mobile {
+            margin-right: 0;
+          }
+        }
+
+        .event-text {
+          font-size: 20px;
+          line-height: 1.2;
+          color: #FFFFFF;
+
+          @include tablet {
+            font-size: 18px;
+            line-height: 1.4;
+          }
+
+          @include mobile {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .section-about-camp {
+      background-color: #FFFFFF;
+      padding-bottom: 170px;
+
+      @include mobile {
+        padding-bottom: 70px;
+      }
+      .about-wrap {
+        display: flex;
+        justify-content: center;
+      }
+
+      .about {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 660px;
+
+        .about-item {
+          display: flex;
+          flex-direction: column;
+          width: 300px;
+          margin-bottom: 50px;
+
+          @include mobile {
+            margin: 0 auto 50px;
+          }
+
+          .about-img {
+            margin: 0 auto;
+            flex-grow: 0;
+          }
+
+          .about-text {
+            text-align: center;
+            margin-top: 10px;
+
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .section-scouts {
+      background-color: #F0F1F6;
+      position: relative;
+
+      .section-title {
+        background-color: #F0F1F6;
+      }
+
+      .scouts-list-item-content.scouts-list-item-content {
+        background-color: transparent;
+        box-shadow: none;
+        transition: background-color $trans;
+
+        &:hover {
+          background-color: #FFFFFF;
+        }
+
+        @include mobile {
+          background-color: #FFFFFF;
+          box-shadow: 10px 10px 20px rgba(31, 30, 36, 0.15);
+        }
+
+        .scout-desc {
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .section-extra-services {
+      background-color: #FFFFFF;
+
+      .extra-service {
+        filter: drop-shadow(10px 10px 20px rgba(31, 30, 36, 0.15));
+        pointer-events: none;
+
+        .section-title {
+          padding-top: 0;
+        }
+      }
+    }
+
+    .section-price {
+      .price-desc-blocks {
+        display: flex;
+
+        @include tablet {
+          flex-direction: column;
+        }
+
+        .price-desc-block {
+          margin-right: 30px;
+
+          @include tablet {
+            margin-right: 0;
+            margin-bottom: 30px;
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.page-services-player-viewing-2021, &.page-services-training-camp-2022 {
     .section-event-details {
       background-color: #181E28;
       padding: 50px 0;
@@ -1772,6 +1932,7 @@
 
     .section-teams-selection {
       background-color: #FFFFFF;
+      padding-bottom: 140px;
       //padding: 25px 0 0;
       //
       //@include mobile {
@@ -1788,30 +1949,95 @@
         }
       }
 
+      .teams-wrap {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .team-arrow {
+        margin-left: auto;
+        transition: transform $trans-slow;
+
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+
+      .teams-list-all {
+        padding-left: 20px;
+
+        @include mobile {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height $trans-slow;
+
+          &.active {
+            max-height: 1500px;
+          }
+        }
+      }
+
       .teams-list {
         display: flex;
-        flex-wrap: wrap;
-        margin: -15px -15px 95px;
+        justify-content: space-between;
+        margin: -15px -15px 60px;
 
         @include laptop {
-          margin: -30px -30px 80px;
+          margin: -30px -30px 60px;
         }
 
         @include tablet {
-          margin: 0px -10px 80px;
+          margin: 0px -10px 60px;
         }
 
         @include mobile {
           margin-bottom: 0;
+          padding: 0 20px;
+          flex-direction: column;
+        }
+      }
+
+      .teams {
+        flex: 1;
+
+        @include mobile {
+          border-radius: 12px;
+          box-shadow: 2px 2px 5px rgba(31, 30, 36, 0.15);
+          margin-bottom: 20px;
+          padding: 10px 0;
         }
       }
 
       .teams-list-item {
-        width: calc(100% / 3);
-        padding: 15px;
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+
+        @include mobile {
+          cursor: pointer;
+        }
+
+        .team-img {
+          @include mobile {
+            width: 62px;
+            height: 69px;
+          }
+        }
+
+        .country {
+          font-size: 24px;
+          line-height: 1.2;
+          font-weight: 500;
+          padding-left: 20px;
+
+          @include mobile {
+            font-size: 14px;
+            line-height: 1.2;
+          }
+        }
 
         @include laptop {
-          padding: 10px;
+          //padding: 10px;
         }
 
         @include tablet {
@@ -1846,40 +2072,52 @@
         }
       }
 
+      .team-item {
+        list-style-type: disc;
+
+        &-enter {
+          height: 0;
+          overflow: hidden;
+          transition: height $trans, padding $trans;
+          padding: 0 10px;
+
+          &-active {
+            height: 70px;
+            padding: 5px 10px;
+          }
+        }
+        &-exit {
+          height: 70px;
+          padding: 5px 10px;
+          overflow: hidden;
+          transition: height $trans, padding $trans;
+
+          &-active {
+            height: 0;
+            padding: 0 10px;
+          }
+        }
+      }
+
       .teams-list-item-content {
-        height: 83px;
-        padding: 27px 30px 0;
-        background-color: #FAFAFA;
-        box-shadow: 0 2px 4px rgba(31, 30, 36, 0.08);
-        text-align: center;
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
         color: #474B54;
-        transition: background-color $trans-fast, color $trans-fast;
+        margin-top: 22px;
 
         @include laptop {
-          height: 81px;
-          padding: 25px 20px 0;
           line-height: 22px;
         }
 
         @include tablet {
-          height: 60px;
-          padding: 18px 15px;
           font-size: 14px;
           line-height: 20px;
         }
 
         @include mobile {
-          padding: 18px 12px;
           font-size: 13px;
           line-height: 19px;
-        }
-
-        &:hover {
-          color: #FFFFFF;
-          background-color: #00B6F0;
         }
       }
 
@@ -1897,11 +2135,11 @@
       }
 
       .show-more-btn {
-        background-color: $primary;
+        background-color: #00B6F0;
         margin-bottom: 10px;
 
         &:hover, &:focus {
-          background-color: darken($primary, 10%);
+          background-color: darken(#00B6F0, 10%);
         }
       }
 
@@ -1921,7 +2159,7 @@
 
     .section-scouts {
       padding: 0 0 110px;
-      background-color: #FFFFFF;
+      background-color: #F0F1F6;
 
       @include laptop {
         padding-top: 0;
@@ -1949,7 +2187,8 @@
 
       .scouts-list-item {
         @include laptop-desktop {
-          width: 25%;
+          height: 100%;
+          width: 33%;
           padding: 34px 15px;
         }
 
@@ -2009,9 +2248,19 @@
       }
 
       .scouts-list-item-content {
-        padding: 15px;
+        padding: 30px 15px;
         background: #FFFFFF;
         box-shadow: 0px 2px 4px rgba(31, 30, 36, 0.08);
+        transition: box-shadow $trans;
+        border-radius: 12px;
+
+        &:hover {
+          box-shadow: 10px 10px 20px rgba(31, 30, 36, 0.15);
+
+          .scout-name {
+            color: #FA6900;
+          }
+        }
       }
 
       .scout-photo {
@@ -2031,9 +2280,11 @@
         font-size: 24px;
         font-weight: bold;
         line-height: 28px;
-        min-height: 56px;
+        min-height: 40px;
         text-align: center;
         color: #575C66;
+        border-bottom: 2px solid #FA6900;
+        transition: color $trans;
 
         @include laptop {
           font-size: 22px;
@@ -2092,14 +2343,14 @@
       display: flex;
       align-items: stretch;
       justify-content: flex-start;
-      background-color: #252D3A;
+      background-color: #FFFFFF;
 
       @include tablet {
         display: block;
       }
 
       .section-title {
-        color: #FFFFFF;
+        color: #474B54;
         margin-bottom: 50px;
 
         &.tablet-mobile-title {
@@ -2124,9 +2375,9 @@
 
       .section-subtitle {
         margin-bottom: 20px;
-        font-size: 23px;
+        font-size: 16px;
         font-weight: 500;
-        line-height: 34px;
+        line-height: 1.5;
         color: #00B6F0;
 
         @include mobile {
@@ -2136,9 +2387,10 @@
       }
 
       .section-text {
-        font-size: 18px;
-        line-height: 27px;
-        color: #FFFFFF;
+        max-width: 540px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #474B54;
 
         @include mobile {
           font-size: 13px;
@@ -2176,6 +2428,143 @@
         @include tablet {
           width: 100%;
           padding: 30px 30px 80px;
+        }
+      }
+    }
+
+    .section-bubbles-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #F0F1F6;
+      padding-bottom: 170px;
+
+      @include mobile {
+        padding-bottom: 65px;
+      }
+
+      .h2 {
+        text-align: center;
+        margin-bottom: 72px;
+
+        @include mobile {
+          margin-bottom: 50px;
+        }
+      }
+
+      .statistics {
+        display: flex;
+        justify-content: center;
+
+        @include mobile {
+          flex-direction: column;
+        }
+
+        .statistics-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 56px 22px;
+          border-right: 1px solid #C5C5C5;
+          margin-bottom: 110px;
+
+          @include mobile {
+            border: none;
+            border-bottom: 1px solid #C5C5C5;
+            margin-bottom: 0;
+            padding: 20px 0;
+
+            &:last-of-type {
+              border: none;
+              margin-bottom: 50px;
+            }
+          }
+
+          .statistics-title {
+            font-size: 50px;
+            line-height: 80px;
+            color: #474B54;
+            font-weight: 700;
+
+            @include tablet {
+              font-size: 30px;
+            }
+          }
+          .statistics-text {
+            text-align: center;
+            max-width: 320px;
+            color: #474B54;
+
+            @include tablet {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .view-statistics {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        @include tablet {
+          width: 75%;
+          justify-content: space-around;
+        }
+
+
+        .outer-circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 230px;
+          height: 230px;
+          border-radius: 50%;
+          background-color: #00B6F0;
+          box-shadow: 3px 1px 4px rgba(0, 0, 0, 0.25);
+
+          @include tablet {
+            margin-bottom: 30px;
+          }
+
+          &.circle-52 {
+            background-image: linear-gradient(162deg, transparent 50%, #00B6F0 50%), linear-gradient(90deg, #C6CAD2 50%, transparent 50%);
+          }
+
+          &.circle-29 {
+            background-image: linear-gradient(230deg, transparent 50%, #C6CAD2 50%), linear-gradient(90deg, #C6CAD2 50%, transparent 50%);
+          }
+
+          &.circle-6 {
+            background-image: linear-gradient(119deg, transparent 50%, #C6CAD2 50%), linear-gradient(90deg, #C6CAD2 50%, transparent 50%);
+          }
+
+          .inner-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 146px;
+            height: 146px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          }
+
+          .circle-title {
+            font-weight: 600;
+            font-size: 34px;
+            line-height: 1.5;
+          }
+
+          .circle-text {
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 500;
+          }
         }
       }
     }
@@ -2547,7 +2936,8 @@
     }
 
     .section-price {
-      background-color: #252D3A;
+      background: url("/assets/img/services/player-viewing/2022/price-background.jpg");
+      background-size: cover;
       padding-bottom: 110px;
 
       @include mobile {
@@ -2576,16 +2966,21 @@
       }
 
       .registration-ends {
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+
+        &.two {
+          margin-bottom: 30px;
+        }
       }
 
       .price-desc-block {
-        padding: 50px 100px;
+        padding: 40px 52px;
         margin-bottom: 50px;
         border-radius: 12px;
         background-color: #FFFFFF;
         box-shadow: 0px 13px 20px rgba(0, 0, 0, 0.25);
         color: #252D3A;
+        width: 100%;
 
         @include tablet {
           padding: 40px 50px;
@@ -2633,8 +3028,8 @@
 
       .price-includes-list-item {
         margin-bottom: 1.5em;
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 18px;
+        line-height: 27px;
 
         @include tablet {
           font-size: 20px;
@@ -2653,10 +3048,18 @@
 
       .price-amounts {
         text-align: center;
+
+        .participation-extra {
+          margin-bottom: 30px;
+        }
+
+        .participation-condition {
+          color: #252D3A;
+        }
       }
 
       .current-price {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         font-size: 48px;
         font-weight: bold;
         line-height: 58px;
@@ -2831,6 +3234,7 @@
         transition: border-radius $trans;
         text-align: center;
         color: #474B54;
+        height: 250px;
 
         @include tablet {
           padding: 24px 24px 32px;
@@ -2840,6 +3244,7 @@
           padding: 20px 20px 30px;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
+          height: 180px;
         }
       }
       .extra-service-name {
@@ -2859,10 +3264,23 @@
           line-height: 24px;
         }
       }
-      .extra-service-desc {
+      .extra-service-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 23px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+      .extra-service-desc {
         font-size: 20px;
         line-height: 30px;
+
+        &.second {
+          margin-bottom: 23px;
+        }
 
         @include tablet {
           font-size: 18px;
@@ -2870,7 +3288,6 @@
         }
 
         @include mobile {
-          margin-bottom: 30px;
           font-size: 16px;
           line-height: 24px;
         }
@@ -2893,8 +3310,10 @@
     }
 
     .section-address {
+      padding-top: 100px;
       @include mobile {
-        background-color: #FFFFFF;
+        background-color: #F0F1F6;
+        padding-top: 0;
       }
 
       .section-title {
@@ -2962,7 +3381,7 @@
         padding-top: 50px;
 
         @include tablet-laptop-desktop {
-          box-shadow: 0px 2px 4px rgba(31, 30, 36, 0.08);
+          box-shadow: 10px 10px 20px rgba(31, 30, 36, 0.15);
         }
       }
 
@@ -2983,7 +3402,7 @@
         }
         &._active {
           .faq-answer {
-            max-height: 236px;
+            max-height: 328px;
 
             @include tablet {
               max-height: 212px;
@@ -3294,13 +3713,33 @@
     }
   }
   .service-price {
-    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
     background-color: #FFFFFF;
     border-bottom-right-radius: 12px;
     font-size: 30px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
+    box-shadow: 0px 20px 50px rgba(31, 30, 36, 0.15);
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .service-price-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .camp-button {
+      @include mobile {
+        margin-top: 30px;
+        width: 190px;
+      }
+    }
 
     @include tablet {
       border-bottom-left-radius: 12px;
@@ -3313,10 +3752,23 @@
   }
 
   .service-price-title {
-    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-right: 30px;
+
+    @include mobile {
+      font-size: 12px;
+      line-height: 1.5;
+    }
   }
   .service-price-value {
-    color: #00B6F0;
+    font-size: 30px;
+    line-height: 1.4;
+    color: #474B54;
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &._service-video {
@@ -3409,6 +3861,7 @@
     .camp-coach {
       display: flex;
       align-items: center;
+      flex-direction: column;
 
       @include mobile {
         text-align: left;
@@ -3451,11 +3904,6 @@
 
   .camp-schedule-block {
     text-align: center;
-    padding-bottom: 13px;
-
-    @include mobile {
-      padding-bottom: 20px;
-    }
   }
   .camp-schedule-title {
     font-size: 18px;
@@ -3479,6 +3927,7 @@
     width: 50%;
     font-size: 18px;
     line-height: 27px;
+    margin-bottom: 30px;
 
     //@include tablet {
     //  width: 100%;
@@ -3495,33 +3944,54 @@
     margin-bottom: 1em;
     font-weight: 600;
 
+    &.section-title {
+      padding-top: 0;
+    }
+
     @include mobile {
     }
   }
   .item-content {
-
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .item-content-element {
-    margin-bottom: 1em;
+    width: min-content;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 23%;
+
+    @include mobile {
+      margin: 0 auto;
+    }
   }
   .camp-schedule-address {
 
   }
   .address-title {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 27px;
     font-weight: 500;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    background-color: #FFFFFF;
+    display: flex;
+    border-radius: 6px;
+    padding: 12px 0;
+    position: relative;
+    top: 10px;
+    justify-content: center;
 
     @include mobile {
       font-size: 14px;
       line-height: 21px;
-      margin-bottom: 20px;
     }
   }
   .address-content {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 27px;
 
     @include mobile {

@@ -17,7 +17,7 @@ import Footer from '../Footer';
 const TABLET_MAX_WIDTH = 1023;
 const ALERT_LVLS = { ERROR: 'ERROR', IMPORTANT: 'IMPORTANT', INFO: 'INFO', WARNING: 'WARNING' };
 const ALERTS = [
-  { id: '4', lvl: ALERT_LVLS.INFO, msg: 'Приглашаем на&nbsp;просмотровый турнир в&nbsp;хоккейные лиги Северной&nbsp;Америки&nbsp;и&nbsp;Европы, Москва&nbsp;14&#8209;16&nbsp;июня', linkTo: '/services/player-viewing/2021' },
+  { id: '4', lvl: ALERT_LVLS.INFO, msg: 'Приглашаем на&nbsp;просмотровый турнир в&nbsp;хоккейные лиги Северной Америки и&nbsp;Европы, Москва май-июнь 2022', linkTo: '/services/player-viewing/2022' },
   // { id: '3', lvl: ALERT_LVLS.INFO, msg: 'Приглашаем на просмотровый лагерь для юниоров в Канаде, Торонто, 27 июля - 24 августа' },
   // { id: '2', lvl: ALERT_LVLS.INFO, msg: 'Тестовое объявление' },
 ];
@@ -80,7 +80,7 @@ function Root({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
-    if (router.asPath === '/services/player-viewing/2021' && !readAlerts['4']) {
+    if (router.asPath === '/services/player-viewing/2022' && !readAlerts['4']) {
       ReadAlertsManager.set('readAlerts', '4');
       setReadAlerts((prevReadAlerts) => ({ ...prevReadAlerts, '4': true }));
     }
