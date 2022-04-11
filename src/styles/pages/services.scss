@@ -1999,6 +1999,11 @@
 
       .teams {
         flex: 1;
+        margin-right: 20px;
+
+        &:last-of-type {
+          margin-left: 0;
+        }
 
         @include mobile {
           border-radius: 12px;
@@ -2025,10 +2030,11 @@
         }
 
         .country {
-          font-size: 24px;
+          font-size: 22px;
           line-height: 1.2;
           font-weight: 500;
           padding-left: 20px;
+          white-space: nowrap;
 
           @include mobile {
             font-size: 14px;
@@ -2074,6 +2080,11 @@
 
       .team-item {
         list-style-type: disc;
+
+        &.bordered {
+          padding-bottom: 20px;
+          border-bottom: 1px solid #DFDFDF;
+        }
 
         &-enter {
           height: 0;
@@ -3725,6 +3736,11 @@
     text-align: center;
     box-shadow: 0px 20px 50px rgba(31, 30, 36, 0.15);
 
+    &.second {
+      flex-direction: column;
+      justify-content: center;
+    }
+
     @include mobile {
       flex-direction: column;
     }
@@ -3755,6 +3771,10 @@
     font-size: 18px;
     line-height: 1.4;
     margin-right: 30px;
+
+    &.second {
+      margin: 0 0 10px;
+    }
 
     @include mobile {
       font-size: 12px;

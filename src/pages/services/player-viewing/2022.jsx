@@ -42,8 +42,8 @@ const details = [
 
 const statistics = [
   { title: '70%', text: 'Участников получают приглашения в команды' },
-  { title: '35 000 $', text: 'Мы&nbsp;сэкономили участникам просмотра 2021&nbsp;за&nbsp;счёт скидок на&nbsp;взнос в&nbsp;команды и&nbsp;стипендий' },
-  { title: '40+', text: 'Положительных отзывов клиентов на Kidshockey' },
+  { title: '43 000 $', text: 'Мы&nbsp;сэкономили участникам просмотра 2021&nbsp;за&nbsp;счёт скидок на&nbsp;взнос в&nbsp;команды и&nbsp;стипендий' },
+  { title: '30+', text: 'Положительных отзывов клиентов на Kidshockey' },
 ];
 
 const viewStatistics = [
@@ -56,11 +56,13 @@ const viewStatistics = [
 const scouts = [
   { name: 'Шон Уэрф', photo: '/assets/img/services/player-viewing/scouts/scout-2.jpg', desc: 'Генеральный менеджер Bradford Rattlers GMHL, Канада' },
   { name: 'Коди Ганье', photo: '/assets/img/services/player-viewing/scouts/scout-1.jpg', desc: 'Главный тренер Northeast Generals U16, США<br />Ассистент главного тренера Northeast Generals NAHL, США<br />Програмный директор Northeast Generals Academy' },
-  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-10.png', desc: 'Главный тренер Cleveland Barons U18 T1EHL, США' },
+  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-17.png', desc: 'Главный тренер Cleveland Barons U18 T1EHL, США' },
   { name: 'Адам Бортоломей', photo: '/assets/img/services/player-viewing/scouts/scout-3.jpg', desc: 'Главный тренер Philadelphia Hockey Club USPHL Premier, США<br />Ассистент главного тренера Philadelphia Hockey Club NCDC, США' },
   { name: 'Марк Андре-Карон', photo: '/assets/img/services/player-viewing/scouts/scout-4.jpg', desc: 'Генеральный менеджер Ville-Marie Pirates GMHL, Канада' },
-  { name: 'Глен Кэмпбэл', photo: '/assets/img/services/player-viewing/scouts/scout-12.png', desc: 'Владелец Northumberland Stars GMHL, Канада' },
-  { name: 'Райан Уитсон', photo: '/assets/img/services/player-viewing/scouts/scout-10.png', desc: 'Главный тренер Cleveland Barons U14 T1EHL, США' },
+  { name: 'Глен Кэмпбэл', photo: '/assets/img/services/player-viewing/scouts/scout-13.png', desc: 'Владелец Northumberland Stars GMHL, Канада' },
+  { name: 'Райан Уитсон', photo: '/assets/img/services/player-viewing/scouts/scout-14.png', desc: 'Главный тренер Cleveland Barons U14 T1EHL, США' },
+  { name: 'Райан Вуд', photo: '/assets/img/services/player-viewing/scouts/scout-15.png', desc: 'Главный тренер New Tecumseth Civics GMHL, Канада' },
+  { name: 'Дуг Орр', photo: '/assets/img/services/player-viewing/scouts/scout-16.png', desc: 'Главный тренер York Simcoe Express U14&nbsp;AAA ETAHL, Канада, Скаут Gatineau Olympiques QMJHL, Канада' },
 ];
 
 const countries = [
@@ -69,12 +71,14 @@ const countries = [
     label: 'Команды США',
     photo: '/assets/img/services/player-viewing/2022/teams-usa.png',
     teams: [
-      { label: 'Northeast Generals NAHL' },
-      { label: 'Northeast Generals NA3HL' },
-      { label: 'Northeast Generals NAPHL' },
-      { label: 'Cleveland Barons&nbsp;T1EHL' },
-      { label: 'Philadelphia Hockey Club NCDC,&nbsp;США' },
-      { label: 'Philadelphia Hockey Club USPHL Premier,&nbsp;США' },
+      { label: 'Lincoln Stars USHL', border: true },
+      { label: 'Lone Star Brahmas NAHL' },
+      { label: 'Northeast Generals NAHL', border: true },
+      { label: 'Northeast Generals NA3HL', border: true },
+      { label: 'Northeast Generals NAPHL', border: true },
+      { label: 'Cleveland Barons&nbsp;T1EHL', border: true },
+      { label: 'Philadelphia Hockey Club NCDC', border: true },
+      { label: 'Philadelphia Hockey Club USPHL Premier' },
     ],
   },
 {
@@ -82,15 +86,18 @@ const countries = [
     label: 'Команды Канады',
     photo: '/assets/img/services/player-viewing/2022/teams-canda.png',
     teams: [
+      { label: 'Gatineau Olympiques QMJHL', border: true },
       { label: 'Bradford Rattlers GMHL' },
       { label: 'Ville-Marie Pirates GMHL' },
       { label: 'New Tecumseth Civics GMHL' },
-      { label: 'Northumberland Stars GMHL' },
+      { label: 'Northumberland Stars GMHL', border: true },
+      { label: 'York Simcoe Express ETAHL', border: true },
       { label: 'Toronto Red Wings GTHL' },
       { label: 'Toronto Titans GTHL' },
-      { label: 'Avalanche GTHL' },
-      { label: 'GT Capitals GTHL' },
-      { label: 'Toronto Royals GTHL' },
+      { label: 'Vaughan Kings GTHL' },
+      { label: 'Don Mills Flyers GTHL' },
+      { label: 'North York Rangers GTHL' },
+      { label: 'Mississauga Senators GTHL' },
     ],
   },
 {
@@ -100,14 +107,16 @@ const countries = [
     teams: [
       { label: 'Grästorps IK, Швеция' },
       { label: 'Leksands IF, Швеция' },
-      { label: 'Malmo Redhawks, Швеция' },
+      { label: 'Malmo Redhawks, Швеция', border: true },
+
       { label: 'BC Mlada Boleslav, Чехия' },
-      { label: 'HC Kometa Brno, Чехия' },
+      { label: 'HC Kometa Brno, Чехия', border: true },
+
       { label: 'MHC Martin, Словакии' },
       { label: 'HK Nitra, Словакия' },
       { label: 'HK Skalica, Словакия' },
       { label: 'ŠHK 37 Piestany, Словакия' },
-      { label: 'HK Ruzinov 99, Словакия' },
+      { label: 'HK Ruzinov 99, Словакия', border: true },
 
       { label: 'Pesterzsébeti Farkasok, Венгрия' },
       { label: 'Györi ETO HC, Венгрия' },
@@ -118,68 +127,25 @@ const countries = [
       { label: 'Fehervar AV19, Венгрия' },
       { label: 'Miskolc, Венгрия' },
       { label: 'HC Lehel,Венгрия' },
-      { label: 'HK Karpati Farkasok ERD,Венгрия' },
+      { label: 'HK Karpati Farkasok ERD,Венгрия', border: true },
 
       { label: 'Meudon, Франция' },
-      { label: 'Besancon, Франция' },
+      { label: 'Besancon, Франция', border: true },
 
       { label: 'Krefelder EV 1981 DNL, Германия' },
-      { label: 'Iserlohner EC DNL, Германия' },
+      { label: 'Iserlohner EC DNL, Германия', border: true },
+
       { label: 'Odense Bulldogs, Дания' },
-      { label: 'Rødovre, Дания' },
-      { label: 'Stavanger Oilers, Норвегия' },
+      { label: 'Rødovre, Дания',border: true },
+
+      { label: 'Stavanger Oilers, Норвегия', border: true },
+
       { label: 'Sport, Финляндия' },
       { label: 'TUTO Hockey, Финляндия' },
       { label: 'Ketterä, Финляндия' },
 
     ],
   },
-];
-
-const teams = [
-  { label: 'Northeast Generals NAHL,&nbsp;США' },
-  { label: 'Bradford Rattlers GMHL,&nbsp;Канада' },
-  { label: 'Philadelphia Hockey Club NCDC,&nbsp;США' },
-  { label: 'Ville-Marie Pirates GMHL,&nbsp;Канада' },
-  { label: 'New Jersey Junior Titans NAHL,&nbsp;США' },
-  { label: 'New Tecumseth Civics GMHL,&nbsp;Канада' },
-  { label: 'Cleveland Barons U15/U16/U18&nbsp;T1EHL,&nbsp;США' },
-  { label: 'South Muskoka Shield GMHL,&nbsp;Канада' },
-  { label: 'The Hill Academy U16/U18&nbsp;Prep CSSHLE и&nbsp;ECEL, Канада и&nbsp;США' },
-  { label: 'Seahawks Hockey EHL,&nbsp;США' },
-  { label: 'New England Knights NA3HL,&nbsp;США' },
-  { label: 'New Jersey 87\'s EHL,&nbsp;США' },
-  { label: 'Okanagan Hockey Ontario U16/U18&nbsp;CSSHLE, Канада' },
-  { label: 'Northeast Generals NA3HL,&nbsp;США' },
-  { label: 'Philadelphia Hockey Club USPHL Premier,&nbsp;США' },
-  { label: 'Kalix HC U18/U20, Швеция' },
-  { label: 'Nynäshamns IF U18/U20, Швеция' },
-  { label: 'Grästorps IK U18/U20, Швеция' },
-  { label: 'Leksands IF U18/U20, Швеция' },
-  { label: 'Malmo Redhawks U18/U20, Швеция' },
-  { label: 'HC Sparta Praha U17/U20, Чехия' },
-  { label: 'BC Mlada Boleslav U17/U20, Чехия' },
-  { label: 'HC Kometa Brno U17/U20, Чехия' },
-  { label: 'MHC Martin U18/U20, Словакия' },
-  { label: 'HK Spisska Nova Ves U16/U18, Словакия' },
-  { label: 'HKM Zvolen U16/U18/U20, Словакия' },
-  { label: 'HK Nitra U16/U18/U20, Словакия' },
-  { label: 'HK Michalovce U16/U18/U20, Словакия' },
-  { label: 'Dukla Trencin U16/U18/U20, Словакия' },
-  { label: 'HK Skalica U16/U18/U20, Словакия' },
-  { label: 'ŠHK 37 Piestany U20&nbsp;2, Словакия' },
-  { label: 'HK Ruzinov 99 U20&nbsp;2, Словакия' },
-  { label: 'Pesterzsébeti Farkasok U18/U21, Венгрия' },
-  { label: 'Györi ETO HC U18/U21, Венгрия' },
-  { label: 'Vasas SC U18/U21, Венгрия' },
-  { label: 'Dunaujvaros AC U18/U21, Венгрия' },
-  { label: 'KMH Budapest U18/U21, Венгрия' },
-  { label: 'Meudon U20, Франция' },
-  { label: 'Krefelder EV 1981 DNL&nbsp;U20, Германия' },
-  { label: 'Iserlohner EC DNL U20&nbsp;2, Германия' },
-  { label: 'Ястребы Уральск U20, Казахстан' },
-  { label: 'Northumberland Stars GMHL, Канада' },
-  { label: 'Northeast Generals U16/U18 NAPHL, США' },
 ];
 
 const view2021 = [
@@ -258,33 +224,6 @@ const BreadcrumbListStructuredData = {
   `,
 };
 
-const gameSchedule = [
-  {
-    title: 'Junior',
-    content: [
-      { title: '14 июня', content: [{ title: 'Желтые — Зеленые', content: '9:00–10:45' }, { title: 'Синие — Черные', content: '11:00–12:45' }] },
-      { title: '15 июня', content: [{ title: 'Желтые — Черные', content: '9:00–10:45' }, { title: 'Зеленые — Синие', content: '11:00–12:45' }] },
-      { title: '16 июня', content: [{ title: 'Желтые — Синие', content: '9:00–10:45' }, { title: 'Зеленые — Черные', content: '11:00–12:45' }] },
-    ],
-  },
-  // {
-  //   title: 'Junior B',
-  //   content: [
-  //     { title: '14 июня', content: [{ title: 'Синие — Зеленые', content: '13:00–14:45' }, { title: 'Золотые — Серые', content: '15:00–16:45' }] },
-  //     { title: '15 июня', content: [{ title: 'Золотые — Синие', content: '13:00–14:45' }, { title: 'Серые — Зеленые', content: '15:00–16:45' }] },
-  //     { title: '16 июня', content: [{ title: 'Синие — Серые', content: '13:00–14:45' }, { title: 'Зеленые — Золотые', content: '15:00–16:45' }] },
-  //   ],
-  // },
-  {
-    title: 'Kids',
-    content: [
-      { title: '14 июня', content: [{ title: 'Белые — Красные', content: '13:00–14:45' }] },
-      { title: '15 июня', content: [{ title: 'Красные — Белые', content: '13:00–14:45' }] },
-      { title: '16 июня', content: [{ title: 'Белые — Красные', content: '13:00–14:45' }] },
-    ],
-  },
-];
-
 const heroSlides = [HeroSlide4];
 
 const CustomA = forwardRef(({ className, children, onClick, href }, ref) => {
@@ -318,7 +257,6 @@ const ClientSideRender = memo(({ children }) => {
 function PlayerViewing2021() {
   const router = useRouter();
   const formModalContext = useContext(ContactFormModalContext);
-  const [mobileTeamsVisibleNumber, setMobileTeamsVisibleNumber] = useState(5);
   const [teamsVisibleNumber, setTeamsVisibleNumber] = useState(6);
   const [goToCamp, setGoToCamp] = useState(false);
   const [desktopScoutsVisibleNumber, setDesktopScoutsVisibleNumber] = useState(3);
@@ -389,30 +327,30 @@ function PlayerViewing2021() {
     },
   ]), []);
 
-  useEffect(() => {
-    // TODO: remove after issue resolve and true lazy loading is possible https://github.com/brainhubeu/react-carousel/issues/389
-    setTimeout(() => {
-      setPhotos2020((prevPhotos) => (
-        [
-          ...prevPhotos,
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-11.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-12.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-13.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-14.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-15.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-16.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-17.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-18.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-19.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-20.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-21.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-22.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-23.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-24.jpg' },
-        ]
-      ));
-    }, 2500);
-  }, []);
+  // useEffect(() => {
+  //   // TODO: remove after issue resolve and true lazy loading is possible https://github.com/brainhubeu/react-carousel/issues/389
+  //   setTimeout(() => {
+  //     setPhotos2020((prevPhotos) => (
+  //       [
+  //         ...prevPhotos,
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-11.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-12.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-13.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-14.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-15.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-16.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-17.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-18.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-19.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-20.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-21.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-22.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-23.jpg' },
+  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-24.jpg' },
+  //       ]
+  //     ));
+  //   }, 2500);
+  // }, []);
 
   const handleEventDetailsItemClick = useCallback((e) => {
     const id = e.currentTarget.dataset?.id;
@@ -427,11 +365,6 @@ function PlayerViewing2021() {
       },
     });
   }, []);
-
-  const handleTeamsShowMoreClick = useCallback(() => {
-    const newMobileTeamsVisibleNumber = mobileTeamsVisibleNumber + 19 > teams.length ? teams.length : mobileTeamsVisibleNumber + 19;
-    setMobileTeamsVisibleNumber(newMobileTeamsVisibleNumber);
-  }, [mobileTeamsVisibleNumber]);
 
   const handleAllTeamsShowMoreClick = useCallback(() => {
     const newMobileTeamsVisibleNumber = teamsVisibleNumber + 19 > countries[2].teams.length ? countries[2].teams.length : teamsVisibleNumber + 30;
@@ -490,7 +423,7 @@ function PlayerViewing2021() {
                               timeout={450}
                               classNames="team-item"
                             >
-                              <li key={team.label} className="team-item">
+                              <li key={team.label} className={classnames('team-item', { bordered: team.border })}>
                                 <div key={team.label} className="teams-list-item-content" dangerouslySetInnerHTML={{ __html: team.label }} />
                               </li>
                             </CSSTransition>
@@ -597,7 +530,7 @@ function PlayerViewing2021() {
               — 4 команды<br /><br />
               — 15 полевых и 2 вратаря в команде<br /><br />
               Такой формат применяется в юношеских, молодёжных и профессиональных лигах Северной Америки.<br /><br />
-              На протяжении 4х лет мы совершенствовали схему проведения турнира, чтобы у каждого участника был реальный шанс получить предложение из зарубежного клуба.<br /><br />
+              На протяжении 4-х лет мы совершенствовали схему проведения турнира, чтобы у каждого участника был реальный шанс получить предложение из зарубежного клуба.<br /><br />
               Приглашённые скауты и клубы оценивают игроков в режиме онлайн во время прямой трансляции матчей на YouTube.<br /><br />
               По итогам просмотра игроки подписывают контракты с агентством и клубами.
             </div>
@@ -615,7 +548,7 @@ function PlayerViewing2021() {
                 </div>
               ))}
             </div>
-            <h2 className="h2">Статистика просмотров</h2>
+            <h2 className="h2">Статистика просмотра 2021</h2>
             <div className="view-statistics">
               {viewStatistics.map((item) => (
                 <div key={item.title} className={`outer-circle circle-${item.title}`}>
@@ -847,7 +780,7 @@ function PlayerViewing2021() {
       >
         <div className="extra-service-illustration">
           <img className="hidden-xs-sm" src="/assets/img/services/player-viewing/2022/extra-service-illustration-2.jpg" alt="Дополнительно - видеонарезка" />
-          <img className="visible-xs-sm" src="/assets/img/services/player-viewing/2021/extra-service-illustration-2-mobile-tablet.jpg" alt="Дополнительно - видеонарезка" />
+          <img className="visible-xs-sm" src="/assets/img/services/player-viewing/2022/extra-service-illustration-2-mobile-tablet.jpg" alt="Дополнительно - видеонарезка" />
         </div>
         <div className="extra-service-description">
           <div className="service-title section-title">Видеонарезка</div>
@@ -882,8 +815,8 @@ function PlayerViewing2021() {
               Срок изготовления 5&nbsp;рабочих дней
             </div>
           </div>
-          <div className="service-price">
-            <div className="service-price-title">Стоимость</div>
+          <div className="service-price second">
+            <div className="service-price-title second">Стоимость</div>
             <div className="service-price-value">5 000 ₽</div>
           </div>
         </div>

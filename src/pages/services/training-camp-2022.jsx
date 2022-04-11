@@ -23,7 +23,7 @@ const about = [
   { src: '/assets/img/services/camp-2022/about-1.png', text: '16&nbsp;полевых игроков<br />и&nbsp;3&nbsp;вратаря' },
   { src: '/assets/img/services/camp-2022/about-2.png', text: 'Наигрываем звенья<br />и&nbsp;сочетания к&nbsp;просмотру' },
   { src: '/assets/img/services/camp-2022/about-3.png', text: 'Корректировка<br />двигательных стереотипов<br />на&nbsp;земле с&nbsp;кинезиологом' },
-  { src: '/assets/img/services/camp-2022/about-1.png', text: 'Работа с&nbsp;травмами<br />и&nbsp;быстрый вход игрока<br />в&nbsp;форму' },
+  { src: '/assets/img/services/camp-2022/about-4.png', text: 'Работа с&nbsp;травмами<br />и&nbsp;быстрый вход игрока<br />в&nbsp;форму' },
 ];
 
 const coaches = [

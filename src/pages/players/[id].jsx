@@ -217,7 +217,7 @@ export async function getStaticPaths() {
       { params: { id: 'korotaev-iliya' } },
       { params: { id: 'levitskiy-stepan' } },
       { params: { id: 'mullagaliev-amir' } },
-      { params: { id: 'pochuev-daniil' } },
+      { params: { id: 'pochuev-danil' } },
       { params: { id: 'rudskoy-egor' } },
       { params: { id: 'sayamov-daniil' } },
       { params: { id: 'sinodkin-denis' } },
