@@ -8,6 +8,7 @@ import OrderCallButton from '../Button/OrderCallButton';
 import FixedCarousel from '../FixedCarousel';
 import { ContactFormModalContext } from '../Root/Root';
 import { HeroSlide1, HeroSlide4 } from './slides';
+import classnames from 'classnames';
 
 const heroSectionSlides = [
   HeroSlide1,
@@ -45,7 +46,7 @@ function HeroSliderSection({ initialSlide, slides }) {
       <div className="full-screen-slider" ref={fullScreenSliderWrapRef}>
         <FixedCarousel value={slide} onChange={setSlide} animationSpeed={500} autoPlay={slides.length > 1 ? 4500 : undefined} infinite={slides.length > 1} dots={slides.length > 1}>
           {slides.map(({ id, title, desc, link }) => (
-            <div className={`slide-content slide-${id}`} key={id} onClick={onSlideClick} data-id={id}>
+            <div className={classnames(`slide-content slide-${id}`, { main: router.pathname === '/' })} key={id} onClick={onSlideClick} data-id={id}>
               <div className="container">
                 <div className="hero-slide-wrap">
                   {id === 5 && <p className="section-title">Москва, ЛД&nbsp;«Морозово» 6–18&nbsp;июня</p>}

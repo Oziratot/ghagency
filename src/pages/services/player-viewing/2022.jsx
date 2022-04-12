@@ -41,9 +41,9 @@ const details = [
 ];
 
 const statistics = [
-  { title: '70%', text: 'Участников получают приглашения в команды' },
-  { title: '43 000 $', text: 'Мы&nbsp;сэкономили участникам просмотра 2021&nbsp;за&nbsp;счёт скидок на&nbsp;взнос в&nbsp;команды и&nbsp;стипендий' },
-  { title: '30+', text: 'Положительных отзывов клиентов на Kidshockey' },
+  { title: '70%', text: 'Участников получают приглашения в&nbsp;команды' },
+  { title: '43&nbsp;000&nbsp;$', text: 'Мы&nbsp;сэкономили участникам просмотра 2021&nbsp;за&nbsp;счёт скидок на&nbsp;взнос в&nbsp;команды и&nbsp;стипендий' },
+  { title: '30+', text: 'Положительных отзывов клиентов на&nbsp;Kidshockey' },
 ];
 
 const viewStatistics = [
@@ -56,11 +56,11 @@ const viewStatistics = [
 const scouts = [
   { name: 'Шон Уэрф', photo: '/assets/img/services/player-viewing/scouts/scout-2.jpg', desc: 'Генеральный менеджер Bradford Rattlers GMHL, Канада' },
   { name: 'Коди Ганье', photo: '/assets/img/services/player-viewing/scouts/scout-1.jpg', desc: 'Главный тренер Northeast Generals U16, США<br />Ассистент главного тренера Northeast Generals NAHL, США<br />Програмный директор Northeast Generals Academy' },
-  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-17.png', desc: 'Главный тренер Cleveland Barons U18 T1EHL, США' },
+  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-17.png', desc: 'Главный тренер Cleveland Barons U18 T1EHL, США<br />Скаут Lincoln Stars USHL, США' },
   { name: 'Адам Бортоломей', photo: '/assets/img/services/player-viewing/scouts/scout-3.jpg', desc: 'Главный тренер Philadelphia Hockey Club USPHL Premier, США<br />Ассистент главного тренера Philadelphia Hockey Club NCDC, США' },
   { name: 'Марк Андре-Карон', photo: '/assets/img/services/player-viewing/scouts/scout-4.jpg', desc: 'Генеральный менеджер Ville-Marie Pirates GMHL, Канада' },
   { name: 'Глен Кэмпбэл', photo: '/assets/img/services/player-viewing/scouts/scout-13.png', desc: 'Владелец Northumberland Stars GMHL, Канада' },
-  { name: 'Райан Уитсон', photo: '/assets/img/services/player-viewing/scouts/scout-14.png', desc: 'Главный тренер Cleveland Barons U14 T1EHL, США' },
+  { name: 'Райан Уитсон', photo: '/assets/img/services/player-viewing/scouts/scout-14.png', desc: 'Главный тренер Cleveland Barons U14 T1EHL, США,<br />Скаут Lone Star Brahmas NAHL, США' },
   { name: 'Райан Вуд', photo: '/assets/img/services/player-viewing/scouts/scout-15.png', desc: 'Главный тренер New Tecumseth Civics GMHL, Канада' },
   { name: 'Дуг Орр', photo: '/assets/img/services/player-viewing/scouts/scout-16.png', desc: 'Главный тренер York Simcoe Express U14&nbsp;AAA ETAHL, Канада, Скаут Gatineau Olympiques QMJHL, Канада' },
 ];
@@ -262,7 +262,6 @@ function PlayerViewing2021() {
   const [desktopScoutsVisibleNumber, setDesktopScoutsVisibleNumber] = useState(3);
   const [photos2020, setPhotos2020] = useState(view2021);
   const [activeScoutPanels, setActiveScoutPanels] = useState([]);
-  const [activeScheduleMobilePanels, setActiveScheduleMobilePanels] = useState([]);
   const [activeFaqItems, setActiveFaqItems] = useState({ 0: true });
   const [hockeyCampModalActive, setHockeyCampModalActive] = useState(false);
   const [videoModalActive, setVideoModalActive] = useState(false);
@@ -371,6 +370,10 @@ function PlayerViewing2021() {
     setTeamsVisibleNumber(newMobileTeamsVisibleNumber);
   }, [teamsVisibleNumber]);
 
+  const handleShowLessClick = useCallback(() => {
+    setTeamsVisibleNumber(6);
+  }, []);
+
   const handleScoutsShowAllClick = useCallback(() => setDesktopScoutsVisibleNumber(scouts.length), []);
 
   return (
@@ -439,12 +442,13 @@ function PlayerViewing2021() {
                               timeout={450}
                               classNames="team-item"
                             >
-                              <li key={team.label} className="team-item">
+                              <li key={team.label} className={classnames('team-item', { bordered: team.border })}>
                                 <div key={team.label} className="teams-list-item-content" dangerouslySetInnerHTML={{ __html: team.label }} />
                               </li>
                             </CSSTransition>
                           ))}
                         </TransitionGroup>
+                        <div onClick={() => handleTeamsClick(item.id)} className={classnames('show-less-mobile', { active: !!teamsList[item.id] })}>Свернуть</div>
                       </ul>
                     </div>
                   ))}
@@ -453,6 +457,12 @@ function PlayerViewing2021() {
                   <div className="show-more-block hidden-xs">
                     <button className="show-more-btn" type="button" onClick={handleAllTeamsShowMoreClick}>Показать еще</button>
                     <DoubleArrowDownIcon className="show-more-icon" onClick={handleAllTeamsShowMoreClick} />
+                  </div>
+                </CSSTransition>
+                <CSSTransition in={teamsVisibleNumber >= countries[2].teams.length} classNames="show-more-block" timeout={300} unmountOnExit>
+                  <div className="show-more-block hidden-xs">
+                    <DoubleArrowDownIcon className="show-more-icon less" onClick={handleShowLessClick} />
+                    <button className="show-more-btn" type="button" onClick={handleShowLessClick}>Свернуть</button>
                   </div>
                 </CSSTransition>
               </div>
@@ -542,8 +552,8 @@ function PlayerViewing2021() {
             <h2 className=" h2 section-title">Почему нужно участвовать<br />в&nbsp;нашем просмотре</h2>
             <div className="statistics">
               {statistics.map((item) => (
-                <div className="statistics-container">
-                  <p className="statistics-title">{item.title}</p>
+                <div key={item.text} className="statistics-container">
+                  <div className="statistics-title" dangerouslySetInnerHTML={{ __html: item.title }} />
                   <div className="statistics-text" dangerouslySetInnerHTML={{ __html: item.text }} />
                 </div>
               ))}
@@ -752,7 +762,7 @@ function PlayerViewing2021() {
               <div className="camp-schedule-address">
                 <div className="address-title with-overflow">
                   Адрес:
-                  <div className="address-content">&nbsp;лд&nbsp;«Морозово», ул.&nbsp;Новоастаповская, д.&nbsp;5&nbsp;с&nbsp;2</div>
+                  <div className="address-content">&nbsp;лд&nbsp;«Морозово», ул.&nbsp;Новоостаповская, д.&nbsp;5&nbsp;с&nbsp;2</div>
                 </div>
               </div>
             </div>

@@ -28,29 +28,29 @@ const about = [
 
 const coaches = [
   { name: 'Илья Винокуров', photo: '/assets/img/services/camp-2022/coaches/coach-1.jpg', desc: '• Тренер по&nbsp;ледовой подготовке<br />• Тренерский стаж с&nbsp;2019&nbsp;года<br />• Высшее педагогическое образование НГГУ, специальность «Физическая Культура и&nbsp;Спорт»<br />• Специалист по&nbsp;технической подготовке на&nbsp;льду<br />• Работал с&nbsp;хоккеистами высших молодёжных и&nbsp;профессиональных лиг&nbsp;США, Канады и&nbsp;Европы.' },
-  { name: 'Егор Гришатов', photo: '/assets/img/services/camp-2022/coaches/coach-2.jpg', desc: '• Тренер по&nbsp;ледовой подготовке<br />• Тренерский стаж с&nbsp;2016&nbsp;года<br />• Высшее педагогическое образование РГСУ, специальность «Физическая культура и&nbsp;спорт»<br />• Основатель спортивной школы Grishatov Hockey<br />• Основатель хоккейного агентства Grishatov Hockey Agency.' },
+  // { name: 'Егор Гришатов', photo: '/assets/img/services/camp-2022/coaches/coach-2.jpg', desc: '• Тренер по&nbsp;ледовой подготовке<br />• Тренерский стаж с&nbsp;2016&nbsp;года<br />• Высшее педагогическое образование РГСУ, специальность «Физическая культура и&nbsp;спорт»<br />• Основатель спортивной школы Grishatov Hockey<br />• Основатель хоккейного агентства Grishatov Hockey Agency.' },
   { name: 'Дмитрий Михин', photo: '/assets/img/services/camp-2022/coaches/coach-3.jpg', desc: '• Тренер по&nbsp;ледовой подготовке<br />• Тренерский стаж с&nbsp;2014&nbsp;года<br />• Высшее педагогическое образование РГУФКСМиТ, специальность «Тренер по&nbsp;хоккею с&nbsp;шайбой»<br />• Специалист по&nbsp;технической и&nbsp;функциональной подготовке на&nbsp;льду<br />• Работал с&nbsp;хоккеистами высших молодёжных и&nbsp;профессиональных лиг&nbsp;США, Канады и&nbsp;Европы.' },
-  // { name: 'Александр Юрин', photo: '/assets/img/services/camp-2022/coaches/coach-4.jpg', desc: '• Тренер по&nbsp;физической подготовке<br />• Тренерский стаж с&nbsp;2008&nbsp;года<br />• Образование National Academy of Sport Medicine USA<br />• Специалист по&nbsp;функциональной подготовке и&nbsp;ортопедическому контролю спортсменов<br />• Основатель спортивного центра диагностики, коррекции и&nbsp;восстановления D.R.E.A.M.' },
+  { name: 'Александр Юрин', photo: '/assets/img/services/camp-2022/coaches/coach-4.jpg', desc: '• Тренер по&nbsp;физической подготовке<br />• Тренерский стаж с&nbsp;2008&nbsp;года<br />• Образование National Academy of Sport Medicine USA<br />• Специалист по&nbsp;функциональной подготовке и&nbsp;ортопедическому контролю спортсменов<br />• Основатель спортивного центра диагностики, коррекции и&nbsp;восстановления D.R.E.A.M.' },
   // { name: 'Олег Гришатов', photo: '/assets/img/services/camp-2022/coaches/coach-5.jpg', desc: '• Тренер по&nbsp;физической подготовке<br />• Действующий игрок канадской команды Lakehead University, USport<br />• Лучший защитник канадской команды Bradford Rattlers, GMHL в&nbsp;сезоне 19–20&nbsp;и&nbsp;21–22<br />• Сертифицированный тренер американской ассоциации NSCA по&nbsp;направлению STRENGTH AND CONDITIONING SPECIALIST (CSCS).' },
 ];
 
 const view2021 = [
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-1.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-2.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-3.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-4.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-5.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-6.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-7.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-8.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-9.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-10.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-11.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-12.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-13.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-14.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-15.jpg' },
-  { src: '/assets/img/services/player-viewing/view2021/gha-2020-view-16.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-1.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-2.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-3.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-4.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-5.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-6.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-7.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-8.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-9.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-10.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-11.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-12.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-13.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-14.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-15.jpg' },
+  { src: '/assets/img/services/camp-2022/2021/camp-16.jpg' },
 ];
 
 const BreadcrumbListStructuredData = {
@@ -153,31 +153,6 @@ function TrainingCamp2022() {
     },
   ]), []);
 
-  useEffect(() => {
-    // TODO: remove after issue resolve and true lazy loading is possible https://github.com/brainhubeu/react-carousel/issues/389
-    setTimeout(() => {
-      setPhotos2020((prevPhotos) => (
-        [
-          ...prevPhotos,
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-11.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-12.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-13.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-14.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-15.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-16.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-17.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-18.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-19.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-20.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-21.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-22.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-23.jpg' },
-          { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-24.jpg' },
-        ]
-      ));
-    }, 2500);
-  }, []);
-
   return (
     <>
       <Head
@@ -212,14 +187,14 @@ function TrainingCamp2022() {
                   ))}
                 </ul>
               </div>
-              <VideoSlider player items={video} />
+              <VideoSlider className="camp-video" player items={video} />
             </div>
           </div>
         </section>
 
         <section className="section section-scouts" id="scouts">
           <div className="container">
-            <h2 className="h2 section-title with-overflow">Тренеры</h2>
+            <h2 className="h2 section-title with-overflow coaches">Тренеры</h2>
             <ul className="scouts-list hidden-xs">
               <TransitionGroup component={null}>
                 {coaches.slice(0, desktopScoutsVisibleNumber).map(({ name, photo, desc }) => (
@@ -354,7 +329,7 @@ function TrainingCamp2022() {
         </section>
 
         <section className="section section-last-view">
-          <h2 className="h2 section-title with-overflow">Фотографии просмотра 2021</h2>
+          <h2 className="h2 section-title with-overflow">Фотографии лагеря 2021</h2>
           <PhotoSlider items={photos2020} albumTitle="Просмотр 2020" />
         </section>
 

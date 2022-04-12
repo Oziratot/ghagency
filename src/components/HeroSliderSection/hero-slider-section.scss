@@ -116,8 +116,16 @@
       //background-color: #FFFFFF;
       background: url('/assets/img/hero/hero-5.jpg') center center / cover no-repeat;
 
+      &.main {
+        background: url('/assets/img/hero/hero-5-main.jpg') center center / cover no-repeat;
+      }
+
       @include mobile {
         background: url('/assets/img/hero/hero-5-mobile.jpg') center center / cover no-repeat;
+
+        &.main {
+          background: url('/assets/img/hero/hero-5-main-mobile.jpg') center center / cover no-repeat;
+        }
       }
 
       &:before {

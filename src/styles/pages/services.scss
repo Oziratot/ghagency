@@ -1749,6 +1749,16 @@
           }
         }
       }
+
+      .camp-video {
+        transform: scale(1.46);
+        margin-top: 60px;
+
+        @include tablet {
+          margin-top: 0;
+          transform: scale(1);
+        }
+      }
     }
 
     .section-scouts {
@@ -1965,16 +1975,31 @@
       }
 
       .teams-list-all {
-        padding-left: 20px;
+        padding-left: 30px;
 
         @include mobile {
           max-height: 0;
           overflow: hidden;
-          transition: max-height $trans-slow;
+          transition: max-height $trans-slow, padding-bottom $trans-slow;
 
           &.active {
-            max-height: 1500px;
+            max-height: 1600px;
+            padding-bottom: 55px;
           }
+        }
+      }
+
+      .show-less-mobile {
+        color: #00B6F0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity $trans;
+
+        &.active {
+          opacity: 1;
         }
       }
 
@@ -2001,6 +2026,7 @@
       .teams {
         flex: 1;
         margin-right: 20px;
+        position: relative;
 
         &:last-of-type {
           margin-left: 0;
@@ -2010,7 +2036,8 @@
           border-radius: 12px;
           box-shadow: 2px 2px 5px rgba(31, 30, 36, 0.15);
           margin-bottom: 20px;
-          padding: 10px 0;
+          padding: 10px 30px 10px 15px;
+          width: 100%;
         }
       }
 
@@ -2172,6 +2199,18 @@
     .section-scouts {
       padding: 0 0 110px;
       background-color: #F0F1F6;
+
+      .section-title {
+        &.coaches {
+          @include tablet {
+            //left: calc(50% - 150px);
+          }
+
+          @include mobile {
+            left: calc(50% - 125px);
+          }
+        }
+      }
 
       @include laptop {
         padding-top: 0;
@@ -2479,6 +2518,10 @@
           padding: 56px 22px;
           border-right: 1px solid #C5C5C5;
           margin-bottom: 110px;
+
+          &:last-of-type {
+            border: none;
+          }
 
           @include mobile {
             border: none;
@@ -3692,7 +3735,7 @@
     }
   }
   .service-title {
-    padding-top: 50px;
+    padding-top: 15px;
     margin-bottom: 30px;
     font-size: 28px;
     line-height: 34px;
@@ -3728,7 +3771,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
+    padding: 15px 50px;
     background-color: #FFFFFF;
     border-bottom-right-radius: 12px;
     font-size: 30px;
@@ -3783,9 +3826,10 @@
     }
   }
   .service-price-value {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.4;
     color: #474B54;
+    white-space: nowrap;
 
     @include mobile {
       font-size: 18px;
@@ -3826,7 +3870,7 @@
     .camp-target {
       font-size: 16px;
       line-height: 24px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
 
       @include mobile {
         font-size: 13px;
@@ -3837,7 +3881,7 @@
     .camp-info {
       font-size: 18px;
       line-height: 27px;
-      margin-bottom: 15px;
+      margin-bottom: 7px;
 
       @include mobile {
         font-size: 14px;
@@ -3857,7 +3901,7 @@
       }
     }
     .camp-dates {
-      margin-bottom: 25px;
+      margin-bottom: 10px;
       @include mobile {
         margin-bottom: 20px;
       }
@@ -3885,6 +3929,8 @@
       flex-direction: column;
 
       @include mobile {
+        flex-direction: row;
+        justify-content: center;
         text-align: left;
         margin-bottom: 20px;
       }
@@ -3948,7 +3994,7 @@
     width: 50%;
     font-size: 18px;
     line-height: 27px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
     //@include tablet {
     //  width: 100%;
@@ -3974,17 +4020,11 @@
   }
   .item-content {
     margin-top: 1.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   .item-content-element {
-    width: min-content;
     white-space: nowrap;
-    text-align: left;
     font-size: 16px;
     line-height: 24px;
-    margin-left: 23%;
 
     @include mobile {
       margin: 0 auto;
@@ -4014,6 +4054,7 @@
   .address-content {
     font-size: 16px;
     line-height: 27px;
+    text-align: left;
 
     @include mobile {
       font-size: 14px;

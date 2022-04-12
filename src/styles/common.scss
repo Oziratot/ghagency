@@ -473,6 +473,11 @@ body {
   cursor: pointer;
   will-change: transform;
   transition: transform $trans;
+
+  &.less {
+    transform: rotate(180deg);
+    margin-bottom: 20px;
+  }
 }
 
 .section-blog-slider {
