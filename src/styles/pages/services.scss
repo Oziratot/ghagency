@@ -1123,6 +1123,36 @@
     }
   }
 
+  .last-view-slider {
+
+    .BrainhubCarouselItem--active {
+      .photo-slider-item {
+        pointer-events: auto;
+        transform: scale(1);
+        opacity: 1;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    .photo-slider-item {
+      opacity: 1;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: rgba(10, 17, 34, 0.7);
+      }
+    }
+  }
+
   .section-reviews {
     padding: 0 0 140px;
 
@@ -1805,6 +1835,11 @@
     }
 
     .section-price {
+      .current-price {
+        font-size: 36px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
       .price-desc-blocks {
         display: flex;
 
@@ -1826,12 +1861,43 @@
         }
       }
     }
+
+    .section-last-view {
+      .last-view-slider {
+        .BrainhubCarouselItem--active {
+          .photo-slider-item {
+            pointer-events: auto;
+            transform: scale(1);
+            opacity: 1;
+
+            &:after {
+              display: none;
+            }
+          }
+        }
+
+        .photo-slider-item {
+          opacity: 1;
+          position: relative;
+
+          &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background: rgba(10, 17, 34, 0.7);
+          }
+        }
+      }
+    }
   }
 
   &.page-services-player-viewing-2021, &.page-services-training-camp-2022 {
     .section-event-details {
-      background-color: #181E28;
-      padding: 50px 0;
+      background-color: #252D3A;
+      padding: 66px 0;
 
       @include mobile {
         padding: 35px 0;
@@ -1882,17 +1948,20 @@
         }
       }
 
+      .map-icon {
+        transform: scale(0.65);
+      }
+
       .details-item-value {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 72px;
+        font-size: 50px;
         font-weight: 700;
-        line-height: 115px;
-        height: 115px;
+        line-height: 80px;
         text-align: center;
         color: #FFFFFF;
-        margin: 0 auto 20px;
+        margin: 0 auto 10px;
         transition: color $trans;
 
         @include laptop {}
@@ -1920,13 +1989,13 @@
         }
       }
       .details-item-label {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 500;
-        line-height: 32px;
+        line-height: 1.5;
         color: #00B6F0;
 
         @include laptop {
-          font-size: 20px;
+          font-size: 18px;
         }
 
         @include tablet {
@@ -1949,6 +2018,9 @@
       //@include mobile {
       //  padding: 15px 0 0;
       //}
+      @include mobile {
+        padding-bottom: 15px;
+      }
 
       .section-title {
         max-width: 900px;
@@ -1958,6 +2030,7 @@
         @include laptop {
           max-width: 825px;
         }
+
       }
 
       .teams-wrap {
@@ -1975,7 +2048,7 @@
       }
 
       .teams-list-all {
-        padding-left: 30px;
+        padding-left: 20px;
 
         @include mobile {
           max-height: 0;
@@ -2038,6 +2111,10 @@
           margin-bottom: 20px;
           padding: 10px 30px 10px 15px;
           width: 100%;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
         }
       }
 
@@ -2107,7 +2184,8 @@
       }
 
       .team-item {
-        list-style-type: disc;
+        //list-style-type: disc;
+        padding-left: 10px;
 
         &.bordered {
           padding-bottom: 20px;
@@ -2139,7 +2217,7 @@
       }
 
       .teams-list-item-content {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 16px;
         line-height: 24px;
         color: #474B54;
@@ -2199,6 +2277,12 @@
     .section-scouts {
       padding: 0 0 110px;
       background-color: #F0F1F6;
+
+      .collapsible-scout-desc {
+        &.full {
+          padding-bottom: 0;
+        }
+      }
 
       .section-title {
         &.coaches {
@@ -2444,8 +2528,8 @@
         color: #474B54;
 
         @include mobile {
-          font-size: 13px;
-          line-height: 19px;
+          font-size: 14px;
+          line-height: 21px;
         }
       }
 
@@ -2889,6 +2973,11 @@
           margin: 0 -16px;
         }
 
+        .slider-arrow-right,
+        .slider-arrow-left {
+          background-color: #F0F1F6;
+        }
+
         //BrainhubCarousel__arrow--disable BrainhubCarousel__custom-arrowLeft
 
         .slide-wrap {
@@ -2951,7 +3040,7 @@
         }
 
         .player-new-role {
-          padding: 8px 11px;
+          padding: 8px 8px;
           line-height: 26px;
 
           @include laptop {
@@ -2964,6 +3053,10 @@
             font-size: 14px;
             line-height: 24px;
             margin-bottom: 20px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
 
           @include mobile-small {
@@ -3066,8 +3159,8 @@
       }
 
       .price-includes-list {
-        padding-bottom: 50px;
-        margin-bottom: 50px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
         border-bottom: 1px solid #E2E2E2;
 
         @include tablet {
@@ -3115,9 +3208,9 @@
 
       .current-price {
         margin-bottom: 20px;
-        font-size: 48px;
+        font-size: 30px;
         font-weight: bold;
-        line-height: 58px;
+        line-height: 36px;
 
         @include tablet {
           margin-bottom: 24px;
@@ -3209,7 +3302,6 @@
           font-size: 20px;
           font-weight: 500;
           line-height: 60px;
-          text-transform: uppercase;
           text-align: center;
           color: #FFFFFF;
           background-color: $primary;
@@ -3262,10 +3354,11 @@
 
       .extra-service-image {
         position: relative;
-        padding-bottom: 46.3%;
+        padding-bottom: 54.3%;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
         overflow: hidden;
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
 
         img {
           position: absolute;
@@ -3879,8 +3972,8 @@
       }
     }
     .camp-info {
-      font-size: 18px;
-      line-height: 27px;
+      font-size: 16px;
+      line-height: 24px;
       margin-bottom: 7px;
 
       @include mobile {
@@ -3889,17 +3982,28 @@
         margin-bottom: 20px;
       }
     }
-    .camp-dates,
-    .camp-coaches-title {
-      font-size: 18px;
-      line-height: 27px;
-      font-weight: 500;
+    .camp-dates {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
 
       @include mobile {
         font-size: 14px;
         line-height: 21px;
       }
     }
+
+    .camp-coaches-title {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+
     .camp-dates {
       margin-bottom: 10px;
       @include mobile {
@@ -3907,7 +4011,6 @@
       }
     }
     .camp-coaches-title {
-      text-transform: uppercase;
       margin-bottom: 5px;
 
       @include mobile {
@@ -3952,12 +4055,12 @@
       }
     }
     .camp-coach-name {
-      font-size: 20px;
-      line-height: 30px;
+      font-size: 16px;
+      line-height: 24px;
       margin: 0 20px;
 
       @include laptop {
-        margin: 0 16px;
+        margin: 8px 16px 0;
       }
 
       @include mobile {
@@ -3973,10 +4076,9 @@
     text-align: center;
   }
   .camp-schedule-title {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 27px;
-    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
     margin-bottom: 15px;
 
     @include mobile {
@@ -4035,9 +4137,8 @@
   }
   .address-title {
     font-size: 16px;
-    line-height: 27px;
+    line-height: 24px;
     font-weight: 500;
-    text-transform: uppercase;
     background-color: #FFFFFF;
     display: flex;
     border-radius: 6px;
@@ -4051,9 +4152,14 @@
       line-height: 21px;
     }
   }
+
+  .address {
+    font-weight: 500;
+  }
+
   .address-content {
     font-size: 16px;
-    line-height: 27px;
+    line-height: 24px;
     text-align: left;
 
     @include mobile {

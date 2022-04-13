@@ -35,9 +35,9 @@ import Button from '../../../components/Button';
 
 const details = [
   { id: '3-days-3-games', value: '3', label: 'Игры за&nbsp;3&nbsp;дня' },
-  { id: 'scouts', value: '9', label: 'Скаутов' },
+  { id: 'scouts', value: '9', label: 'Зарубежных скаутов' },
   { id: '50-usa-and-europe-teams', value: '50+', label: 'Команд США, Канады&nbsp;и&nbsp;Европы' },
-  { id: 'address', value: <MapPointIcon />, label: 'Москва ЛД&nbsp;«Морозово»' },
+  { id: 'address', value: <MapPointIcon className="map-icon" />, label: 'Москва ЛД&nbsp;«Морозово»' },
 ];
 
 const statistics = [
@@ -48,7 +48,7 @@ const statistics = [
 
 const viewStatistics = [
   { title: '75', text: 'Участников просмотра' },
-  { title: '52', text: 'Получили приглашения в команду' },
+  { title: '52', text: 'Получили приглашения в&nbsp;команду' },
   { title: '29', text: 'Игроков уехали за границу' },
   { title: '6', text: 'Игроков получают зарплату' },
 ];
@@ -71,14 +71,14 @@ const countries = [
     label: 'Команды США',
     photo: '/assets/img/services/player-viewing/2022/teams-usa.png',
     teams: [
-      { label: 'Lincoln Stars USHL', border: true },
-      { label: 'Lone Star Brahmas NAHL' },
-      { label: 'Northeast Generals NAHL', border: true },
-      { label: 'Northeast Generals NA3HL', border: true },
-      { label: 'Northeast Generals NAPHL', border: true },
-      { label: 'Cleveland Barons&nbsp;T1EHL', border: true },
-      { label: 'Philadelphia Hockey Club NCDC', border: true },
-      { label: 'Philadelphia Hockey Club USPHL Premier' },
+      { label: '&#8226; Lincoln Stars USHL', border: true },
+      { label: '&#8226; Lone Star Brahmas NAHL' },
+      { label: '&#8226; Northeast Generals NAHL', border: true },
+      { label: '&#8226; Northeast Generals NA3HL', border: true },
+      { label: '&#8226; Northeast Generals NAPHL', border: true },
+      { label: '&#8226; Cleveland Barons&nbsp;T1EHL', border: true },
+      { label: '&#8226; Philadelphia Hockey Club NCDC', border: true },
+      { label: '&#8226; Philadelphia Hockey Club USPHL Premier' },
     ],
   },
 {
@@ -86,18 +86,18 @@ const countries = [
     label: 'Команды Канады',
     photo: '/assets/img/services/player-viewing/2022/teams-canda.png',
     teams: [
-      { label: 'Gatineau Olympiques QMJHL', border: true },
-      { label: 'Bradford Rattlers GMHL' },
-      { label: 'Ville-Marie Pirates GMHL' },
-      { label: 'New Tecumseth Civics GMHL' },
-      { label: 'Northumberland Stars GMHL', border: true },
-      { label: 'York Simcoe Express ETAHL', border: true },
-      { label: 'Toronto Red Wings GTHL' },
-      { label: 'Toronto Titans GTHL' },
-      { label: 'Vaughan Kings GTHL' },
-      { label: 'Don Mills Flyers GTHL' },
-      { label: 'North York Rangers GTHL' },
-      { label: 'Mississauga Senators GTHL' },
+      { label: '&#8226; Gatineau Olympiques QMJHL', border: true },
+      { label: '&#8226; Bradford Rattlers GMHL' },
+      { label: '&#8226; Ville-Marie Pirates GMHL' },
+      { label: '&#8226; New Tecumseth Civics GMHL' },
+      { label: '&#8226; Northumberland Stars GMHL', border: true },
+      { label: '&#8226; York Simcoe Express ETAHL', border: true },
+      { label: '&#8226; Toronto Red Wings GTHL' },
+      { label: '&#8226; Toronto Titans GTHL' },
+      { label: '&#8226; Vaughan Kings GTHL' },
+      { label: '&#8226; Don Mills Flyers GTHL' },
+      { label: '&#8226; North York Rangers GTHL' },
+      { label: '&#8226; Mississauga Senators GTHL' },
     ],
   },
 {
@@ -105,45 +105,36 @@ const countries = [
     label: 'Команды Европы',
     photo: '/assets/img/services/player-viewing/2022/teams-eu.png',
     teams: [
-      { label: 'Grästorps IK, Швеция' },
-      { label: 'Leksands IF, Швеция' },
-      { label: 'Malmo Redhawks, Швеция', border: true },
-
-      { label: 'BC Mlada Boleslav, Чехия' },
-      { label: 'HC Kometa Brno, Чехия', border: true },
-
-      { label: 'MHC Martin, Словакии' },
-      { label: 'HK Nitra, Словакия' },
-      { label: 'HK Skalica, Словакия' },
-      { label: 'ŠHK 37 Piestany, Словакия' },
-      { label: 'HK Ruzinov 99, Словакия', border: true },
-
-      { label: 'Pesterzsébeti Farkasok, Венгрия' },
-      { label: 'Györi ETO HC, Венгрия' },
-      { label: 'Vasas SC, Венгрия' },
-      { label: 'Dunaujvaros AC, Венгрия' },
-      { label: 'Debrecen, Венгрия' },
-      { label: 'MAC, Венгрия' },
-      { label: 'Fehervar AV19, Венгрия' },
-      { label: 'Miskolc, Венгрия' },
-      { label: 'HC Lehel,Венгрия' },
-      { label: 'HK Karpati Farkasok ERD,Венгрия', border: true },
-
-      { label: 'Meudon, Франция' },
-      { label: 'Besancon, Франция', border: true },
-
-      { label: 'Krefelder EV 1981 DNL, Германия' },
-      { label: 'Iserlohner EC DNL, Германия', border: true },
-
-      { label: 'Odense Bulldogs, Дания' },
-      { label: 'Rødovre, Дания',border: true },
-
-      { label: 'Stavanger Oilers, Норвегия', border: true },
-
-      { label: 'Sport, Финляндия' },
-      { label: 'TUTO Hockey, Финляндия' },
-      { label: 'Ketterä, Финляндия' },
-
+      { label: '&#8226; Grästorps IK, Швеция' },
+      { label: '&#8226; Leksands IF, Швеция' },
+      { label: '&#8226; Malmo Redhawks, Швеция', border: true },
+      { label: '&#8226; BC Mlada Boleslav, Чехия' },
+      { label: '&#8226; HC Kometa Brno, Чехия', border: true },
+      { label: '&#8226; MHC Martin, Словакии' },
+      { label: '&#8226; HK Nitra, Словакия' },
+      { label: '&#8226; HK Skalica, Словакия' },
+      { label: '&#8226; ŠHK 37 Piestany, Словакия' },
+      { label: '&#8226; HK Ruzinov 99, Словакия', border: true },
+      { label: '&#8226; Pesterzsébeti Farkasok, Венгрия' },
+      { label: '&#8226; Györi ETO HC, Венгрия' },
+      { label: '&#8226; Vasas SC, Венгрия' },
+      { label: '&#8226; Dunaujvaros AC, Венгрия' },
+      { label: '&#8226; Debrecen, Венгрия' },
+      { label: '&#8226; MAC, Венгрия' },
+      { label: '&#8226; Fehervar AV19, Венгрия' },
+      { label: '&#8226; Miskolc, Венгрия' },
+      { label: '&#8226; HC Lehel,Венгрия' },
+      { label: '&#8226; HK Karpati Farkasok ERD,Венгрия', border: true },
+      { label: '&#8226; Meudon, Франция' },
+      { label: '&#8226; Besancon, Франция', border: true },
+      { label: '&#8226; Krefelder EV 1981 DNL, Германия' },
+      { label: '&#8226; Iserlohner EC DNL, Германия', border: true },
+      { label: '&#8226; Odense Bulldogs, Дания' },
+      { label: '&#8226; Rødovre, Дания', border: true },
+      { label: '&#8226; Stavanger Oilers, Норвегия', border: true },
+      { label: '&#8226; Sport, Финляндия' },
+      { label: '&#8226; TUTO Hockey, Финляндия' },
+      { label: '&#8226; Ketterä, Финляндия' },
     ],
   },
 ];
@@ -663,7 +654,7 @@ function PlayerViewing2021() {
 
         <section className="section section-last-view">
           <h2 className="h2 section-title with-overflow">Фотографии просмотра 2021</h2>
-          <PhotoSlider items={photos2020} albumTitle="Просмотр 2020" />
+          <PhotoSlider className="last-view-slider" items={photos2020} albumTitle="Просмотр 2020" />
         </section>
 
         <section className="section section-faq">
@@ -761,7 +752,7 @@ function PlayerViewing2021() {
               </ul>
               <div className="camp-schedule-address">
                 <div className="address-title with-overflow">
-                  Адрес:
+                  <div className="address">Адрес:</div>
                   <div className="address-content">&nbsp;лд&nbsp;«Морозово», ул.&nbsp;Новоостаповская, д.&nbsp;5&nbsp;с&nbsp;2</div>
                 </div>
               </div>

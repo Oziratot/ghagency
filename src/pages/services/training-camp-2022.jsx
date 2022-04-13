@@ -330,7 +330,7 @@ function TrainingCamp2022() {
 
         <section className="section section-last-view">
           <h2 className="h2 section-title with-overflow">Фотографии лагеря 2021</h2>
-          <PhotoSlider items={photos2020} albumTitle="Просмотр 2020" />
+          <PhotoSlider className="last-view-slider" items={photos2020} albumTitle="Просмотр 2020" />
         </section>
 
         <section className="section section-faq">
