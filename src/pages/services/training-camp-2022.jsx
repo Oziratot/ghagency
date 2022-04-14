@@ -282,6 +282,8 @@ function TrainingCamp2022() {
             <h2 className="h2 section-title">Стоимость лагеря</h2>
             <div className="price-desc-blocks">
               <div className="price-desc-block">
+                <div className="price-includes-duration">Лагерь на 6 дней</div>
+                <div className="price-includes-dates">6–12 июня</div>
                 <p className="price-includes-title">В&nbsp;стоимость включено:</p>
                 <ul className="price-includes-list">
                   <li className="price-includes-list-item">—&nbsp;5&nbsp;тренировочных и&nbsp;1&nbsp;игровой день</li>
@@ -303,6 +305,8 @@ function TrainingCamp2022() {
                 </div>
               </div>
               <div className="price-desc-block">
+                <div className="price-includes-duration">Лагерь на 12 дней</div>
+                <div className="price-includes-dates">6–18 июня</div>
                 <p className="price-includes-title">В&nbsp;стоимость включено:</p>
                 <ul className="price-includes-list">
                   <li className="price-includes-list-item">—&nbsp;10&nbsp;тренировочных и&nbsp;2&nbsp;игровых дня</li>

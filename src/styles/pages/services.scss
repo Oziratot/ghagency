@@ -1824,12 +1824,36 @@
     .section-extra-services {
       background-color: #FFFFFF;
 
+      .extra-services-list-item.extra-services-list-item {
+        @include mobile {
+          padding-bottom: 0;
+        }
+      }
+
       .extra-service {
         filter: drop-shadow(10px 10px 20px rgba(31, 30, 36, 0.15));
         pointer-events: none;
 
+        .extra-service-image {
+          @include mobile {
+            padding-bottom: 50.3%;
+          }
+        }
+
+        .extra-service-info {
+          @include mobile {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            padding: 30px 20px;
+          }
+        }
+
         .section-title {
           padding-top: 0;
+
+          @include mobile {
+            margin-bottom: 30px;
+          }
         }
       }
     }
@@ -1849,6 +1873,50 @@
 
         .price-desc-block {
           margin-right: 30px;
+
+          .price-includes-duration {
+            text-align: center;
+            font-size: 24px;
+            line-height: 36px;
+            font-weight: 500;
+            margin-bottom: 5px;
+
+            @include mobile {
+              font-size: 16px;
+              line-height: 24px;
+              font-weight: 600;
+              margin-bottom: 10px;
+            }
+          }
+
+          .price-includes-dates {
+            text-align: center;
+            font-size: 18px;
+            line-height: 27px;
+            font-weight: 600;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #FA6900;
+
+            @include mobile {
+              font-size: 14px;
+              line-height: 21px;
+              font-weight: 500;
+              color: #00B6F0;
+            }
+          }
+
+          .price-includes-title {
+            font-size: 18px;
+            line-height: 27px;
+            font-weight: 600;
+
+            @include mobile {
+              font-size: 16px;
+              line-height: 1.5;
+              text-align: center;
+            }
+          }
 
           @include tablet {
             margin-right: 0;
@@ -3392,7 +3460,7 @@
           padding: 20px 20px 30px;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
-          height: 180px;
+          height: fit-content;
         }
       }
       .extra-service-name {
@@ -3530,6 +3598,10 @@
 
         @include tablet-laptop-desktop {
           box-shadow: 10px 10px 20px rgba(31, 30, 36, 0.15);
+        }
+
+        @include mobile {
+          padding-top: 0;
         }
       }
 
@@ -3911,6 +3983,11 @@
 
     &.second {
       margin: 0 0 10px;
+
+      @include mobile {
+        font-size: 18px;
+        font-weight: 500;
+      }
     }
 
     @include mobile {
@@ -3968,7 +4045,7 @@
       @include mobile {
         font-size: 13px;
         line-height: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
     }
     .camp-info {
@@ -4161,6 +4238,7 @@
     font-size: 16px;
     line-height: 24px;
     text-align: left;
+    font-weight: 400;
 
     @include mobile {
       font-size: 14px;
