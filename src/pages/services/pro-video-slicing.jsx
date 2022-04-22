@@ -20,6 +20,10 @@ const readyPortfolioItems = [
 ];
 
 const videos = [
+  { videoId: 'DH86iQKpdRE' }, // Максим Цегельник
+  { videoId: 'uAMIb9ioHZM' }, // Никита Соболев
+  { videoId: 'A3QJ1yu6O4k' }, // Вадим Фролов
+  { videoId: 'V-5eHWE744g' }, // Тихон Ашихмин
   { videoId: 'sYV0PzW2EEw' }, // Вадим Цыркунов
   { videoId: 'ApMaDGWrHJk' }, // Александр Гусейнов
   { videoId: 'tyePbA7qIdw' }, // Олег Гришатов

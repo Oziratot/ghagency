@@ -5,6 +5,7 @@ import Link from 'next/link';
 import classnames from 'classnames';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { useRouter } from 'next/router';
+import { useSpring, animated, config } from 'react-spring';
 import DoubleArrowDownIcon from '../../../assets/svg/double-arrow-down.svg';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import OrderCallButton from '../../../components/Button/OrderCallButton';
@@ -47,10 +48,10 @@ const statistics = [
 ];
 
 const viewStatistics = [
-  { title: '75', text: 'Участников просмотра' },
-  { title: '52', text: 'Получили приглашения в&nbsp;команду' },
-  { title: '29', text: 'Игроков уехали за границу' },
-  { title: '6', text: 'Игроков получают зарплату' },
+  { title: 75, text: 'Участников просмотра' },
+  { title: 52, text: 'Получили приглашения в&nbsp;команду' },
+  { title: 29, text: 'Игроков уехали за границу' },
+  { title: 6, text: 'Игроков получают зарплату' },
 ];
 
 const scouts = [
@@ -244,6 +245,18 @@ const ClientSideRender = memo(({ children }) => {
 
   return isMounted ? children : null;
 });
+
+function NumberReviews({ count }) {
+  const { number } = useSpring({
+    from: { number: 0 },
+    number: count,
+    delay: 300,
+  });
+
+  return (
+    <animated.p className="circle-title">{number.interpolate((val) => Math.floor(val))}</animated.p>
+  );
+}
 
 function PlayerViewing2021() {
   const router = useRouter();
@@ -554,7 +567,7 @@ function PlayerViewing2021() {
               {viewStatistics.map((item) => (
                 <div key={item.title} className={`outer-circle circle-${item.title}`}>
                   <div className="inner-circle">
-                    <p className="circle-title">{item.title}</p>
+                    <NumberReviews count={item.title} />
                     <div className="circle-text" dangerouslySetInnerHTML={{ __html: item.text }} />
                   </div>
                 </div>
