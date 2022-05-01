@@ -224,7 +224,6 @@ export async function getStaticPaths() {
       { params: { id: 'smirnov-anton' } },
       { params: { id: 'smirnov-ilia' } },
       { params: { id: 'sobolev-nikita' } },
-      { params: { id: 'stepayants-artyom' } },
       { params: { id: 'suschenko-sergei' } },
       { params: { id: 'terenin-sergei' } },
       { params: { id: 'trubachev-matvey' } },

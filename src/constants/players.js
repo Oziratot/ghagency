@@ -64,7 +64,7 @@ export const PLAYERS = [
   },
   {
     id: 'babets-danil',
-    imgSrc: '/assets/img/players/Babets-Danil.jpeg',
+    imgSrc: '/assets/img/players/Babets-Danil.jpg',
     name: 'Бабец Данил',
     birthday: '2003',
     role: 'Вратарь',
@@ -285,7 +285,7 @@ export const PLAYERS = [
   },
   {
     id: 'kleimenov-kirill',
-    imgSrc: '/assets/img/players/Kleimenov-Kirill.jpeg',
+    imgSrc: '/assets/img/players/Kleimenov-Kirill.jpg',
     name: 'Клейменов Кирилл',
     birthday: '2003',
     role: 'Защитник',
@@ -354,7 +354,7 @@ export const PLAYERS = [
   },
   {
     id: 'rudskoy-egor',
-    imgSrc: '/assets/img/players/Rudskoy-Egor.jpeg',
+    imgSrc: '/assets/img/players/Rudskoy-Egor.jpg',
     name: 'Рудской Егор',
     birthday: '2002',
     role: 'Защитник',
@@ -392,6 +392,7 @@ export const PLAYERS = [
     country: 'Венгрия',
     prevteam: 'Сокол Курск U18, Россия',
     clientsince: '2021',
+    videoId: 'LTxp3600iWk',
   },
   {
     id: 'smirnov-anton',
@@ -409,7 +410,7 @@ export const PLAYERS = [
   },
   {
     id: 'smirnov-ilia',
-    imgSrc: '/assets/img/players/Smirnov-Ilia.jpeg',
+    imgSrc: '/assets/img/players/Smirnov-Ilia.jpg',
     name: 'Смирнов Илья',
     birthday: '2002',
     role: 'Нападающий',
@@ -437,18 +438,6 @@ export const PLAYERS = [
     reviewByPlayerOrParent: parentOrPlayerReviewByPlayerId['sobolev-nikita'],
     lgImgSrc: '/assets/img/players/lg/sobolev-lg-photo.jpeg',
     lgImgCaption: 'Никита во время игры канадской лиги GMHL',
-  },
-  {
-    id: 'stepayants-artyom',
-    imgSrc: '/assets/img/players/player-fallback.jpg',
-    name: 'Степанянц Артём',
-    birthday: '2005',
-    role: 'Защитник',
-    team: 'Toronto Red Wings U18 AAA',
-    league: 'GTHL',
-    country: 'Канада',
-    prevteam: 'Витязь Подольск U16, Россия',
-    clientsince: '2019',
   },
   {
     id: 'suschenko-sergei',
@@ -490,10 +479,6 @@ export const PLAYERS = [
     country: 'Венгрия',
     prevteam: 'Капитан Ступино U18, Россия',
     clientsince: '2019',
-    lgImgSrc: '/assets/img/players/lg/trubachev-lg-photo.jpg',
-    lgImgCaption: 'Первая шайба Матвея в Канаде',
-    review: reviewByPlayerId['trubachev-matvey'],
-    desc: descByPlayerId['trubachev-matvey'],
   },
   {
     id: 'frolov-vadim',
@@ -524,8 +509,6 @@ export const PLAYERS = [
     videoId: 'EJb1iTKlZAg',
     lgImgSrc: '/assets/img/players/lg/tsegelnik-lg-photo.jpeg',
     lgImgCaption: 'Максим на точке вбрасывания во время игры GMHL',
-    review: reviewByPlayerId['tsegelnik-maxim'],
-    desc: descByPlayerId['tsegelnik-maxim'],
   },
   {
     id: 'chebanu-yaroslav',
