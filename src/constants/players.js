@@ -64,7 +64,7 @@ export const PLAYERS = [
   },
   {
     id: 'babets-danil',
-    imgSrc: '/assets/img/players/Babets-Danil.jpg',
+    imgSrc: '/assets/img/players/Babets-Danil1.jpg',
     name: 'Бабец Данил',
     birthday: '2003',
     role: 'Вратарь',
@@ -120,7 +120,7 @@ export const PLAYERS = [
   },
   {
     id: 'bubnov-daniil',
-    imgSrc: '/assets/img/players/Bubnov-Daniil.jpg',
+    imgSrc: '/assets/img/players/Bubnov-Daniil1.jpg',
     name: 'Бубнов Даниил',
     birthday: '2002',
     role: 'Защитник',
@@ -269,7 +269,7 @@ export const PLAYERS = [
   },
   {
     id: 'kabataev-egor',
-    imgSrc: '/assets/img/players/Kabataev-Egor.jpg',
+    imgSrc: '/assets/img/players/Kabataev-Egor1.jpg',
     name: 'Кабатаев Егор',
     birthday: '2003',
     role: 'Нападающий',
@@ -285,7 +285,7 @@ export const PLAYERS = [
   },
   {
     id: 'kleimenov-kirill',
-    imgSrc: '/assets/img/players/Kleimenov-Kirill.jpg',
+    imgSrc: '/assets/img/players/Kleimenov-Kirill1.jpg',
     name: 'Клейменов Кирилл',
     birthday: '2003',
     role: 'Защитник',
@@ -297,7 +297,7 @@ export const PLAYERS = [
   },
   {
     id: 'korotaev-iliya',
-    imgSrc: '/assets/img/players/Korotaev-Iliya.jpg',
+    imgSrc: '/assets/img/players/Korotaev-Iliya1.jpg',
     name: 'Коротаев Илья',
     birthday: '2003',
     role: 'Нападающий',
@@ -340,7 +340,7 @@ export const PLAYERS = [
   },
   {
     id: 'pochuev-danil',
-    imgSrc: '/assets/img/players/Pochuev-Daniil.jpg',
+    imgSrc: '/assets/img/players/Pochuev-Daniil1.jpg',
     name: 'Почуев Данил',
     birthday: '2002',
     role: 'Нападающий',
@@ -354,7 +354,7 @@ export const PLAYERS = [
   },
   {
     id: 'rudskoy-egor',
-    imgSrc: '/assets/img/players/Rudskoy-Egor.jpg',
+    imgSrc: '/assets/img/players/Rudskoy-Egor1.jpg',
     name: 'Рудской Егор',
     birthday: '2002',
     role: 'Защитник',
@@ -369,7 +369,7 @@ export const PLAYERS = [
   },
   {
     id: 'sayamov-daniil',
-    imgSrc: '/assets/img/players/Sayamov-Daniil.jpg',
+    imgSrc: '/assets/img/players/Sayamov-Daniil1.jpg',
     name: 'Саямов Даниил',
     birthday: '2003',
     role: 'Нападающий',
@@ -383,7 +383,7 @@ export const PLAYERS = [
   },
   {
     id: 'sinodkin-denis',
-    imgSrc: '/assets/img/players/Sinodkin-Denis.jpg',
+    imgSrc: '/assets/img/players/Sinodkin-Denis1.jpg',
     name: 'Синодкин Денис',
     birthday: '2003',
     role: 'Нападающий',
@@ -410,7 +410,7 @@ export const PLAYERS = [
   },
   {
     id: 'smirnov-ilia',
-    imgSrc: '/assets/img/players/Smirnov-Ilia.jpg',
+    imgSrc: '/assets/img/players/Smirnov-Ilia1.jpg',
     name: 'Смирнов Илья',
     birthday: '2002',
     role: 'Нападающий',
@@ -426,7 +426,7 @@ export const PLAYERS = [
   },
   {
     id: 'sobolev-nikita',
-    imgSrc: '/assets/img/players/Sobolev-Nikita.jpg',
+    imgSrc: '/assets/img/players/Sobolev-Nikita1.jpg',
     name: 'Соболев Никита',
     birthday: '2004',
     role: 'Нападающий',
@@ -455,7 +455,7 @@ export const PLAYERS = [
   },
   {
     id: 'terenin-sergei',
-    imgSrc: '/assets/img/players/Terenin-Sergei.jpg',
+    imgSrc: '/assets/img/players/Terenin-Sergei1.jpg',
     name: 'Теренин Сергей',
     birthday: '2003',
     role: 'Нападающий',
@@ -470,7 +470,7 @@ export const PLAYERS = [
   },
   {
     id: 'trubachev-matvey',
-    imgSrc: '/assets/img/players/Trubachev-Matvey.jpg',
+    imgSrc: '/assets/img/players/Trubachev-Matvey1.jpg',
     name: 'Трубачев Матвей',
     birthday: '2003',
     role: 'Нападающий',
@@ -512,7 +512,7 @@ export const PLAYERS = [
   },
   {
     id: 'chebanu-yaroslav',
-    imgSrc: '/assets/img/players/Chebanu-Yaroslav.jpg',
+    imgSrc: '/assets/img/players/Chebanu-Yaroslav1.jpg',
     name: 'Чебану Ярослав',
     birthday: '2003',
     role: 'Вратарь',
