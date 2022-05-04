@@ -73,6 +73,7 @@ export const PLAYERS = [
     country: 'Польша',
     prevteam: 'Капитан Ступино U18, Россия',
     clientsince: '2021',
+    videoId: 'xODQN7uc57I',
     reviewByPlayerOrParent: parentOrPlayerReviewByPlayerId['babets-danil'],
     lgImgSrc: '/assets/img/players/lg/babets-lg-photo.jpeg',
     lgImgCaption: 'Данил в воротах команды Polonia Bytom',
