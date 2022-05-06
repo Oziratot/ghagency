@@ -330,31 +330,6 @@ function PlayerViewing2021() {
     },
   ]), []);
 
-  // useEffect(() => {
-  //   // TODO: remove after issue resolve and true lazy loading is possible https://github.com/brainhubeu/react-carousel/issues/389
-  //   setTimeout(() => {
-  //     setPhotos2020((prevPhotos) => (
-  //       [
-  //         ...prevPhotos,
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-11.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-12.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-13.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-14.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-15.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-16.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-17.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-18.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-19.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-20.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-21.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-22.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-23.jpg' },
-  //         { src: '/assets/img/services/player-viewing/view2020/gha-2020-view-24.jpg' },
-  //       ]
-  //     ));
-  //   }, 2500);
-  // }, []);
-
   const handleEventDetailsItemClick = useCallback((e) => {
     const id = e.currentTarget.dataset?.id;
     const scrollY = getScrollY();
