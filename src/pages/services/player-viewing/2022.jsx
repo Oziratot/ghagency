@@ -5,7 +5,7 @@ import Link from 'next/link';
 import classnames from 'classnames';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { useRouter } from 'next/router';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import DoubleArrowDownIcon from '../../../assets/svg/double-arrow-down.svg';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import OrderCallButton from '../../../components/Button/OrderCallButton';
@@ -81,8 +81,8 @@ const countries = [
       { label: '&#8226; Cleveland Barons&nbsp;T1EHL', border: true },
       { label: '&#8226; Philadelphia Hockey Club NCDC', border: true },
       { label: '&#8226; Philadelphia Hockey Club USPHL Premier', border: true },
-      { label: '&#8226; New Jersey 87’s EHL' },
-      { label: '&#8226; New Jersey 87’s EHLP' },
+      { label: '&#8226; New Jersey 87’s EHL', border: true },
+      { label: '&#8226; New Jersey 87’s EHLP', border: true },
       { label: '&#8226; New Jersey 87\'s 18U AAA' },
     ],
   },
