@@ -56,14 +56,15 @@ const viewStatistics = [
 
 const scouts = [
   { name: 'Шон Уэрф', photo: '/assets/img/services/player-viewing/scouts/scout-2.jpg', desc: 'Генеральный менеджер Bradford Rattlers GMHL, Канада' },
-  { name: 'Коди Ганье', photo: '/assets/img/services/player-viewing/scouts/scout-1.jpg', desc: 'Главный тренер Northeast Generals U16, США<br />Ассистент главного тренера Northeast Generals NAHL, США<br />Програмный директор Northeast Generals Academy' },
-  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-17.png', desc: 'Главный тренер Cleveland Barons U18 T1EHL, США<br />Скаут Lincoln Stars USHL, США' },
+  { name: 'Коди Ганье', photo: '/assets/img/services/player-viewing/scouts/scout-1.jpg', desc: 'Главный тренер Northeast Generals 16U NAPHL, США<br />Ассистент главного тренера Northeast Generals NAHL, США<br />Програмный директор Northeast Generals Academy' },
+  { name: 'Крис Вилк', photo: '/assets/img/services/player-viewing/scouts/scout-17.png', desc: 'Главный тренер Cleveland Barons 18U T1EHL, США<br />Скаут Lincoln Stars USHL, США' },
   { name: 'Адам Бортоломей', photo: '/assets/img/services/player-viewing/scouts/scout-3.jpg', desc: 'Главный тренер Philadelphia Hockey Club USPHL Premier, США<br />Ассистент главного тренера Philadelphia Hockey Club NCDC, США' },
   { name: 'Марк Андре-Карон', photo: '/assets/img/services/player-viewing/scouts/scout-4.jpg', desc: 'Генеральный менеджер Ville-Marie Pirates GMHL, Канада' },
   { name: 'Глен Кэмпбэл', photo: '/assets/img/services/player-viewing/scouts/scout-13.png', desc: 'Владелец Northumberland Stars GMHL, Канада' },
-  { name: 'Райан Уитсон', photo: '/assets/img/services/player-viewing/scouts/scout-14.png', desc: 'Главный тренер Cleveland Barons U14 T1EHL, США,<br />Скаут Lone Star Brahmas NAHL, США' },
+  { name: 'Райан Уитсон', photo: '/assets/img/services/player-viewing/scouts/scout-14.png', desc: 'Главный тренер Cleveland Barons 14U T1EHL, США,<br />Скаут Lone Star Brahmas NAHL, США' },
   { name: 'Райан Вуд', photo: '/assets/img/services/player-viewing/scouts/scout-15.png', desc: 'Главный тренер New Tecumseth Civics GMHL, Канада' },
   { name: 'Дуг Орр', photo: '/assets/img/services/player-viewing/scouts/scout-16.png', desc: 'Главный тренер York Simcoe Express U14&nbsp;AAA ETAHL, Канада, Скаут Gatineau Olympiques QMJHL, Канада' },
+  { name: 'Адам Хаули', photo: '/assets/img/services/player-viewing/scouts/scout-18.png', desc: 'Главный тренер New Jersey 87’s  EHL, США<br />Генеральный менеджер New Jersey 87’s EHLP, США<br />Програмный директор New Jersey 87\'s 18U AAA, США' },
 ];
 
 const countries = [
@@ -79,7 +80,10 @@ const countries = [
       { label: '&#8226; Northeast Generals NAPHL', border: true },
       { label: '&#8226; Cleveland Barons&nbsp;T1EHL', border: true },
       { label: '&#8226; Philadelphia Hockey Club NCDC', border: true },
-      { label: '&#8226; Philadelphia Hockey Club USPHL Premier' },
+      { label: '&#8226; Philadelphia Hockey Club USPHL Premier', border: true },
+      { label: '&#8226; New Jersey 87’s EHL' },
+      { label: '&#8226; New Jersey 87’s EHLP' },
+      { label: '&#8226; New Jersey 87\'s 18U AAA' },
     ],
   },
 {
