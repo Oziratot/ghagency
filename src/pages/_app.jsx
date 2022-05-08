@@ -118,7 +118,12 @@ class App extends NextApp {
           <meta name="description" content="Хоккейное агентство предоставляет услуги по поиску и трудоустройству спортсменов в хоккейные лиги Канады и США. Мы представляем интересы игроков от 14 лет до 21 года в юниорских и молодежных лигах Северной Америки." />
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
           <meta name="format-detection" content="telephone=no" />
-          <link rel="icon" type="image/png" href="/favicon/favicon.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+          <link rel="manifest" href="/favicon/site.webmanifest" />
+          <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" />
+          {/*<link rel="icon" type="image/png" href="/favicon/favicon.png" />*/}
           <link rel="preload" href="/fonts/montserrat-v14-latin_cyrillic-regular.woff2" as="font" crossOrigin="" />
           <link rel="preload" href="/fonts/montserrat-v14-latin_cyrillic-italic.woff2" as="font" crossOrigin="" />
           <link rel="preload" href="/fonts/montserrat-v14-latin_cyrillic-500.woff2" as="font" crossOrigin="" />
