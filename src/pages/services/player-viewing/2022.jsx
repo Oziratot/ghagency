@@ -36,7 +36,7 @@ import Button from '../../../components/Button';
 
 const details = [
   { id: '3-days-3-games', value: '3', label: 'Игры за&nbsp;3&nbsp;дня' },
-  { id: 'scouts', value: '9', label: 'Зарубежных скаутов' },
+  { id: 'scouts', value: '11', label: 'Зарубежных скаутов' },
   { id: '50-usa-and-europe-teams', value: '50+', label: 'Команд США, Канады&nbsp;и&nbsp;Европы' },
   { id: 'address', value: <MapPointIcon className="map-icon" />, label: 'Москва ЛД&nbsp;«Морозово»' },
 ];
@@ -65,6 +65,7 @@ const scouts = [
   { name: 'Райан Вуд', photo: '/assets/img/services/player-viewing/scouts/scout-15.png', desc: 'Главный тренер New Tecumseth Civics GMHL, Канада' },
   { name: 'Дуг Орр', photo: '/assets/img/services/player-viewing/scouts/scout-16.png', desc: 'Главный тренер York Simcoe Express U14&nbsp;AAA ETAHL, Канада, Скаут Gatineau Olympiques QMJHL, Канада' },
   { name: 'Адам Хаули', photo: '/assets/img/services/player-viewing/scouts/scout-18.png', desc: 'Главный тренер New Jersey 87’s  EHL, США<br />Генеральный менеджер New Jersey 87’s EHLP, США<br />Програмный директор New Jersey 87\'s 18U AAA, США' },
+  { name: 'Дейв Буш', photo: '/assets/img/services/player-viewing/scouts/scout-19.png', desc: 'Скаут New Jersey Junior Titans NAHL, США<br />Скаут New Jersey 87\'s EHL, США' },
 ];
 
 const countries = [
@@ -83,7 +84,9 @@ const countries = [
       { label: '&#8226; Philadelphia Hockey Club USPHL Premier', border: true },
       { label: '&#8226; New Jersey 87’s EHL', border: true },
       { label: '&#8226; New Jersey 87’s EHLP', border: true },
-      { label: '&#8226; New Jersey 87\'s 18U AAA' },
+      { label: '&#8226; New Jersey 87\'s 18U AAA', border: true },
+      { label: '&#8226; New Jersey Junior Titans NAHL', border: true },
+      { label: '&#8226; New Jersey 87\'s EHL' },
     ],
   },
 {

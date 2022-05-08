@@ -341,7 +341,7 @@ export const PLAYERS = [
   },
   {
     id: 'pochuev-danil',
-    imgSrc: '/assets/img/players/Pochuev-Daniil1.jpg',
+    imgSrc: '/assets/img/players/Pochuev-Daniil2.jpg',
     name: 'Почуев Данил',
     birthday: '2002',
     role: 'Нападающий',

@@ -9,7 +9,7 @@ export const VIEWS = [
   { imgSrc: '/assets/img/players/Kabataev-Egor1.jpg', name: 'Кабатаев Егор', newRole: 'Нападающий Dunaújvárosi Acélbikák, Венгрия', prevTeam: 'Барыс Нур-Султан U20, Казахстан', id: 'kabataev-egor' },
   { imgSrc: '/assets/img/players/Korotaev-Iliya1.jpg', name: 'Коротаев Илья', newRole: 'Нападающий Györi ETO HC U21k, Венгрия', prevTeam: 'Капитан Ступино U18, Россия', id: 'korotaev-iliya' },
   { imgSrc: '/assets/img/players/Levitskiy-Stepan.jpg', name: 'Левицкий Степан', newRole: 'Нападающий Bradford Rattlers, Канада', prevTeam: 'Орбита Зеленоград U18, Россия', id: 'levitskiy-stepan' },
-  { imgSrc: '/assets/img/players/Pochuev-Daniil1.jpg', name: 'Почуев Даниил', newRole: 'Нападающий New Tecumseth Civics, Канада', prevTeam: 'Рубин Тюмень U18, Россия', id: 'pochuev-daniil' },
+  { imgSrc: '/assets/img/players/Pochuev-Daniil2.jpg', name: 'Почуев Даниил', newRole: 'Нападающий New Tecumseth Civics, Канада', prevTeam: 'Рубин Тюмень U18, Россия', id: 'pochuev-daniil' },
   { imgSrc: '/assets/img/players/Rudskoy-Egor1.jpg', name: 'Рудской Егор', newRole: 'Защитник Polonia Bytom, Польша', prevTeam: 'Капитан Ступино U18, Россия', id: 'rudskoy-egor' },
   { imgSrc: '/assets/img/players/Sinodkin-Denis1.jpg', name: 'Синодкин Денис', newRole: 'Нападающий Györi ETO HC U21, Венгрия', prevTeam: 'Сокол Курск U18, Россия', id: 'sinodkin-denis' },
   { imgSrc: '/assets/img/players/Smirnov-Anton.jpg', name: 'Смирнов Антон', newRole: 'Нападающий Toronto Titans U16 AAA, Канада', prevTeam: 'Ястребы Москва U16, Россия', id: 'smirnov-anton' },
