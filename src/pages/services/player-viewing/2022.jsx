@@ -65,7 +65,7 @@ const scouts = [
   { name: 'Райан Вуд', photo: '/assets/img/services/player-viewing/scouts/scout-15.png', desc: 'Главный тренер New Tecumseth Civics GMHL, Канада' },
   { name: 'Дуг Орр', photo: '/assets/img/services/player-viewing/scouts/scout-16.png', desc: 'Главный тренер York Simcoe Express U14&nbsp;AAA ETAHL, Канада, Скаут Gatineau Olympiques QMJHL, Канада' },
   { name: 'Адам Хаули', photo: '/assets/img/services/player-viewing/scouts/scout-18.png', desc: 'Главный тренер New Jersey 87’s  EHL, США<br />Генеральный менеджер New Jersey 87’s EHLP, США<br />Програмный директор New Jersey 87\'s 18U AAA, США' },
-  { name: 'Дейв Буш', photo: '/assets/img/services/player-viewing/scouts/scout-19.png', desc: 'Скаут New Jersey Junior Titans NAHL, США<br />Скаут New Jersey 87\'s EHL, США' },
+  { name: 'Дейв Буш', photo: '/assets/img/services/player-viewing/scouts/scout-19.png', desc: 'Скаут New Jersey Junior Titans NAHL, США' },
 ];
 
 const countries = [
@@ -76,7 +76,8 @@ const countries = [
     teams: [
       { label: '&#8226; Lincoln Stars USHL', border: true },
       { label: '&#8226; Lone Star Brahmas NAHL' },
-      { label: '&#8226; Northeast Generals NAHL', border: true },
+      { label: '&#8226; Northeast Generals NAHL' },
+      { label: '&#8226; New Jersey Junior Titans NAHL', border: true },
       { label: '&#8226; Northeast Generals NA3HL', border: true },
       { label: '&#8226; Northeast Generals NAPHL', border: true },
       { label: '&#8226; Cleveland Barons&nbsp;T1EHL', border: true },
@@ -84,9 +85,7 @@ const countries = [
       { label: '&#8226; Philadelphia Hockey Club USPHL Premier', border: true },
       { label: '&#8226; New Jersey 87’s EHL', border: true },
       { label: '&#8226; New Jersey 87’s EHLP', border: true },
-      { label: '&#8226; New Jersey 87\'s 18U AAA', border: true },
-      { label: '&#8226; New Jersey Junior Titans NAHL', border: true },
-      { label: '&#8226; New Jersey 87\'s EHL' },
+      { label: '&#8226; New Jersey 87\'s 18U AAA' },
     ],
   },
 {
