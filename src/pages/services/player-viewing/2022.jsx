@@ -514,7 +514,7 @@ function PlayerViewing2021() {
           <h2 className="h2 section-title tablet-mobile-title">Как проходит просмотр</h2>
           <div className="section-illustration">
             <img className="hidden-xs" src="/assets/img/services/player-viewing/2022/gha-view-2022-format-desktop.jpg" alt="Формат просмотра GHA 2021" />
-            <img className="visible-xs" src="/assets/img/services/player-viewing/2021/gha-view-2021-format-mobile.jpg" alt="Формат просмотра GHA 2021" />
+            <img className="view visible-xs" src="/assets/img/services/player-viewing/2022/gha-view-2022-format-mobile.jpg" alt="Формат просмотра GHA 2021" />
           </div>
           <div className="section-content">
             <h2 className="h2 section-title desktop-title">Как проходит просмотр</h2>
@@ -579,7 +579,7 @@ function PlayerViewing2021() {
         <section className="section section-price">
           <div className="container">
             <h2 className="h2 section-title">Стоимость просмотра</h2>
-            <p className="registration-ends">Регистрация для&nbsp;группы 2007–2009&nbsp;г.&nbsp;р. заканчивается 11&nbsp;мая</p>
+            <p className="registration-ends">Регистрация для&nbsp;группы 2007–2009&nbsp;г.&nbsp;р. заканчивается 16&nbsp;мая</p>
             <p className="registration-ends two">Регистрация для&nbsp;группы 2003–2006&nbsp;г.р. заканчивается 30&nbsp;мая</p>
             <div className="price-desc-block">
               <p className="price-includes-title">В&nbsp;стоимость включено:</p>
