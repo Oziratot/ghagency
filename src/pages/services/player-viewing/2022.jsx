@@ -579,8 +579,8 @@ function PlayerViewing2021() {
         <section className="section section-price">
           <div className="container">
             <h2 className="h2 section-title">Стоимость просмотра</h2>
-            <p className="registration-ends">Регистрация для&nbsp;группы 2007–2009&nbsp;г.&nbsp;р. заканчивается 16&nbsp;мая</p>
-            <p className="registration-ends two">Регистрация для&nbsp;группы 2003–2006&nbsp;г.р. заканчивается 30&nbsp;мая</p>
+            <p className="registration-ends">Регистрация для&nbsp;группы 2007–2009&nbsp;г.&nbsp;р. заканчивается 23&nbsp;мая</p>
+            <p className="registration-ends two">Регистрация для&nbsp;группы 2003–2006&nbsp;г.р. заканчивается 6&nbsp;июня</p>
             <div className="price-desc-block">
               <p className="price-includes-title">В&nbsp;стоимость включено:</p>
               <ul className="price-includes-list">
@@ -595,8 +595,8 @@ function PlayerViewing2021() {
               <div className="price-amounts">
                 <div className="current-price">29 900&nbsp;₽</div>
                 <div className="participation-extra">
-                  <div className="participation-condition">с&nbsp;16&nbsp;мая&nbsp;— 49 900&nbsp;₽</div>
-                  <div className="participation-condition">с&nbsp;30&nbsp;мая, после завершения регистрации&nbsp;— 99 900&nbsp;₽</div>
+                  <div className="participation-condition">с&nbsp;23&nbsp;мая&nbsp;— 49 900&nbsp;₽</div>
+                  <div className="participation-condition">с&nbsp;6&nbsp;июня, после завершения регистрации&nbsp;— 99 900&nbsp;₽</div>
                 </div>
                 {/*<div className="later-price">с&nbsp;1&nbsp;апреля&nbsp;—  29 900&nbsp;₽</div>*/}
                 <OrderCallButton modalTitle="Запишитесь на просмотр" firstSubmitLabel="Записаться" secondSubmitLabel="Записаться">Забронировать</OrderCallButton>
