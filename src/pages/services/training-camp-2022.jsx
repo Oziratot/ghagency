@@ -283,7 +283,7 @@ function TrainingCamp2022() {
             <div className="price-desc-blocks">
               <div className="price-desc-block">
                 <div className="price-includes-duration">Лагерь на 6 дней</div>
-                <div className="price-includes-dates">6–12 июня</div>
+                <div className="price-includes-dates">13–18 июня</div>
                 <p className="price-includes-title">В&nbsp;стоимость включено:</p>
                 <ul className="price-includes-list">
                   <li className="price-includes-list-item">—&nbsp;5&nbsp;тренировочных и&nbsp;1&nbsp;игровой день</li>
