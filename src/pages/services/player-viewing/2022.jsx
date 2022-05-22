@@ -33,6 +33,7 @@ import ExtraServiceVideoPros3Icon from '../../../assets/svg/services/player-view
 import CloseExtraServiceModalIcon from '../../../assets/svg/services/player-viewing/2021/close-modal.svg';
 import ArrowIcon from '../../../assets/svg/arrow.svg';
 import Button from '../../../components/Button';
+import VideoSlider from '../../../components/VideoSlider';
 
 const details = [
   { id: '3-days-3-games', value: '3', label: 'Игры за&nbsp;3&nbsp;дня' },
@@ -654,6 +655,7 @@ function PlayerViewing2021() {
         <section className="section section-faq">
           <div className="faq-block">
             <h2 className="h2 section-title">Ответы на часто задаваемые вопросы</h2>
+            <VideoSlider className="faq-video" faq player items={[{ videoId: 'f02vo5hZb6Q' }]} />
             <ul className="faq-list">
               {faq.map(({ question, answer }, i) => (
                 <li

@@ -834,6 +834,17 @@
       }
     }
 
+    .faq-video {
+      transform: scale(1.5);
+      margin-bottom: 40px;
+      margin-top: 7vw;
+
+      @include tablet {
+        transform: scale(1);
+        margin: 0;
+      }
+    }
+
     .faq-list-item {
       cursor: pointer;
       position: relative;

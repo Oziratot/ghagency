@@ -91,7 +91,7 @@ const getBreadcrumbListStructuredData = ({ id, name }) => ({
 function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, reviewByPlayerOrParent, desc, ...resumeParams }) {
   const initialVideoSlide = useMemo(() => reviews.findIndex((item) => item.videoId === videoId), [videoId]);
   const video = useMemo(() => ({ videoId }), [videoId]);
-  const vidoeArr = [video];
+  const videoArr = [video];
   const [activePanels, setActivePanels] = useState([]);
   const BreadcrumbListStructuredData = useMemo(() => getBreadcrumbListStructuredData({ id, name }), [id, name]);
   // const router = useRouter();
@@ -160,7 +160,7 @@ function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, rev
         {videoId && (
           <section className="section section-video-review">
             <h2 className="h2 section-title with-overflow">Отзыв игрока</h2>
-            <VideoSlider player items={vidoeArr} />
+            <VideoSlider player items={videoArr} />
           </section>
         )}
 

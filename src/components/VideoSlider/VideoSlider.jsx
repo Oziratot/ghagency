@@ -8,7 +8,7 @@ import SliderArrowRight from '../SliderArrowRight';
 
 import YouTubePlay from '../../assets/svg/youtube-play.svg';
 
-function VideoSlider({ className, items, initialSlide, player }) {
+function VideoSlider({ className, items, initialSlide, player, faq }) {
   const [slide, setSlide] = useState(initialSlide);
   const [playingId, setPlayingId] = useState(null);
   const [lazyLoadedIds, setLazyLoadedIds] = useState({});
@@ -102,7 +102,7 @@ function VideoSlider({ className, items, initialSlide, player }) {
         addArrowClickHandler
       >
         {items.map(({ videoId }) => (
-          <div className={classnames('video-slider-item', { playing: videoId === playingId })} key={videoId}>
+          <div className={classnames('video-slider-item', { playing: videoId === playingId, faq })} key={videoId}>
             <div
               className="video-foreground"
               data-video-id={videoId}
