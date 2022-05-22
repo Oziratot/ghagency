@@ -9,6 +9,8 @@ import YouTubeIcon from '../../assets/svg/youtube.svg';
 import YouTubeXsIcon from '../../assets/svg/youtube-xs.svg';
 import InstagramIcon from '../../assets/svg/instagram.svg';
 import InstagramXsIcon from '../../assets/svg/instagram-xs.svg';
+import TelegramIcon from '../../assets/svg/telegram.svg';
+import TelegramXsIcon from '../../assets/svg/telegram-xs.svg';
 import { PAGES } from '../../constants/pages';
 import { getScrollY } from '../../utils/getScroll';
 import { getScrollProgress } from '../../utils/getScrollProgress';
@@ -57,6 +59,9 @@ const MobileNavList = memo(({ items, closeNav, withSocialLinks }) => {
           </a>
           <a href="https://www.instagram.com/gha_hockey/" className="instagram-link" target="_blank" rel="noreferrer">
             <InstagramIcon />
+          </a>
+          <a href="https://t.me/grishatov_hockey_agency" className="telegram-link" target="_blank" rel="noreferrer">
+            <TelegramIcon />
           </a>
         </li>
       )}
@@ -206,6 +211,10 @@ function Header({ mobileNavShown, setMobileNavShown, desktopNavShown, setDesktop
             <a href="https://www.instagram.com/gha_hockey/" className="instagram-link" target="_blank" rel="noreferrer">
               <InstagramIcon className="icon-desktop" />
               <InstagramXsIcon className="icon-mobile" />
+            </a>
+            <a href="https://t.me/grishatov_hockey_agency" className="telegram-link" target="_blank" rel="noreferrer">
+              <TelegramIcon className="icon-desktop" />
+              <TelegramXsIcon className="icon-mobile" />
             </a>
           </animated.div>
           <div className="mobile-phone-icon">

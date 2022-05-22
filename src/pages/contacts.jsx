@@ -10,6 +10,8 @@ import InstagramLgIcon from '../assets/svg/instagram-lg.svg';
 import InstagramIcon from '../assets/svg/instagram.svg';
 import YouTubeLgIcon from '../assets/svg/youtube-lg.svg';
 import YouTubeIcon from '../assets/svg/youtube.svg';
+import TelegramLgIcon from '../assets/svg/telegram-lg.svg';
+import Telegram2Icon from '../assets/svg/telegram.svg';
 import Breadcrumbs from '../components/Breadcrumbs';
 import FeedbackSection from '../components/FeedbackSection/FeedbackSection';
 import Head from '../components/Head';
@@ -144,6 +146,10 @@ function Contacts() {
                   <a href="https://www.instagram.com/gha_hockey/" className="instagram-link" target="_blank" rel="noreferrer">
                     <InstagramLgIcon className="icon-desktop" />
                     <InstagramIcon className="icon-mobile" />
+                  </a>
+                  <a href="https://t.me/grishatov_hockey_agency" className="telegram-link" target="_blank" rel="noreferrer">
+                    <TelegramLgIcon className="icon-desktop" />
+                    <Telegram2Icon className="icon-mobile" />
                   </a>
                 </div>
               </div>

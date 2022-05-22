@@ -219,7 +219,8 @@ body {
   }
 
   .youtube-link,
-  .instagram-link {
+  .instagram-link,
+  .telegram-link {
     &:hover {
       .stroke-colored-el {
         stroke: $primary;
@@ -231,7 +232,8 @@ body {
     }
   }
 
-  .youtube-link {
+  .youtube-link,
+  .instagram-link {
     margin-right: 30px;
 
     @include laptop {

@@ -151,7 +151,8 @@
   }
 
   .youtube-link,
-  .instagram-link {
+  .instagram-link,
+  .telegram-link {
     display: inline-block;
     opacity: .7;
     transition: opacity $trans;
@@ -177,7 +178,8 @@
     }
   }
 
-  .youtube-link {
+  .youtube-link,
+  .instagram-link {
     margin-right: 16px;
   }
 

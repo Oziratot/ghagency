@@ -279,7 +279,8 @@
       }
     }
 
-    .youtube-link {
+    .youtube-link,
+    .instagram-link {
       margin-right: 15px;
 
       @include laptop {
@@ -293,7 +294,8 @@
     }
 
     .youtube-link,
-    .instagram-link {
+    .instagram-link,
+    .telegram-link {
       &:hover {
         .stroke-colored-el {
           stroke: $primary;
@@ -594,7 +596,8 @@
         }
 
         .youtube-link,
-        .instagram-link {
+        .instagram-link,
+        .telegram-link {
           padding: 3px 4px;
         }
       }
