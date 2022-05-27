@@ -88,7 +88,7 @@ const getBreadcrumbListStructuredData = ({ id, name }) => ({
   `,
 });
 
-function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, reviewByPlayerOrParent, desc, ...resumeParams }) {
+function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, reviewByPlayerOrParent, byPlayer, desc, ...resumeParams }) {
   const initialVideoSlide = useMemo(() => reviews.findIndex((item) => item.videoId === videoId), [videoId]);
   const video = useMemo(() => ({ videoId }), [videoId]);
   const videoArr = [video];
@@ -166,7 +166,7 @@ function Player({ id, imgSrc, name, review, lgImgSrc, videoId, lgImgCaption, rev
 
         {reviewByPlayerOrParent && (
           <section className="section section-reviews">
-            <h2 className="h2 section-title">Отзыв родителей</h2>
+            <h2 className="h2 section-title">{!byPlayer ? 'Отзыв родителей' : 'Отзыв игрока'}</h2>
             {/*{videoId && <VideoSlider items={reviews} initialSlide={initialVideoSlide} />}*/}
             <div className="container">
               <div className="text-reviews-list-item-content">
