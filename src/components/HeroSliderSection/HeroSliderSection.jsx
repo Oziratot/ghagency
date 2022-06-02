@@ -57,7 +57,7 @@ function HeroSliderSection({ initialSlide, slides }) {
                   {id === 4 && router.pathname === '/services/player-viewing/2022' && <OrderCallButton modalTitle="Запишитесь на просмотр" firstSubmitLabel="Записаться" secondSubmitLabel="Записаться">Забронировать</OrderCallButton>}
                   {id === 5 && <OrderCallButton modalTitle="Запишитесь на просмотр" firstSubmitLabel="Записаться" secondSubmitLabel="Записаться">Записаться</OrderCallButton>}
                   {id !== 1 && id !== 4 && id !== 5 && <Link href={link}><a className="ui-button ui-button-orange">Подробнее</a></Link>}
-                  {id === 5 && <p className="note">*Регистрация до&nbsp;1&nbsp;июня</p> }
+                  {id === 5 && <p className="note">*Регистрация до&nbsp;6&nbsp;июня</p> }
                 </div>
               </div>
             </div>
