@@ -581,7 +581,7 @@ function PlayerViewing2021() {
           <div className="container">
             <h2 className="h2 section-title">Стоимость просмотра</h2>
             {/*<p className="registration-ends">Регистрация для&nbsp;группы 2007–2009&nbsp;г.&nbsp;р. заканчивается 23&nbsp;мая</p>*/}
-            <p className="registration-ends two">Регистрация для&nbsp;группы 2003–2006&nbsp;г.р. заканчивается 6&nbsp;июня</p>
+            <p className="registration-ends two">Регистрация для&nbsp;группы 2003–2006&nbsp;г.р. заканчивается 13&nbsp;июня</p>
             <div className="price-desc-block">
               <p className="price-includes-title">В&nbsp;стоимость включено:</p>
               <ul className="price-includes-list">

@@ -1,7 +1,6 @@
 import React, {
-  forwardRef, memo, useCallback, useContext, useEffect, useMemo, useRef, useState,
+  forwardRef, memo, useCallback, useEffect, useMemo, useRef, useState,
 } from 'react';
-import Link from 'next/link';
 import classnames from 'classnames';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Head from '../../components/Head';
@@ -18,6 +17,9 @@ import PhotoSlider from '../../components/PhotoSlider/PhotoSlider';
 import FeedbackSection from '../../components/FeedbackSection/FeedbackSection';
 import useContactsMap from '../../utils/hooks/useContactsMap';
 import VideoSlider from '../../components/VideoSlider/VideoSlider';
+import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import CloseIcon from '../../assets/svg/close-btn-new.svg'
 
 const about = [
   { src: '/assets/img/services/camp-2022/about-1.png', text: '16&nbsp;полевых игроков<br />и&nbsp;3&nbsp;вратаря' },
@@ -51,6 +53,15 @@ const view2021 = [
   { src: '/assets/img/services/camp-2022/2021/camp-14.jpg' },
   { src: '/assets/img/services/camp-2022/2021/camp-15.jpg' },
   { src: '/assets/img/services/camp-2022/2021/camp-16.jpg' },
+];
+
+const modalSchedule = [
+  { date: '6 июня', ground: '13:30 – 14:45&nbsp;земля', ice: '15:15 – 16:30&nbsp;лёд' },
+  { date: '7 июня', ground: '13:45 – 15:00&nbsp;земля', ice: '15:30 – 16:45&nbsp;лёд' },
+  { date: '8 июня', ground: '13:15 – 14:30&nbsp;земля', ice: '15:00 – 16:15&nbsp;лёд' },
+  { date: '9 июня', ground: '13:45 – 15:00&nbsp;земля', ice: '15:30 – 16:45&nbsp;лёд' },
+  { date: '10 июня', ground: '13:15 – 14:30&nbsp;земля', ice: '15:00 – 16:15&nbsp;лёд' },
+  { date: '11 июня', ground: '15:30 – 17:00&nbsp;игра', ice: '17:30 – 19:30&nbsp;баня' },
 ];
 
 const BreadcrumbListStructuredData = {
@@ -127,12 +138,13 @@ const video = [{ videoId: 'qXvKcp0tSrE' }];
 function TrainingCamp2022() {
   const [desktopScoutsVisibleNumber, setDesktopScoutsVisibleNumber] = useState(3);
   const [activeScoutPanels, setActiveScoutPanels] = useState([]);
+  const [scheduleActive, setScheduleActive] = useState(false);
   const handleScoutsShowAllClick = useCallback(() => setDesktopScoutsVisibleNumber(coaches.length), []);
+  const toggleScheduleModal = useCallback(() => setScheduleActive((prev) => !prev), []);
   const [photos2020, setPhotos2020] = useState(view2021);
   const [activeFaqItems, setActiveFaqItems] = useState({ 0: true });
   const mapRef = useRef();
   useContactsMap(mapRef, true);
-
 
   const faq = useMemo(() => ([
     {
@@ -146,10 +158,6 @@ function TrainingCamp2022() {
     {
       question: 'Экзамен в один из тренировочных дней, как быть?',
       answer: (<>Вы&nbsp;также&nbsp;можете принять участие в&nbsp;подготовительном лагере&nbsp;— пропуск 1–2&nbsp;дней не&nbsp;критичен для&nbsp;набора формы.</>),
-    },
-    {
-      question: 'В&nbsp;какое время тренировки?',
-      answer: (<>В&nbsp;первой половине дня&nbsp;или&nbsp;в&nbsp;обед, финальное расписание будет предоставлено участникам лагеря за&nbsp;месяц до&nbsp;начала тренировок&nbsp;— 9&nbsp;мая.</>),
     },
   ]), []);
 
@@ -274,6 +282,7 @@ function TrainingCamp2022() {
                 </div>
               </li>
             </ul>
+            <Button className="schedule-button" onClick={toggleScheduleModal}>Смотреть расписание</Button>
           </div>
         </section>
 
@@ -377,6 +386,24 @@ function TrainingCamp2022() {
             </div>
           </div>
         </FeedbackSection>
+
+        <Modal className="schedule-modal" onClose={toggleScheduleModal} active={scheduleActive}>
+          <img className="schedule-image hidden-xs" src="/assets/img/services/camp-2022/schedule.png" alt="Игрок на поле" />
+          <img className="schedule-image visible-xs" src="/assets/img/services/camp-2022/schedule-mobile.png" alt="Игрок на поле" />
+          <div className="schedule-container">
+            <h2 className="h2 section-title">Расписание тренировок</h2>
+            <ul className="schedule">
+              {modalSchedule.map((item) => (
+                <div className="schedule-item">
+                  <p className="schedule-date">{item.date}</p>
+                  <div className="schedule-text" dangerouslySetInnerHTML={{ __html: item.ground }} />
+                  <div className="schedule-text" dangerouslySetInnerHTML={{ __html: item.ice }} />
+                </div>
+              ))}
+            </ul>
+          </div>
+          <CloseIcon onClick={toggleScheduleModal} className="new-close-btn" />
+        </Modal>
 
       </PageServices>
     </>
