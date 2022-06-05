@@ -56,12 +56,12 @@ const view2021 = [
 ];
 
 const modalSchedule = [
-  { date: '6 июня', ground: '13:30 – 14:45&nbsp;земля', ice: '15:15 – 16:30&nbsp;лёд' },
-  { date: '7 июня', ground: '13:45 – 15:00&nbsp;земля', ice: '15:30 – 16:45&nbsp;лёд' },
-  { date: '8 июня', ground: '13:15 – 14:30&nbsp;земля', ice: '15:00 – 16:15&nbsp;лёд' },
-  { date: '9 июня', ground: '13:45 – 15:00&nbsp;земля', ice: '15:30 – 16:45&nbsp;лёд' },
-  { date: '10 июня', ground: '13:15 – 14:30&nbsp;земля', ice: '15:00 – 16:15&nbsp;лёд' },
-  { date: '11 июня', ground: '15:30 – 17:00&nbsp;игра', ice: '17:30 – 19:30&nbsp;баня' },
+  { date: 'Понедельник', ground: '13:30 – 14:45&nbsp;земля', ice: '15:15 – 16:30&nbsp;лёд' },
+  { date: 'Вторник', ground: '13:45 – 15:00&nbsp;земля', ice: '15:30 – 16:45&nbsp;лёд' },
+  { date: 'Среда', ground: '13:15 – 14:30&nbsp;земля', ice: '15:00 – 16:15&nbsp;лёд' },
+  { date: 'Четверг', ground: '13:45 – 15:00&nbsp;земля', ice: '15:30 – 16:45&nbsp;лёд' },
+  { date: 'Пятница', ground: '13:15 – 14:30&nbsp;земля', ice: '15:00 – 16:15&nbsp;лёд' },
+  { date: 'Суббота', ground: '15:30 – 17:00&nbsp;игра', ice: '17:15 – 19:15&nbsp;баня' },
 ];
 
 const BreadcrumbListStructuredData = {
